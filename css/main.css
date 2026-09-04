@@ -11,6 +11,19 @@
     --soft-gray: #666666;
     --white: #ffffff;
 
+   .our-story {
+  background: linear-gradient(to bottom, #f9e6b3, #d8c1f0);
+  transition: background 1s ease-out;
+}
+
+.our-story.horizon-mid {
+  background: linear-gradient(to bottom, #ffe9a8, #bcd4ff);
+}
+
+.our-story.horizon-sunset {
+  background: linear-gradient(to bottom, #f7c27a, #d8a0e8);
+}
+
     --heading-font: 'Playfair Display', serif;
     --body-font: 'Inter', sans-serif;
 
