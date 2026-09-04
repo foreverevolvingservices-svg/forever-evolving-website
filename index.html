@@ -56,55 +56,238 @@
            <img src="images/forever-evolving-logo.png" alt="Forever Evolving Logo">
     </section>
 
-    <!-- OUR STORY SECTION -->
-<section id="story" class="story-section">
-    <div class="story-container">
+   <!-- OUR STORY SECTION -->
+<section id="our-story" class="our-story">
+  <div class="our-story-background">
+    <div class="cloud-layer"></div>
+  </div>
 
-        <h1 class="section-title">About Forever Evolving</h1>
+  <div class="our-story-inner">
+    <!-- Title -->
+    <h2 class="our-story-title">Our Story</h2>
 
-        <p class="section-intro">
-            Forever Evolving was created as a sanctuary — a place where growth feels natural,
-            healing feels possible, and every person is invited to rise into the fullest version
-            of themselves. It is a home for transformation, reflection, and meaningful human connection.
-        </p>
+    <!-- Panoramic Image with Parallax Wrapper -->
+    <div class="story-image-wrapper">
+      <div class="story-image-parallax">
+        <img src="images/panoramic-evolution.png" alt="The Journey of Becoming" class="story-image">
+      </div>
+      <div class="story-caption">
+        In every chapter, we rise, heal, and evolve.
+      </div>
+    </div>
 
-        <div class="story-content">
-            <div class="story-text">
-                <h2>Our Story</h2>
-                <p>
-                    Forever Evolving began with a simple truth: life is a continuous unfolding.
-                    Every experience, every challenge, every moment of clarity becomes part of the
-                    journey toward becoming who we are meant to be. Through books, community projects,
-                    wellness initiatives, and heartfelt conversations, Forever Evolving grew into a
-                    movement centered on empowerment, authenticity, and compassion.
-                </p>
+    <!-- Letter-style Text Block -->
+    <div class="story-letter">
+      <p>
+        As I look back on my own journey — the bright beginnings, the heavy seasons, the quiet rebuilds, and the wisdom that only time can teach — I’ve learned that growth is never a straight line. It’s a tender, sacred unfolding. <em>Forever Evolving</em> was born from that truth. It is my way of honoring every person who has ever had to rise again, who has ever carried both hope and hurt in the same heart, who is still learning how to walk forward with grace. If you are here, you are part of this story. And I welcome you — not as a visitor, but as someone who is evolving right alongside me.
+      </p>
 
-                <p>
-                    Founded by Kinia Colbert, Forever Evolving reflects her lifelong commitment to
-                    emotional wellness, human connection, and the courage it takes to rewrite the
-                    narratives that no longer serve us. Her work encourages individuals to step into
-                    their own evolution — gently, bravely, and with intention.
-                </p>
-
-                <h2>What We Believe</h2>
-                <p>
-                    We believe that transformation is not a destination, but a practice.
-                    We believe that healing is possible when people feel seen, supported, and safe.
-                    We believe that every person deserves to choose who they are becoming — not who
-                    the world tells them they must be.
-                </p>
-
-                <p>
-                    Forever Evolving is more than a brand. It is a living, breathing invitation to
-                    rise, to act, and to embrace the beauty of becoming.
-                </p>
-            </div>
-
-            <div class="story-image">
-                <img src="images/about-placeholder.jpg" alt="Forever Evolving About Image">
-            </div>
+      <!-- Signature + Small Symbolic Accent -->
+      <div class="story-signature-block">
+        <div class="story-accent">
+          <!-- symbolic accent: soft glowing dot / small butterfly-like mark -->
+          <span class="accent-orb"></span>
         </div>
+        <p class="story-signature">
+          In grace and growth,<br>
+          <span class="signature-name">Kinia</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<style>
+/* Overall Section */
+.our-story {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f9e6b3, #d8c1f0);
+  color: #2f2438;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+/* Background with moving clouds */
+.our-story-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.cloud-layer {
+  position: absolute;
+  top: 10%;
+  left: -30%;
+  width: 160%;
+  height: 60%;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.7), transparent 60%),
+              radial-gradient(circle at 60% 40%, rgba(255,255,255,0.6), transparent 55%),
+              radial-gradient(circle at 80% 30%, rgba(255,255,255,0.5), transparent 50%);
+  opacity: 0.6;
+  animation: clouds-drift 60s linear infinite;
+}
+
+/* Inner content */
+.our-story-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Title */
+.our-story-title {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Image + Caption */
+.story-image-wrapper {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.story-image-parallax {
+  transform: translateY(0);
+  transition: transform 0.6s ease-out;
+}
+
+.story-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* Caption overlay */
+.story-caption {
+  position: relative;
+  margin-top: -50px;
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.45);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+/* Letter-style block */
+.story-letter {
+  max-width: 780px;
+  margin: 70px auto 0;
+  padding: 30px 28px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  text-align: left;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* Signature block */
+.story-signature-block {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Symbolic accent */
+.story-accent {
+  margin-right: 14px;
+}
+
+.accent-orb {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe9a8 0%, #f3b86b 40%, transparent 70%);
+  box-shadow: 0 0 12px rgba(243,184,107,0.8);
+  animation: accent-pulse 4s ease-in-out infinite;
+}
+
+/* Signature styling */
+.story-signature {
+  margin: 0;
+  font-size: 1rem;
+  font-style: italic;
+  color: #3b2a4a;
+}
+
+.signature-name {
+  font-family: "Pacifico", "Segoe Script", cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+}
+
+/* Typography refinements */
+.story-letter p {
+  margin: 0;
+}
+
+/* Animations */
+@keyframes clouds-drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20%);
+  }
+}
+
+@keyframes accent-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Parallax effect on scroll (simple CSS hook; JS can enhance) */
+@media (prefers-reduced-motion: no-preference) {
+  .our-story:hover .story-image-parallax {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .our-story {
+    padding: 60px 16px;
+  }
+
+  .our-story-title {
+    font-size: 2rem;
+  }
+
+  .story-letter {
+    padding: 24px 20px;
+    margin-top: 50px;
+  }
+
+  .story-caption {
+    font-size: 1rem;
+    margin-top: -40px;
+  }
+<audio id="ambientSound" src="sounds/ambient-wind.mp3" preload="auto"></audio>
+  .story-signature-block {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+</style>
     </div>
 </section>
 
