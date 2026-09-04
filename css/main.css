@@ -3,8 +3,8 @@
    --------------------------------------------------------- */
 
 :root {
-    --teal: #1fa2ff;
-    --gold: #fdbb2d;
+    --teal: #008080;      /* real teal */
+    --gold: #d4af37;      /* real gold */
     --gradient: linear-gradient(135deg, var(--teal), var(--gold));
     --ivory: #faf8f4;
     --charcoal: #333333;
