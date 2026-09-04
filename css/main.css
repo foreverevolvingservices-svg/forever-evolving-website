@@ -11,7 +11,17 @@
     --soft-gray: #666666;
     --white: #ffffff;
 
-   .our-story {
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Inter', sans-serif;
+
+    --section-padding: 80px 40px;
+    --section-padding-mobile: 60px 24px;
+}
+/* ---------------------------------------------------------
+   OUR STORY — Horizon Shift Animation
+   --------------------------------------------------------- */
+
+.our-story {
   background: linear-gradient(to bottom, #f9e6b3, #d8c1f0);
   transition: background 1s ease-out;
 }
@@ -22,13 +32,6 @@
 
 .our-story.horizon-sunset {
   background: linear-gradient(to bottom, #f7c27a, #d8a0e8);
-}
-
-    --heading-font: 'Playfair Display', serif;
-    --body-font: 'Inter', sans-serif;
-
-    --section-padding: 80px 40px;
-    --section-padding-mobile: 60px 24px;
 }
 
 /* Reset */
