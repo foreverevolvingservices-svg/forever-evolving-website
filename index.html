@@ -60,12 +60,8 @@
 <section id="our-story" class="our-story">
   <audio id="ambientSound" src="sounds/ambient-wind.mp3" preload="auto"></audio>
   <div class="our-story-background">
-
-    <section id="our-story" class="our-story">
-  <div class="our-story-background">
-    <div class="cloud-layer"></div>
+ <div class="cloud-layer"></div>
   </div>
-
   <div class="our-story-inner">
     <!-- Title -->
     <h2 class="our-story-title">Our Story</h2>
@@ -100,7 +96,6 @@
     </div>
   </div>
 </section>
-
 <style>
 /* Overall Section */
 .our-story {
@@ -236,30 +231,17 @@
 
 /* Animations */
 @keyframes clouds-drift {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(20%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20%); }
 }
 
 @keyframes accent-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.9;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.9;
-  }
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
 }
 
-/* Parallax effect on scroll (simple CSS hook; JS can enhance) */
+/* Parallax effect on scroll */
 @media (prefers-reduced-motion: no-preference) {
   .our-story:hover .story-image-parallax {
     transform: translateY(-10px);
@@ -268,31 +250,14 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .our-story {
-    padding: 60px 16px;
-  }
-
-  .our-story-title {
-    font-size: 2rem;
-  }
-
-  .story-letter {
-    padding: 24px 20px;
-    margin-top: 50px;
-  }
-
-  .story-caption {
-    font-size: 1rem;
-    margin-top: -40px;
-  }
-  .story-signature-block {
-    flex-direction: row;
-    align-items: center;
-  }
+  .our-story { padding: 60px 16px; }
+  .our-story-title { font-size: 2rem; }
+  .story-letter { padding: 24px 20px; margin-top: 50px; }
+  .story-caption { font-size: 1rem; margin-top: -40px; }
+  .story-signature-block { flex-direction: row; align-items: center; }
 }
 </style>
-    </div>
-</section>
+
 
     <!-- PROJECTS / ECOSYSTEM SECTION -->
 <section id="projects" class="projects-section">
