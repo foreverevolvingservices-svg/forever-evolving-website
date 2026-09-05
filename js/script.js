@@ -1,3 +1,6 @@
+/* ---------------------------------------------------------
+   Mobile Menu Toggle
+--------------------------------------------------------- */
 function toggleMenu() {
     const mobileNav = document.getElementById("mobileNav");
 
@@ -24,18 +27,6 @@ window.addEventListener('scroll', () => {
         soundPlayed = true;
     }
 });
-/* --------------------------------------------------------------
-   Mobile Menu Toggle
--------------------------------------------------------------- */
-function toggleMenu() {
-    const mobileNav = document.getElementById("mobileNav");
-
-    if (mobileNav.style.display === "flex") {
-        mobileNav.style.display = "none";
-    } else {
-        mobileNav.style.display = "flex";
-    }
-}
 
 /* ---------------------------------------------------------
    Horizon Shift Animation
