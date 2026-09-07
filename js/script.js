@@ -45,7 +45,7 @@ window.addEventListener('scroll', () => {
         storySection.classList.remove('horizon-sunset');
     } else {
         storySection.classList.add('horizon-sunset');
-        storySection.classList.remove('horizon-mid');
+        storySection.classList.remove('horizon-mid'); 
     }
 });
 
