@@ -9,7 +9,7 @@ function toggleMenu() {
     if (mobileNav.style.display === "flex") {
         mobileNav.style.display = "none";
     } else {
-        mobileNav.style.display = "flex";
+        mobileNav.style.display = "flex"; 
     }
 }
 
