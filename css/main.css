@@ -285,6 +285,17 @@ body {
     line-height: 1.7;
 }
 
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
 /* --------------------------------------------------------------
    OUR STORY SECTION STYLING
 -------------------------------------------------------------- */
@@ -348,10 +359,3 @@ body {
 .our-story p:nth-child(3) { animation-delay: 0.4s; }
 .our-story p:nth-child(4) { animation-delay: 0.6s; }
 .our-story p:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
