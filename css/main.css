@@ -18,107 +18,7 @@
     --section-padding-mobile: 60px 24px;
 }
 /* ---------------------------------------------------------
-   OUR STORY — Horizon Shift Animation
-   --------------------------------------------------------- */
-
-.our-story {
-  background: linear-gradient(to bottom, #f9e6b3, #d8c1f0);
-  transition: background 1s ease-out;
-}
-
-.our-story.horizon-mid {
-  background: linear-gradient(to bottom, #ffe9a8, #bcd4ff);
-}
-
-.our-story.horizon-sunset {
-  background: linear-gradient(to bottom, #f7c27a, #d8a0e8);
-}
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: var(--ivory);
-    color: var(--charcoal);
-    font-family: var(--body-font);
-    line-height: 1.7;
-}
-
-/* --------------------------------------------------------------
-   OUR STORY SECTION STYLING
--------------------------------------------------------------- */
-
-.our-story {
-    padding: 120px 20px;
-    background: linear-gradient(to bottom, #fdfcf7, #f7f3e9);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Soft golden glow behind the section */
-.our-story::before {
-    content: "";
-    position: absolute;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,215,130,0.35), transparent 70%);
-    z-index: 0;
-}
-
-.story-container {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.story-title {
-    font-size: 2.8rem;
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: 600;
-    background: linear-gradient(to right, #008c8c, #00b3b3, #d4a24c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.story-intro,
-.story-body,
-.story-closing {
-    font-size: 1.25rem;
-    line-height: 1.75;
-    margin-bottom: 28px;
-    color: #444;
-    text-align: center;
-    font-weight: 300;
-}
-
-/* Subtle fade-in animation */
-.our-story p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1.2s ease forwards;
-}
-
-.our-story p:nth-child(2) { animation-delay: 0.2s; }
-.our-story p:nth-child(3) { animation-delay: 0.4s; }
-.our-story p:nth-child(4) { animation-delay: 0.6s; }
-.our-story p:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+  
 /* ---------------------------------------------------------
    Header + Navigation
    --------------------------------------------------------- */
@@ -353,5 +253,105 @@ body {
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+}
+ OUR STORY — Horizon Shift Animation
+   --------------------------------------------------------- */
+
+.our-story {
+  background: linear-gradient(to bottom, #f9e6b3, #d8c1f0);
+  transition: background 1s ease-out;
+}
+
+.our-story.horizon-mid {
+  background: linear-gradient(to bottom, #ffe9a8, #bcd4ff);
+}
+
+.our-story.horizon-sunset {
+  background: linear-gradient(to bottom, #f7c27a, #d8a0e8);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-family: var(--body-font);
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------------------
+   OUR STORY SECTION STYLING
+-------------------------------------------------------------- */
+
+.our-story {
+    padding: 120px 20px;
+    background: linear-gradient(to bottom, #fdfcf7, #f7f3e9);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft golden glow behind the section */
+.our-story::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,215,130,0.35), transparent 70%);
+    z-index: 0;
+}
+
+.story-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.story-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+    background: linear-gradient(to right, #008c8c, #00b3b3, #d4a24c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.story-intro,
+.story-body,
+.story-closing {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    margin-bottom: 28px;
+    color: #444;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* Subtle fade-in animation */
+.our-story p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.our-story p:nth-child(2) { animation-delay: 0.2s; }
+.our-story p:nth-child(3) { animation-delay: 0.4s; }
+.our-story p:nth-child(4) { animation-delay: 0.6s; }
+.our-story p:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
