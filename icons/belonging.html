@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Gate of Belonging</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #0b0b0b, #000);
+            color: #fff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .belonging-container {
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        /* Floating wing particles */
+        .wing {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #ffd700;
+            clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+            opacity: 0.7;
+            animation: flutter 5s infinite ease-in-out;
+        }
+
+        @keyframes flutter {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-80px) rotate(10deg); opacity: 1; }
+            100% { transform: translateY(-160px) rotate(0deg); opacity: 0; }
+        }
+
+        /* Glowing header */
+        .belonging-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 25px #ffd700;
+        }
+
+        .belonging-subtitle {
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Key icon */
+        .belonging-icon {
+            width: 170px;
+            height: 170px;
+            background-image: url('icons/key-gold.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 40px auto;
+            filter: drop-shadow(0 0 25px #ffd700);
+            animation: keyGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes keyGlow {
+            0% { filter: drop-shadow(0 0 14px #ffd700); }
+            50% { filter: drop-shadow(0 0 32px #ffea8a); }
+            100% { filter: drop-shadow(0 0 14px #ffd700); }
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 22px;
+            background: #ffd700;
+            color: #000;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #fff3a0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="belonging-container">
+
+        <!-- Floating wing particles -->
+        <div class="wing" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="wing" style="left: 40%; animation-delay: 1s;"></div>
+        <div class="wing" style="left: 60%; animation-delay: 2s;"></div>
+        <div class="wing" style="left: 80%; animation-delay: 3s;"></div>
+
+        <div class="belonging-title">
