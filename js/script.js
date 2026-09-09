@@ -49,3 +49,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// PORTAL SOUND EFFECT
+const portalItems = document.querySelectorAll('.portal-item');
+const portalSound = new Audio('sounds/ambient-wind.mp3');
+
+portalItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        portalSound.currentTime = 0;
+        portalSound.play();
+    });
+});
+
