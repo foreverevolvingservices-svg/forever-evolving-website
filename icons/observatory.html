@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Insight Observatory</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #050505, #000);
+            color: #fff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .observatory-container {
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        /* Floating star particles */
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 4s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.4); }
+            100% { opacity: 0.4; transform: scale(1); }
+        }
+
+        /* Glowing header */
+        .observatory-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 25px #ffd700;
+        }
+
+        .observatory-subtitle {
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Orb icon */
+        .observatory-icon {
+            width: 170px;
+            height: 170px;
+            background-image: url('icons/orb-gold.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 40px auto;
+            filter: drop-shadow(0 0 25px #ffd700);
+            animation: orbRotate 6s linear infinite;
+        }
+
+        @keyframes orbRotate {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 22px;
+            background: #ffd700;
+            color: #000;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background
