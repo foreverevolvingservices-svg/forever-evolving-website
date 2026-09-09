@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Guidance Hall</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #0d0d0d, #000);
+            color: #fff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .guidance-container {
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        /* Floating lantern sparks */
+        .spark {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #ffd700;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: drift 5s infinite ease-in-out;
+        }
+
+        @keyframes drift {
+            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(40px); opacity: 0; }
+        }
+
+        /* Glowing header */
+        .guidance-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 22px #ffd700;
+        }
+
+        .guidance-subtitle {
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Lantern icon */
+        .guidance-icon {
+            width: 150px;
+            height: 150px;
+            background-image: url('icons/lantern-gold.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 40px auto;
+            filter: drop-shadow(0 0 20px #ffd700);
+            animation: lanternGlow 2.2s infinite alternate ease-in-out;
+        }
+
+        @keyframes lanternGlow {
+            from { filter: drop-shadow(0 0 14px #ffd700); }
+            to   { filter: drop-shadow(0 0 28px #ffea8a); }
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 22px;
+            background: #ffd700;
+            color: #000;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #fff3a0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="guidance-container">
+
+        <!-- Floating sparks -->
+        <div class="spark" style="left: 25%; animation-delay: 0s;"></div>
+        <div class="spark" style="left: 45%; animation-delay: 1s;"></div>
+        <div class="spark" style="left: 65%; animation-delay: 2s;"></div>
+        <div class="spark" style="left: 85%; animation-delay: 3s;"></div>
+
+        <div class="guidance-title">
