@@ -378,3 +378,55 @@ body {
 .portal-button:hover {
   background: #fff3a0;
 }
+
+/* PORTAL HOVER GLOW */
+.portal-item {
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.portal-item:hover {
+    transform: translateY(-6px) scale(1.05);
+    filter: drop-shadow(0 0 12px #ffd700) brightness(1.2);
+}
+
+.book-icon:hover {
+    transform: translateY(-6px) scale(1.08);
+}
+
+.lantern-icon:hover {
+    animation: lanternFlicker 0.8s infinite alternate;
+}
+
+@keyframes lanternFlicker {
+    from { filter: drop-shadow(0 0 10px #ffd700); }
+    to   { filter: drop-shadow(0 0 18px #ffea8a); }
+}
+
+.hands-icon:hover {
+    animation: handsPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes handsPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+.orb-icon:hover {
+    animation: orbSpin 4s linear infinite;
+}
+
+@keyframes orbSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.key-icon:hover {
+    animation: keyFlutter 0.6s infinite alternate;
+}
+
+@keyframes keyFlutter {
+    from { transform: translateY(-6px) rotate(-3deg); }
+    to   { transform: translateY(-6px) rotate(3deg); }
+}
+
