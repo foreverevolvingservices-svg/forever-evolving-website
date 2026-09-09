@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Library of Becoming</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #1a1a1a, #000);
+            color: #fff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .library-container {
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffd700;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: floatUp 6s infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-120px); opacity: 0; }
+        }
+
+        /* Glowing header */
+        .library-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px #ffd700;
+        }
+
+        .library-subtitle {
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Glowing book icon */
+        .library-icon {
+            width: 140px;
+            height: 140px;
+            background-image: url('icons/book-gold.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 40px auto;
+            filter: drop-shadow(0 0 20px #ffd700);
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0% { filter: drop-shadow(0 0 12px #ffd700); }
+            50% { filter: drop-shadow(0 0 28px #ffea8a); }
+            100% { filter: drop-shadow(0 0 12px #ffd700); }
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 22px;
+            background: #ffd700;
+            color: #000;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #fff3a0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="library-container">
+
+        <!-- Floating particles -->
+        <div class="particle" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 3s;"></div>
+
+        <div class="library-title">The Library of Becoming</div>
+
+        <div class="library-subtitle">
+            A realm of wisdom, reflection, and transformation.  
+            Here, every page is a doorway. Every word is a lantern.  
+            Every lesson becomes part of your evolution.
+        </div>
+
+        <div class="library-icon"></div>
+
+        <a href="index.html" class="back-button">Return to Portals</a>
+
+    </div>
+
+</body>
+</html>
