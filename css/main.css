@@ -452,3 +452,26 @@ body {
     opacity: 1;
 }
 
+/* REALM NAVIGATION BAR */
+.realm-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 12px 0;
+    text-align: center;
+    z-index: 999;
+    backdrop-filter: blur(6px);
+}
+
+.realm-nav a {
+    color: #ffd700;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.realm-nav a:hover {
+    color: #fff3a0;
+}
