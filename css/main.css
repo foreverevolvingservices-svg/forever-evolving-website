@@ -585,3 +585,45 @@ body {
         transform: translate(10%, 10%) rotate(360deg);
     }
 }
+
+/* COSMIC LOADING TRANSITION */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.8), rgba(0,0,0,0.9));
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fadeOutOverlay 1.2s ease forwards;
+}
+
+@keyframes fadeOutOverlay {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* FLASH WHEN CLICKING PORTALS OR NAV LINKS */
+a {
+    position: relative;
+}
+
+a:active ~ .transition-overlay,
+a:focus ~ .transition-overlay {
+    animation: fadeInOverlay 0.6s ease forwards;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
