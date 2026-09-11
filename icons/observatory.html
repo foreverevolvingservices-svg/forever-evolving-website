@@ -27,6 +27,8 @@
 </div>
 
     <div class="observatory-container">
+        <div class="realm-particles"></div>
+
     <div class="observatory-title">The Insight Observatory</div>
 
     <div class="observatory-subtitle">
@@ -165,4 +167,15 @@
             }, 450);
         });
     });
+</script>
+<script>
+    const particleContainer = document.querySelector('.realm-particles');
+
+    for (let i = 0; i < 25; i++) {
+        const p = document.createElement('span');
+        p.style.left = Math.random() * 100 + '%';
+        p.style.top = Math.random() * 100 + '%';
+        p.style.animationDelay = (Math.random() * 4) + 's';
+        particleContainer.appendChild(p);
+    }
 </script>
