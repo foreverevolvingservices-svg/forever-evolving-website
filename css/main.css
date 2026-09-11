@@ -878,3 +878,18 @@ a:focus ~ .transition-overlay {
     animation: trailFade 0.6s linear forwards;
     z-index: 9999;
 }
+/* PORTAL CLICK PULSE */
+@keyframes portalClickPulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px #ffd700);
+    }
+    50% {
+        transform: scale(1.25);
+        filter: drop-shadow(0 0 22px #fff8c6);
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px #ffd700);
+    }
+}
