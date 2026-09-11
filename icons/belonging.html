@@ -91,6 +91,7 @@
 </head>
 
 <body>
+<audio id="ambientSound" src="sounds/belonging-ambience.mp3" preload="auto" loop></audio>
 
     <nav class="realm-nav">
     <a href="index.html">Home</a>
@@ -116,3 +117,18 @@
 </footer>
 
             <body>
+
+     <script>
+    const ambient = document.getElementById('ambientSound');
+    ambient.volume = 0;
+
+    ambient.play().then(() => {
+        let vol = 0;
+        const fade = setInterval(() => {
+            vol += 0.02;
+            ambient.volume = vol;
+            if (vol >= 0.4) clearInterval(fade);
+        }, 150);
+    });
+</script>
+           
