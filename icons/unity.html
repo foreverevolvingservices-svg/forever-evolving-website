@@ -11,6 +11,7 @@
             <div class="transition-overlay"></div>
 
 <audio id="ambientSound" src="sounds/unity-ambience.mp3" preload="auto" loop></audio>
+<audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
 
     <nav class="realm-nav">
         <a href="index.html">Home</a>
@@ -130,4 +131,14 @@
         }, 150);
     });
 </script>
-         
+   <script>
+    const portalActivate = document.getElementById('portalActivate');
+
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            portalActivate.currentTime = 0;
+            portalActivate.play();
+        });
+    });
+</script>
+      
