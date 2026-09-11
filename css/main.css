@@ -1031,3 +1031,39 @@ a:focus ~ .transition-overlay {
     position: relative;
     z-index: 999;
 }
+/* COSMIC PARALLAX BACKGROUND */
+.cosmic-parallax {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: -10;
+    pointer-events: none;
+}
+
+.parallax-layer {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-repeat: repeat;
+    background-size: 600px 600px;
+    opacity: 0.35;
+    animation: parallaxDrift 60s linear infinite;
+}
+
+.parallax-layer.stars {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.5) 2px, transparent 3px);
+}
+
+.parallax-layer.nebula {
+    background-image: radial-gradient(circle, rgba(255,215,0,0.15) 8px, transparent 12px);
+    opacity: 0.25;
+    animation-duration: 90s;
+}
+
+@keyframes parallaxDrift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(200px, 300px); }
+}
