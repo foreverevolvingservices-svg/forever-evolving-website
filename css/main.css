@@ -492,3 +492,13 @@ body {
 .realm-footer a:hover {
     color: #fff3a0;
 }
+
+/* PAGE FADE-IN */
+body {
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
