@@ -709,3 +709,21 @@ a:focus ~ .transition-overlay {
 .belonging-container {
     animation: slowGlow 4s ease-in-out infinite;
 }
+/* PORTAL RIPPLE EFFECT */
+@keyframes ripplePulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px #ffd700);
+    }
+    50% {
+        transform: scale(1.12);
+        filter: drop-shadow(0 0 14px #ffd700);
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px #ffd700);
+    }
+}
+.portal-item:hover {
+    animation: ripplePulse 0.8s ease-out;
+}
