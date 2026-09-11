@@ -1113,3 +1113,24 @@ a:focus ~ .transition-overlay {
     animation: introFade 1.4s ease-out forwards;
     opacity: 0;
 }
+/* PORTAL HOVER SHIMMER TRAILS */
+@keyframes shimmerTrail {
+    0% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+.portal-shimmer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffd700, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: shimmerTrail 0.6s linear forwards;
+    z-index: 9999;
+}

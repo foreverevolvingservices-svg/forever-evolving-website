@@ -509,3 +509,19 @@
         });
     });
 </script>
+<script>
+    document.querySelectorAll('.portal-item').forEach(portal => {
+        portal.addEventListener('mousemove', (e) => {
+            const shimmer = document.createElement('div');
+            shimmer.classList.add('portal-shimmer');
+            document.body.appendChild(shimmer);
+
+            shimmer.style.left = e.pageX + 'px';
+            shimmer.style.top = e.pageY + 'px';
+
+            setTimeout(() => {
+                shimmer.remove();
+            }, 600);
+        });
+    });
+</script>
