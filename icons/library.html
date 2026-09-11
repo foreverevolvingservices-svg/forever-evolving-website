@@ -15,6 +15,8 @@
             <div class="transition-overlay"></div>
 
 <audio id="ambientSound" src="sounds/library-ambience.mp3" preload="auto" loop></audio>
+<audio id="arrivalLibrary" src="sounds/library-arrival.mp3" preload="auto"></audio>
+
 <audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
 
 
@@ -234,5 +236,20 @@
                 }, 900); // matches animation duration
             }
         });
+    });
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const audio =
+            document.getElementById('arrivalLibrary') ||
+            document.getElementById('arrivalGuidance') ||
+            document.getElementById('arrivalUnity') ||
+            document.getElementById('arrivalObservatory') ||
+            document.getElementById('arrivalBelonging');
+
+        if (audio) {
+            audio.currentTime = 0;
+            audio.play();
+        }
     });
 </script>
