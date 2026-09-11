@@ -1249,3 +1249,55 @@ a:focus ~ .transition-overlay {
     font-family: 'Georgia', serif;
     letter-spacing: 2px;
 }
+/* REALM-SPECIFIC BACKGROUND MOTION */
+@keyframes realmSkyDrift {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-40px, -60px) scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+}
+
+.realm-sky {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -5;
+    background-size: cover;
+    background-position: center;
+    animation: realmSkyDrift 18s ease-in-out infinite;
+    opacity: 0.8;
+}
+/* LIBRARY — Golden Wisdom Sky */
+.library-container .realm-sky {
+    background: radial-gradient(circle at center, #2a1f00, #000);
+}
+
+/* GUIDANCE — Lantern Glow Sky */
+.guidance-container .realm-sky {
+    background: radial-gradient(circle at center, #2b1a00, #000);
+}
+
+/* UNITY — Heart Bloom Sky */
+.unity-container .realm-sky {
+    background: radial-gradient(circle at center, #2a0010, #000);
+}
+
+/* OBSERVATORY — Starfield Sky */
+.observatory-container .realm-sky {
+    background: radial-gradient(circle at center, #0a0a1a, #000);
+}
+
+/* BELONGING — Wing Light Sky */
+.belonging-container .realm-sky {
+    background: radial-gradient(circle at center, #1a0f00, #000);
+}
