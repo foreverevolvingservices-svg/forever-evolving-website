@@ -139,3 +139,19 @@
         });
     });
 </script>
+<script>
+    document.querySelectorAll('.portal-item, .realm-nav a, .map-node').forEach(icon => {
+        icon.addEventListener('mousemove', (e) => {
+            const trail = document.createElement('div');
+            trail.classList.add('icon-trail');
+            document.body.appendChild(trail);
+
+            trail.style.left = e.pageX + 'px';
+            trail.style.top = e.pageY + 'px';
+
+            setTimeout(() => {
+                trail.remove();
+            }, 600);
+        });
+    });
+</script>
