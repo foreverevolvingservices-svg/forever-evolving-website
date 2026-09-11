@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <title>Realm Map</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <div class="transition-overlay"></div>
+
+    <audio id="ambientSound" src="sounds/observatory-ambience.mp3" preload="auto" loop></audio>
+
+    <nav class="realm-nav">
+        <a href="index.html">Home</a>
+        <a href="realm-map.html">Realm Map</a>
+        <a href="library.html">Library</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="unity.html">Unity</a>
+        <a href="observatory.html">Observatory</a>
+        <a href="belonging.html">Belonging</a>
+    </nav>
+
+    <div class="realm-map-container">
+
+        <!-- Center Gate -->
+        <div class="map-gate evolving-gate">
+            <img src="icons/evolving-gate.svg" alt="Evolving Gate">
+        </div>
+
+        <!-- Realm Nodes -->
+        <a href="library.html" class="map-node" style="top: 20%; left: 50%;">Library</a>
+        <a href="guidance.html" class="map-node" style="top: 40%; left: 20%;">Guidance</a>
+        <a href="unity.html" class="map-node" style="top: 40%; left: 80%;">Unity</a>
+        <a href="observatory.html" class="map-node" style="top: 65%; left: 30%;">Observatory</a>
+        <a href="belonging.html" class="map-node" style="top: 65%; left: 70%;">Belonging</a>
+
+        <!-- Connecting Lines -->
+        <div class="map-line line1"></div>
+        <div class="map-line line2"></div>
+        <div class="map-line line3"></div>
+        <div class="map-line line4"></div>
+        <div class="map-line line5"></div>
+
+    </div>
+
+    <footer class="realm-footer">
+        <a href="index.html">Return to the Realm Gate</a>
+    </footer>
+
+    <script>
+        const ambient = document.getElementById('ambientSound');
+        ambient.volume = 0;
+        ambient.play().then(() => {
+            let vol = 0;
+            const fade = setInterval(() => {
+                vol += 0.02;
+                ambient.volume = vol;
+                if (vol >= 0.4) clearInterval(fade);
+            }, 150);
+        });
+    </script>
+
+</body>
+</html>

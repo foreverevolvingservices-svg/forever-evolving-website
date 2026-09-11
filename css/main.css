@@ -808,3 +808,58 @@ a:focus ~ .transition-overlay {
         gateFloat 10s ease-in-out infinite,
         gateHalo 5s ease-in-out infinite;
 }
+/* REALM MAP */
+.realm-map-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    margin-top: 80px;
+}
+
+/* Realm Nodes */
+.map-node {
+    position: absolute;
+    color: #ffd700;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 10px #ffd700;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.map-node:hover {
+    transform: scale(1.15);
+    text-shadow: 0 0 18px #fff8c6;
+}
+
+/* Center Gate */
+.map-gate {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+}
+
+/* Connecting Lines */
+.map-line {
+    position: absolute;
+    background: rgba(255, 215, 0, 0.4);
+    height: 3px;
+    transform-origin: left center;
+    animation: pulseLine 3s ease-in-out infinite;
+}
+
+@keyframes pulseLine {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+/* Line Positions */
+.line1 { top: 32%; left: 50%; width: 30%; transform: rotate(180deg); }
+.line2 { top: 38%; left: 50%; width: 30%; transform: rotate(0deg); }
+.line3 { top: 50%; left: 50%; width: 40%; transform: rotate(210deg); }
+.line4 { top: 50%; left: 50%; width: 40%; transform: rotate(-30deg); }
+.line5 { top: 60%; left: 50%; width: 25%; transform: rotate(90deg); }
