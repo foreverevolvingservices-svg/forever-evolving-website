@@ -475,3 +475,20 @@ body {
 .realm-nav a:hover {
     color: #fff3a0;
 }
+
+/* REALM FOOTER */
+.realm-footer {
+    text-align: center;
+    margin: 60px 0 40px;
+}
+
+.realm-footer a {
+    color: #ffd700;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.realm-footer a:hover {
+    color: #fff3a0;
+}
