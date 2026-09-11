@@ -203,3 +203,22 @@
         }
     });
 </script>
+<script>
+    const realmContainer =
+        document.querySelector('.library-container, .guidance-container, .unity-container, .observatory-container, .belonging-container');
+
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Only animate when leaving the realm (not internal anchors)
+            if (!link.href.includes('#')) {
+                e.preventDefault();
+
+                realmContainer.classList.add('realm-exit');
+
+                setTimeout(() => {
+                    window.location = link.href;
+                }, 900); // matches animation duration
+            }
+        });
+    });
+</script>
