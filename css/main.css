@@ -23,7 +23,12 @@
     box-sizing: border-box;
 }
 
+body 
 body {
+    animation: introFade 1.2s ease-out;
+}
+
+{
     background: var(--ivory);
     color: var(--charcoal);
     font-family: var(--body-font);
@@ -1092,4 +1097,19 @@ a:focus ~ .transition-overlay {
     0% { opacity: 0.4; }
     50% { opacity: 1; }
     100% { opacity: 0.4; }
+}
+/* HOMEPAGE INTRO FADE-IN */
+@keyframes introFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.intro-fade {
+    animation: introFade 1.4s ease-out forwards;
+    opacity: 0;
 }
