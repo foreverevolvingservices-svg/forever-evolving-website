@@ -198,3 +198,21 @@
         particleContainer.appendChild(p);
     }
 </script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.realm-container, .library-container, .guidance-container, .unity-container, .observatory-container, .belonging-container');
+
+        for (let i = 0; i < 20; i++) {
+            const burst = document.createElement('div');
+            burst.classList.add('realm-burst');
+
+            burst.style.left = (Math.random() * 100) + '%';
+            burst.style.top = (Math.random() * 100) + '%';
+            burst.style.animationDelay = (Math.random() * 0.4) + 's';
+
+            container.appendChild(burst);
+
+            setTimeout(() => burst.remove(), 1500);
+        }
+    });
+</script>

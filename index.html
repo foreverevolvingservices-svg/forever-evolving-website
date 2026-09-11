@@ -525,3 +525,52 @@
         });
     });
 </script>
+/* REALM ENTRY PARTICLE BURSTS */
+@keyframes realmBurst {
+    0% {
+        transform: scale(0.4);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.8);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
+}
+
+.realm-burst {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: realmBurst 1.2s ease-out forwards;
+    z-index: 9999;
+}
+/* LIBRARY — Golden Dust Burst */
+.library-container .realm-burst {
+    background: radial-gradient(circle, #ffd700, transparent);
+}
+
+/* GUIDANCE — Lantern Spark Burst */
+.guidance-container .realm-burst {
+    background: radial-gradient(circle, #ffdd88, transparent);
+}
+
+/* UNITY — Heart Glow Burst */
+.unity-container .realm-burst {
+    background: radial-gradient(circle, #ffb3c1, transparent);
+}
+
+/* OBSERVATORY — Star Burst */
+.observatory-container .realm-burst {
+    background: radial-gradient(circle, #ffffff, transparent);
+}
+
+/* BELONGING — Wing Light Burst */
+.belonging-container .realm-burst {
+    background: radial-gradient(circle, #ffe9c6, transparent);
+}
