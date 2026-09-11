@@ -730,3 +730,56 @@ a:focus ~ .transition-overlay {
 .portal-link:hover .portal-label {
     animation: ripplePulse 0.8s ease-out;
 }
+/* REALM ICON ANIMATIONS */
+@keyframes iconFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes iconGlow {
+    0% { filter: drop-shadow(0 0 4px #ffd700); }
+    50% { filter: drop-shadow(0 0 12px #ffd700); }
+    100% { filter: drop-shadow(0 0 4px #ffd700); }
+}
+
+@keyframes iconOrbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes iconBreath {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+/* LIBRARY — Gentle Float */
+.library-icon {
+    animation: iconFloat 4s ease-in-out infinite;
+}
+
+/* GUIDANCE — Lantern Glow */
+.guidance-icon {
+    animation: iconGlow 3.5s ease-in-out infinite;
+}
+
+/* UNITY — Heartbeat Pulse */
+.unity-icon {
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* OBSERVATORY — Orbital Rotation */
+.observatory-icon {
+    animation: iconOrbit 18s linear infinite;
+}
+
+/* BELONGING — Soft Breath */
+.belonging-icon {
+    animation: iconBreath 5s ease-in-out infinite;
+}
