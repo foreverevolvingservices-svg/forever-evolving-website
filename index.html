@@ -129,6 +129,7 @@
 <div class="floating-gate evolving-gate">
     <img src="icons/evolving-gate.svg" alt="Evolving Gate">
 </div>
+<div class="glowing-paths"></div>
 
   <div class="portal-grid">
 
@@ -445,5 +446,34 @@
                 opening.remove();
             }, 650);
         });
+    });
+</script>
+<script>
+    const paths = document.querySelector('.glowing-paths');
+    const portals = document.querySelectorAll('.portal-item');
+
+    portals.forEach((portal, i) => {
+        if (i < portals.length - 1) {
+            const rect1 = portals[i].getBoundingClientRect();
+            const rect2 = portals[i + 1].getBoundingClientRect();
+
+            const line = document.createElement('div');
+            line.classList.add('path-line');
+
+            const x1 = rect1.left + rect1.width / 2;
+            const y1 = rect1.top + rect1.height / 2;
+            const x2 = rect2.left + rect2.width / 2;
+            const y2 = rect2.top + rect2.height / 2;
+
+            const length = Math.hypot(x2 - x1, y2 - y1);
+            const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+
+            line.style.width = length + 'px';
+            line.style.left = x1 + 'px';
+            line.style.top = y1 + 'px';
+            line.style.transform = `rotate(${angle}deg)`;
+
+            paths.appendChild(line);
+        }
     });
 </script>

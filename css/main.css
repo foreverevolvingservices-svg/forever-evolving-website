@@ -1067,3 +1067,29 @@ a:focus ~ .transition-overlay {
     0% { transform: translate(0, 0); }
     100% { transform: translate(200px, 300px); }
 }
+/* GLOWING PATHS BETWEEN PORTALS */
+.glowing-paths {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.path-line {
+    position: absolute;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    opacity: 0.7;
+    animation: pathPulse 3s ease-in-out infinite;
+    transform-origin: left center;
+}
+
+@keyframes pathPulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
