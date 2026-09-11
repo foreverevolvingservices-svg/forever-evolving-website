@@ -1004,3 +1004,30 @@ a:focus ~ .transition-overlay {
 .belonging-container .realm-particles span {
     background: radial-gradient(circle, #ffe9c6, transparent);
 }
+/* PORTAL OPENING EXPANSION */
+@keyframes portalOpen {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px #ffd700);
+        opacity: 1;
+    }
+    40% {
+        transform: scale(1.4);
+        filter: drop-shadow(0 0 28px #fff8c6);
+        opacity: 0.9;
+    }
+    70% {
+        transform: scale(1.8);
+        filter: drop-shadow(0 0 40px #fff8c6);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+.portal-opening {
+    animation: portalOpen 0.65s ease-out forwards;
+    position: relative;
+    z-index: 999;
+}

@@ -425,3 +425,25 @@
 </body>
 </html>
 <a href="realm-map.html" class="portal-link">Realm Map</a>
+<script>
+    document.querySelectorAll('.portal-item').forEach(portal => {
+        portal.addEventListener('click', (e) => {
+            const opening = document.createElement('div');
+            opening.classList.add('portal-opening');
+
+            // Match portal position
+            const rect = portal.getBoundingClientRect();
+            opening.style.position = 'absolute';
+            opening.style.left = rect.left + 'px';
+            opening.style.top = rect.top + 'px';
+            opening.style.width = rect.width + 'px';
+            opening.style.height = rect.height + 'px';
+
+            document.body.appendChild(opening);
+
+            setTimeout(() => {
+                opening.remove();
+            }, 650);
+        });
+    });
+</script>
