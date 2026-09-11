@@ -547,3 +547,41 @@ body {
 .portal-link:hover .portal-item::after {
     top: 100%;
 }
+
+/* FLOATING PARTICLES */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particles::before,
+.particles::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 3px) repeat;
+    background-size: 40px 40px;
+    animation: floatParticles 18s linear infinite;
+    opacity: 0.4;
+}
+
+.particles::after {
+    animation-duration: 28s;
+    opacity: 0.25;
+}
+
+@keyframes floatParticles {
+    from {
+        transform: translate(-10%, -10%) rotate(0deg);
+    }
+    to {
+        transform: translate(10%, 10%) rotate(360deg);
+    }
+}
