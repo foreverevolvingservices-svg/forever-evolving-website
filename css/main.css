@@ -1217,3 +1217,35 @@ a:focus ~ .transition-overlay {
 .belonging-container.realm-exit {
     filter: drop-shadow(0 0 30px rgba(255, 233, 198, 0.25));
 }
+/* PORTAL GLYPH REVEAL */
+@keyframes glyphReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.6) rotate(-10deg);
+        filter: blur(6px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+.portal-glyph {
+    position: absolute;
+    font-size: 22px;
+    color: #ffd700;
+    opacity: 0;
+    pointer-events: none;
+    animation: glyphReveal 0.8s ease-out forwards;
+    z-index: 9999;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+}
+/* GLYPH SYMBOL SET */
+.glyph-symbol {
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+}

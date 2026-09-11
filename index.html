@@ -574,3 +574,23 @@
 .belonging-container .realm-burst {
     background: radial-gradient(circle, #ffe9c6, transparent);
 }
+<script>
+    const glyphs = ["✦", "✧", "❂", "❉", "✺", "✶", "✷", "✹", "✵", "✴"];
+
+    document.querySelectorAll('.portal-item').forEach(portal => {
+        portal.addEventListener('mouseenter', (e) => {
+            const glyph = document.createElement('div');
+            glyph.classList.add('portal-glyph', 'glyph-symbol');
+
+            glyph.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+
+            const rect = portal.getBoundingClientRect();
+            glyph.style.left = (rect.left + rect.width / 2) + 'px';
+            glyph.style.top = (rect.top - 20) + 'px';
+
+            document.body.appendChild(glyph);
+
+            setTimeout(() => glyph.remove(), 900);
+        });
+    });
+</script>
