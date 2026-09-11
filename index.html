@@ -124,6 +124,11 @@
   </div>
 
 <audio id="ambientSound" src="sounds/ambient-wind.mp3" preload="auto" loop></audio>
+<audio id="cueLibrary" src="sounds/library-cue.mp3" preload="auto"></audio>
+<audio id="cueGuidance" src="sounds/guidance-cue.mp3" preload="auto"></audio>
+<audio id="cueUnity" src="sounds/unity-cue.mp3" preload="auto"></audio>
+<audio id="cueObservatory" src="sounds/observatory-cue.mp3" preload="auto"></audio>
+<audio id="cueBelonging" src="sounds/belonging-cue.mp3" preload="auto"></audio>
 
   <div class="particles"></div>
 <div class="floating-gate evolving-gate">
@@ -475,5 +480,30 @@
 
             paths.appendChild(line);
         }
+    });
+</script>
+<script>
+    const cues = {
+        library: document.getElementById('cueLibrary'),
+        guidance: document.getElementById('cueGuidance'),
+        unity: document.getElementById('cueUnity'),
+        observatory: document.getElementById('cueObservatory'),
+        belonging: document.getElementById('cueBelonging')
+    };
+
+    document.querySelectorAll('.portal-item').forEach(portal => {
+        portal.addEventListener('mouseenter', () => {
+            const type = portal.classList.contains('book-icon') ? 'library' :
+                         portal.classList.contains('lantern-icon') ? 'guidance' :
+                         portal.classList.contains('hands-icon') ? 'unity' :
+                         portal.classList.contains('orb-icon') ? 'observatory' :
+                         portal.classList.contains('belonging-icon') ? 'belonging' :
+                         null;
+
+            if (type && cues[type]) {
+                cues[type].currentTime = 0;
+                cues[type].play();
+            }
+        });
     });
 </script>
