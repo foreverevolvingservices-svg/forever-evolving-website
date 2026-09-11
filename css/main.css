@@ -893,3 +893,6 @@ a:focus ~ .transition-overlay {
         filter: drop-shadow(0 0 6px #ffd700);
     }
 }
+.portal-click-animate {
+    animation: portalClickPulse 0.45s ease-out;
+}

@@ -162,3 +162,14 @@
         });
     });
 </script>
+<script>
+    document.querySelectorAll('.portal-item').forEach(portal => {
+        portal.addEventListener('click', () => {
+            portal.classList.add('portal-click-animate');
+
+            setTimeout(() => {
+                portal.classList.remove('portal-click-animate');
+            }, 450);
+        });
+    });
+</script>
