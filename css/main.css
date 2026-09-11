@@ -727,3 +727,6 @@ a:focus ~ .transition-overlay {
 .portal-item:hover {
     animation: ripplePulse 0.8s ease-out;
 }
+.portal-link:hover .portal-label {
+    animation: ripplePulse 0.8s ease-out;
+}
