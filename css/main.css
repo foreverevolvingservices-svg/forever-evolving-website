@@ -896,3 +896,37 @@ a:focus ~ .transition-overlay {
 .portal-click-animate {
     animation: portalClickPulse 0.45s ease-out;
 }
+/* CONSTELLATION MOTION */
+@keyframes constellationDrift {
+    0% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-6px) translateX(4px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes constellationGlow {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+/* Realm Nodes Drift */
+.map-node {
+    animation: constellationDrift 6s ease-in-out infinite;
+}
+/* Lines Glow & Drift */
+.map-line {
+    animation:
+        constellationGlow 4s ease-in-out infinite,
+        constellationDrift 10s ease-in-out infinite;
+}
+/* Starfield Behind Map */
+.realm-map-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 3px) repeat;
+    background-size: 70px 70px;
+    opacity: 0.35;
+    animation: constellationDrift 12s ease-in-out infinite;
+    pointer-events: none;
+}
