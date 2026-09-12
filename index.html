@@ -1,598 +1,64 @@
 <!-- test -->
-<<!-- force netlify refresh -->
-!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Evolving</title>
-   <link rel="stylesheet" href="css/main.css?v=2">
+    <title>Realm Map</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <audio id="ambientSound" src="sounds/ambient-wind.mp3"></audio>
+<div class="transition-overlay"></div>
 
-    <!-- Navigation -->
-    <header class="header">
-        <div class="hero-image">
-            
-            <img src="images/forever-evolving-logo.png" alt="Forever Evolving Logo">
+    <audio id="ambientSound" src="sounds/observatory-ambience.mp3" preload="auto" loop></audio>
+
+    <nav class="realm-nav">
+        <a href="index.html">Home</a>
+        <a href="realm-map.html">Realm Map</a>
+        <a href="library.html">Library</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="unity.html">Unity</a>
+        <a href="observatory.html">Observatory</a>
+        <a href="belonging.html">Belonging</a>
+    </nav>
+
+    <div class="realm-map-container">
+
+        <!-- Center Gate -->
+        <div class="map-gate evolving-gate">
+            <img src="icons/evolving-gate.svg" alt="Evolving Gate">
         </div>
 
-        <nav class="nav">
-            <a href="#home">Home</a>
-            <a href="#our-story">Our Story</a>
-            <a href="#projects">Projects</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-            <a href="#sitemap">Site Map</a>
-        </nav>
-    </header>
-<section class="hero">
-    <div class="hero-content">
-        <h1>In every chapter of life, we rise, heal, and transform — gently, bravely, and always evolving.</h1>
+        <!-- Realm Nodes -->
+        <a href="library.html" class="map-node" style="top: 20%; left: 50%;">Library</a>
+        <a href="guidance.html" class="map-node" style="top: 40%; left: 20%;">Guidance</a>
+        <a href="unity.html" class="map-node" style="top: 40%; left: 80%;">Unity</a>
+        <a href="observatory.html" class="map-node" style="top: 65%; left: 30%;">Observatory</a>
+        <a href="belonging.html" class="map-node" style="top: 65%; left: 70%;">Belonging</a>
 
-        <p>Welcome to a space where growth feels natural, connection feels sacred, and your journey is honored.</p>
+        <!-- Connecting Lines -->
+        <div class="map-line line1"></div>
+        <div class="map-line line2"></div>
+        <div class="map-line line3"></div>
+        <div class="map-line line4"></div>
+        <div class="map-line line5"></div>
 
-        <p>Here, action becomes possibility. This is where you choose who you are becoming — not who the world says you have to be.</p>
-
-        <p class="action-line">Explore Your Journey</p>
     </div>
 
-    <div class="hero-image">
-        <img src="images/forever-evolving-logo.png" alt="Forever Evolving Logo">
-    </div>
-</section>
+    <footer class="realm-footer">
+        <a href="index.html">Return to the Realm Gate</a>
+    </footer>
 
-    <section id="our-story" class="our-story">
-        <div class="story-container">
-            <h2 class="story-title">Our Story</h2>
+    <script>
+        const ambient = document.getElementById('ambientSound');
+        ambient.volume = 0;
+        ambient.play().then(() => {
+            let vol = 0;
+            const fade = setInterval(() => {
+                vol += 0.02;
+                ambient.volume = vol;
+                if (vol >= 0.4) clearInterval(fade);
+            }, 150);
+        });
+    </script>
 
-            <p class="story-intro">...</p>
-            <p class="story-body">...</p>
-            <p class="story-body">...</p>
-            <p class="story-closing">...</p>
-        </div>
-    </section>
 </body>
 </html>
-
-        <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
-    </header>
-
-   <div class="mobile-nav" id="mobileNav">
-  <a href="#home">Home</a>
-  <a href="#story">Our Story</a>
-  <a href="#projects">Projects</a>
-  <a href="#blog">Blog</a>
-  <a href="#contact">Contact</a>
-  <a href="#sitemap">Site Map</a>
-  <a href="events.html">Events</a>
-</div>
-
-   <!-- OUR STORY SECTION -->
-<section id="our-story" class="our-story">
-  <div class="our-story-background">
- <div class="cloud-layer"></div>
-  </div>
-  <div class="our-story-inner">
-    <!-- Title -->
-    <h2 class="our-story-title">Our Story</h2>
-
-    <!-- Panoramic Image with Parallax Wrapper -->
-    <div class="story-image-wrapper">
-      <div class="story-image-parallax">
-        <img src="images/panoramic-evolution.png" alt="The Journey of Becoming" class="story-image">
-      </div>
-      <div class="story-caption">
-        In every chapter, we rise, heal, and evolve.
-      </div>
-    </div>
-
-    <!-- Letter-style Text Block -->
-    <div class="story-letter">
-      <p>
-        As I look back on my own journey — the bright beginnings, the heavy seasons, the quiet rebuilds, and the wisdom that only time can teach — I’ve learned that growth is never a straight line. It’s a tender, sacred unfolding. <em>Forever Evolving</em> was born from that truth. It is my way of honoring every person who has ever had to rise again, who has ever carried both hope and hurt in the same heart, who is still learning how to walk forward with grace. If you are here, you are part of this story. And I welcome you — not as a visitor, but as someone who is evolving right alongside me.
-      </p>
-
-      <!-- Signature + Small Symbolic Accent -->
-      <div class="story-signature-block">
-        <div class="story-accent">
-          <!-- symbolic accent: soft glowing dot / small butterfly-like mark -->
-          <span class="accent-orb"></span>
-        </div>
-        <p class="story-signature">
-          In grace and growth,<br>
-          <span class="signature-name">Kinia</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="ecosystem-section">
-  <div class="starlight"></div>
-
-  <div class="ecosystem-intro">
-    <h2>Forever Evolving Ecosystem</h2>
-    <p>
-      Welcome to the Forever Evolving Ecosystem — a living constellation of ideas, creations, and pathways designed to spark curiosity, healing, and possibility.
-      This is not a list of projects. It’s a world. A garden of stories. A map of doorways. A treasure hunt of inspiration waiting to be discovered.
-    </p>
-    <p>
-      Wander. Explore. Follow what glows. Each portal below opens into a different part of this universe — some familiar, some surprising, all intentionally crafted to meet you where you are and invite you into what comes next. Choose the doorway that calls to you… and see what unfolds.
-    </p>
-  </div>
-
-<audio id="ambientSound" src="sounds/ambient-wind.mp3" preload="auto" loop></audio>
-<audio id="cueLibrary" src="sounds/library-cue.mp3" preload="auto"></audio>
-<audio id="cueGuidance" src="sounds/guidance-cue.mp3" preload="auto"></audio>
-<audio id="cueUnity" src="sounds/unity-cue.mp3" preload="auto"></audio>
-<audio id="cueObservatory" src="sounds/observatory-cue.mp3" preload="auto"></audio>
-<audio id="cueBelonging" src="sounds/belonging-cue.mp3" preload="auto"></audio>
-
-  <div class="particles"></div>
-<div class="floating-gate evolving-gate">
-    <img src="icons/evolving-gate.svg" alt="Evolving Gate">
-</div>
-<div class="glowing-paths"></div>
-
-  <div class="portal-grid">
-
-  <a href="library.html">
-    <div class="portal-item book-icon"></div>
-  </a>
-
-  <a href="guidance.html">
-    <div class="portal-item lantern-icon"></div>
-  </a>
-
-  <a href="unity.html">
-    <div class="portal-item hands-icon"></div>
-  </a>
-
-  <a href="observatory.html">
-    <div class="portal-item orb-icon"></div>
-  </a>
-
-  <a href="belonging.html">
-    <div class="portal-item key-icon"></div>
-  </a>
-
-</div>
-
-<a href="library.html" class="portal-link">
-    <div class="portal-item book-icon"></div>
-    <p class="portal-label">Library of Becoming</p>
-</a>
-
-<a href="guidance.html" class="portal-link">
-    <div class="portal-item lantern-icon"></div>
-    <p class="portal-label">Guidance Hall</p>
-</a>
-
-<a href="unity.html" class="portal-link">
-    <div class="portal-item hands-icon"></div>
-    <p class="portal-label">Unity Chamber</p>
-</a>
-
-<a href="observatory.html" class="portal-link">
-    <div class="portal-item orb-icon"></div>
-    <p class="portal-label">Insight Observatory</p>
-</a>
-
-<a href="belonging.html" class="portal-link">
-    <div class="portal-item key-icon"></div>
-    <p class="portal-label">Gate of Belonging</p>
-</a>
-
-
-        <!-- BLOG SECTION -->
-<section id="blog" class="blog-section">
-    <div class="blog-container">
-
-        <h1 class="section-title">Blog</h1>
-
-        <p class="section-intro">
-            Welcome to the Forever Evolving blog — a space for reflection, inspiration, healing,
-            and honest conversation. Here, we explore the journey of becoming, one story, one insight,
-            and one moment of clarity at a time.
-        </p>
-
-        <div class="blog-grid">
-
-            <!-- Blog Post 1 -->
-            <div class="blog-card">
-                <h3>The Beauty of Becoming</h3>
-                <p class="blog-date">August 2026</p>
-                <p>
-                    Growth is not always loud. Sometimes it’s quiet, gentle, and unfolding beneath the surface.
-                    This reflection explores the subtle ways transformation shows up in our everyday lives.
-                </p>
-                <a href="#" class="card-button">Read More</a>
-            </div>
-
-            <!-- Blog Post 2 -->
-            <div class="blog-card">
-                <h3>Healing in Real Time</h3>
-                <p class="blog-date">July 2026</p>
-                <p>
-                    Healing is not a destination — it’s a practice. This post dives into the courage it takes
-                    to show up for yourself even when the world feels heavy.
-                </p>
-                <a href="#" class="card-button">Read More</a>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class="blog-card">
-                <h3>Choosing Yourself</h3>
-                <p class="blog-date">June 2026</p>
-                <p>
-                    There comes a moment when you decide to stop living by the expectations of others and begin
-                    choosing the life that aligns with your truth. This entry explores that powerful shift.
-                </p>
-                <a href="#" class="card-button">Read More</a>
-            </div>
-
-            <!-- Blog Post 4 -->
-            <div class="blog-card">
-                <h3>The Power of Human Connection</h3>
-                <p class="blog-date">May 2026</p>
-                <p>
-                    Connection is the heartbeat of healing. This post reflects on the ways community, empathy,
-                    and shared stories help us rise stronger together.
-                </p>
-                <a href="#" class="card-button">Read More</a>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-    </div>
-</section>
-
-    <!-- CONTACT SECTION -->
-<section id="contact" class="contact-section">
-    <div class="contact-container">
-
-        <h1 class="section-title">Contact Us</h1>
-
-        <p class="section-intro">
-            Whether you’re seeking guidance, exploring collaboration, or simply reaching out to say hello,
-            Forever Evolving welcomes you with warmth and open arms. Your journey matters, and we’re honored
-            to connect with you.
-        </p>
-
-        <div class="contact-wrapper">
-
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h2>Send a Message</h2>
-
-                <form>
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name">
-
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email">
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Write your message here"></textarea>
-
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h2>Connect With Us</h2>
-                <p>
-                    Email: <strong>foreverevolvingservices@gmail.com</strong><br>
-                    Location: Palm Coast, Florida<br>
-                </p>
-
-                <p>
-                    Follow our journey, join our community, and stay connected through upcoming events,
-                    workshops, and new releases.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-   <!-- FOOTER SECTION -->
-<footer id="footer" class="footer-section">
-    <div class="footer-container">
-
-        <!-- Column 1: Brand -->
-        <div class="footer-column">
-            <h3>Forever Evolving</h3>
-            <p>Growing Through Every Season of Life</p>
-        </div>
-
-        <!-- Column 2: Navigation -->
-        <div class="footer-column">
-            <h4>Navigate</h4>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- Column 3: Our Projects -->
-        <div class="footer-column">
-            <h4>Our Projects</h4>
-            <ul>
-                <li><a href="#healthy-noggin">My Healthy Noggin</a></li>
-                <li><a href="#finding-peace">Finding Peace</a></li>
-                <li><a href="#human-connection">Human Connection Project</a></li>
-                <li><a href="#podcast">Thorns & Silver Linings Podcast</a></li>
-            </ul>
-        </div>
-
-        <!-- Column 4: Resources -->
-        <div class="footer-column">
-            <h4>Resources</h4>
-            <ul>
-                <li><a href="#sitemap">Site Map</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Accessibility</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 Forever Evolving LLC. All rights reserved.</p>
-    </div>
-</footer>
-
-<!-- SITE MAP SECTION -->
-<section id="sitemap" class="sitemap-section">
-    <div class="sitemap-container">
-
-        <h1 class="section-title">Website Structure Map</h1>
-        <p class="section-intro">
-            A clear overview of the Forever Evolving ecosystem — every brand, every path, every way to connect.
-        </p>
-
-        <div class="sitemap-grid">
-
-            <!-- Main Node -->
-            <div class="sitemap-node main-node">
-                <h2>Forever Evolving LLC</h2>
-                <p>ForeverEvolving.com</p>
-            </div>
-
-            <!-- Primary Navigation -->
-            <div class="sitemap-row">
-                <div class="sitemap-node"><a href="#home">Home</a></div>
-                <div class="sitemap-node"><a href="#story">Our Story</a></div>
-                <div class="sitemap-node"><a href="#projects">Projects</a></div>
-                <div class="sitemap-node"><a href="#blog">Blog</a></div>
-                <div class="sitemap-node"><a href="#contact">Contact</a></div>
-            </div>
-
-            <!-- Ecosystem Nodes -->
-            <h3 class="sitemap-subheading">Our Ecosystem</h3>
-
-            <div class="sitemap-row">
-                <div class="sitemap-node ecosystem-blue">
-                    <h4>My Healthy Noggin</h4>
-                    <p>Emotional wellness, clarity, and mental health tools.</p>
-                </div>
-
-                <div class="sitemap-node ecosystem-green">
-                    <h4>Finding Peace</h4>
-                    <p>Guided reflections and spiritual growth resources.</p>
-                </div>
-
-                <div class="sitemap-node ecosystem-red">
-                    <h4>Human Connection Project</h4>
-                    <p>Community, belonging, and shared stories.</p>
-                </div>
-
-                <div class="sitemap-node ecosystem-gold">
-                    <h4>Thorns & Silver Linings Podcast</h4>
-                    <p>Coming Soon — conversations on resilience and healing.</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<script src="js/script.js"></script>
-
-<script>
-    const ambient = document.getElementById('ambientSound');
-    ambient.volume = 0;
-
-    // Start muted to satisfy browser rules
-    ambient.play().then(() => {
-        // Fade in over 3 seconds
-        let vol = 0;
-        const fade = setInterval(() => {
-            vol += 0.02;
-            ambient.volume = vol;
-            if (vol >= 0.4) clearInterval(fade);
-        }, 150);
-    });
-</script>
-
-<div class="floating-gate evolving-gate intro-fade">
-    ...
-</div>
-</body>
-</html>
-<a href="realm-map.html" class="portal-link">Realm Map</a>
-<script>
-    document.querySelectorAll('.portal-item').forEach(portal => {
-        portal.addEventListener('click', (e) => {
-            const opening = document.createElement('div');
-            opening.classList.add('portal-opening');
-
-            // Match portal position
-            const rect = portal.getBoundingClientRect();
-            opening.style.position = 'absolute';
-            opening.style.left = rect.left + 'px';
-            opening.style.top = rect.top + 'px';
-            opening.style.width = rect.width + 'px';
-            opening.style.height = rect.height + 'px';
-
-            document.body.appendChild(opening);
-
-            setTimeout(() => {
-                opening.remove();
-            }, 650);
-        });
-    });
-</script>
-<script>
-    const paths = document.querySelector('.glowing-paths');
-    const portals = document.querySelectorAll('.portal-item');
-
-    portals.forEach((portal, i) => {
-        if (i < portals.length - 1) {
-            const rect1 = portals[i].getBoundingClientRect();
-            const rect2 = portals[i + 1].getBoundingClientRect();
-
-            const line = document.createElement('div');
-            line.classList.add('path-line');
-
-            const x1 = rect1.left + rect1.width / 2;
-            const y1 = rect1.top + rect1.height / 2;
-            const x2 = rect2.left + rect2.width / 2;
-            const y2 = rect2.top + rect2.height / 2;
-
-            const length = Math.hypot(x2 - x1, y2 - y1);
-            const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
-
-            line.style.width = length + 'px';
-            line.style.left = x1 + 'px';
-            line.style.top = y1 + 'px';
-            line.style.transform = `rotate(${angle}deg)`;
-
-            paths.appendChild(line);
-        }
-    });
-</script>
-<script>
-    const cues = {
-        library: document.getElementById('cueLibrary'),
-        guidance: document.getElementById('cueGuidance'),
-        unity: document.getElementById('cueUnity'),
-        observatory: document.getElementById('cueObservatory'),
-        belonging: document.getElementById('cueBelonging')
-    };
-
-    document.querySelectorAll('.portal-item').forEach(portal => {
-        portal.addEventListener('mouseenter', () => {
-            const type = portal.classList.contains('book-icon') ? 'library' :
-                         portal.classList.contains('lantern-icon') ? 'guidance' :
-                         portal.classList.contains('hands-icon') ? 'unity' :
-                         portal.classList.contains('orb-icon') ? 'observatory' :
-                         portal.classList.contains('belonging-icon') ? 'belonging' :
-                         null;
-
-            if (type && cues[type]) {
-                cues[type].currentTime = 0;
-                cues[type].play();
-            }
-        });
-    });
-</script>
-<script>
-    document.querySelectorAll('.portal-item').forEach(portal => {
-        portal.addEventListener('mousemove', (e) => {
-            const shimmer = document.createElement('div');
-            shimmer.classList.add('portal-shimmer');
-            document.body.appendChild(shimmer);
-
-            shimmer.style.left = e.pageX + 'px';
-            shimmer.style.top = e.pageY + 'px';
-
-            setTimeout(() => {
-                shimmer.remove();
-            }, 600);
-        });
-    });
-</script>
-/* REALM ENTRY PARTICLE BURSTS */
-@keyframes realmBurst {
-    0% {
-        transform: scale(0.4);
-        opacity: 1;
-    }
-    80% {
-        transform: scale(1.8);
-        opacity: 0.6;
-    }
-    100% {
-        transform: scale(2.4);
-        opacity: 0;
-    }
-}
-
-.realm-burst {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: realmBurst 1.2s ease-out forwards;
-    z-index: 9999;
-}
-/* LIBRARY — Golden Dust Burst */
-.library-container .realm-burst {
-    background: radial-gradient(circle, #ffd700, transparent);
-}
-
-/* GUIDANCE — Lantern Spark Burst */
-.guidance-container .realm-burst {
-    background: radial-gradient(circle, #ffdd88, transparent);
-}
-
-/* UNITY — Heart Glow Burst */
-.unity-container .realm-burst {
-    background: radial-gradient(circle, #ffb3c1, transparent);
-}
-
-/* OBSERVATORY — Star Burst */
-.observatory-container .realm-burst {
-    background: radial-gradient(circle, #ffffff, transparent);
-}
-
-/* BELONGING — Wing Light Burst */
-.belonging-container .realm-burst {
-    background: radial-gradient(circle, #ffe9c6, transparent);
-}
-<script>
-    const glyphs = ["✦", "✧", "❂", "❉", "✺", "✶", "✷", "✹", "✵", "✴"];
-
-    document.querySelectorAll('.portal-item').forEach(portal => {
-        portal.addEventListener('mouseenter', (e) => {
-            const glyph = document.createElement('div');
-            glyph.classList.add('portal-glyph', 'glyph-symbol');
-
-            glyph.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
-
-            const rect = portal.getBoundingClientRect();
-            glyph.style.left = (rect.left + rect.width / 2) + 'px';
-            glyph.style.top = (rect.top - 20) + 'px';
-
-            document.body.appendChild(glyph);
-
-            setTimeout(() => glyph.remove(), 900);
-        });
-    });
-</script>
