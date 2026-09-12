@@ -1,64 +1,92 @@
-<!-- test -->
-<html lang="en">
-<head>
-    <title>Realm Map</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
+<section id="hero" class="hero-section">
+  <div class="hero-background">
+    <div class="sky-layer"></div>
+    <div class="light-glow"></div>
+  </div>
 
-<body>
-<div class="transition-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      In every chapter of life, we rise, heal, and transform —
+      gently, bravely, and always evolving.
+    </h1>
 
-    <audio id="ambientSound" src="sounds/observatory-ambience.mp3" preload="auto" loop></audio>
+    <p class="hero-subtitle">
+      Welcome to Forever Evolving — a sanctuary for growth, belonging, and becoming.
+    </p>
+  </div>
+</section>
 
-    <nav class="realm-nav">
-        <a href="index.html">Home</a>
-        <a href="realm-map.html">Realm Map</a>
-        <a href="library.html">Library</a>
-        <a href="guidance.html">Guidance</a>
-        <a href="unity.html">Unity</a>
-        <a href="observatory.html">Observatory</a>
-        <a href="belonging.html">Belonging</a>
-    </nav>
+<section id="story-letter" class="story-letter-section">
+  <div class="letter-container">
+    <h2 class="section-title">Our Story</h2>
 
-    <div class="realm-map-container">
+    <p class="letter-text">
+      As I look back on my own journey, the bright beginning, the shadows,
+      the lessons, and the rising — I see a path shaped by grace, courage,
+      and the quiet strength of becoming.
+    </p>
 
-        <!-- Center Gate -->
-        <div class="map-gate evolving-gate">
-            <img src="icons/evolving-gate.svg" alt="Evolving Gate">
-        </div>
+    <p class="letter-text">
+      Forever Evolving was born from that journey — a place where healing
+      feels natural, connection feels sacred, and every soul is honored
+      for who they are becoming.
+    </p>
 
-        <!-- Realm Nodes -->
-        <a href="library.html" class="map-node" style="top: 20%; left: 50%;">Library</a>
-        <a href="guidance.html" class="map-node" style="top: 40%; left: 20%;">Guidance</a>
-        <a href="unity.html" class="map-node" style="top: 40%; left: 80%;">Unity</a>
-        <a href="observatory.html" class="map-node" style="top: 65%; left: 30%;">Observatory</a>
-        <a href="belonging.html" class="map-node" style="top: 65%; left: 70%;">Belonging</a>
-
-        <!-- Connecting Lines -->
-        <div class="map-line line1"></div>
-        <div class="map-line line2"></div>
-        <div class="map-line line3"></div>
-        <div class="map-line line4"></div>
-        <div class="map-line line5"></div>
-
+    <div class="signature">
+      <img src="images/signature.png" alt="Kinia Signature">
     </div>
+  </div>
+</section>
+<section id="evolving-gate" class="gate-section">
+  <div class="gate-container">
+    <img src="images/evolving-gate.png" class="gate-image" alt="Evolving Gate">
 
-    <footer class="realm-footer">
-        <a href="index.html">Return to the Realm Gate</a>
-    </footer>
+    <p class="gate-caption">
+      Step through the gate and enter the realms of your becoming.
+    </p>
+  </div>
+</section>
+<section id="realms" class="realms-section">
+  <h2 class="section-title">The Realms</h2>
 
-    <script>
-        const ambient = document.getElementById('ambientSound');
-        ambient.volume = 0;
-        ambient.play().then(() => {
-            let vol = 0;
-            const fade = setInterval(() => {
-                vol += 0.02;
-                ambient.volume = vol;
-                if (vol >= 0.4) clearInterval(fade);
-            }, 150);
-        });
-    </script>
+  <div class="realm-grid">
 
-</body>
-</html>
+    <a href="belonging.html" class="realm-card">
+      <h3>Belonging</h3>
+      <p>A sanctuary for connection, identity, and emotional grounding.</p>
+    </a>
+
+    <a href="guidance.html" class="realm-card">
+      <h3>Guidance</h3>
+      <p>Where clarity meets intuition, and your inner voice becomes your compass.</p>
+    </a>
+
+    <a href="library.html" class="realm-card">
+      <h3>Library</h3>
+      <p>A quiet space of wisdom, reflection, and learning.</p>
+    </a>
+
+    <a href="unity.html" class="realm-card">
+      <h3>Unity</h3>
+      <p>The realm of harmony, balance, and inner alignment.</p>
+    </a>
+
+    <a href="observatory.html" class="realm-card">
+      <h3>Observatory</h3>
+      <p>A cosmic vantage point to see your life from above.</p>
+    </a>
+
+    <a href="realm-map.html" class="realm-card">
+      <h3>Realm Map</h3>
+      <p>Your guide to navigating the universe of your becoming.</p>
+    </a>
+
+  </div>
+</section>
+<section id="closing" class="closing-section">
+  <div class="closing-glow"></div>
+
+  <p class="closing-message">
+    You are evolving — beautifully, bravely, endlessly.
+  </p>
+</section>
