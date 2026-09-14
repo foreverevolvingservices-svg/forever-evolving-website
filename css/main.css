@@ -1301,3 +1301,224 @@ a:focus ~ .transition-overlay {
 .belonging-container .realm-sky {
     background: radial-gradient(circle at center, #1a0f00, #000);
 }
+/* --------------------------------------------------------------
+   HERO SECTION STYLING
+-------------------------------------------------------------- */
+
+.hero-background {
+  background-image: url("images/family-heroes.jpg"); /* rename to whatever you save it as */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.sky-layer {
+  background: linear-gradient(#87CEEB, #ffffff);
+  opacity: 0.6;
+}
+
+.light-glow {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8), transparent);
+  opacity: 0.7;
+}
+/* --------------------------------------------------------------
+   GLOBAL STYLES
+-------------------------------------------------------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+section {
+  padding: 80px 10%;
+  position: relative;
+}
+
+h1, h2, h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+/* --------------------------------------------------------------
+   HERO SECTION
+-------------------------------------------------------------- */
+
+.hero-section {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/family photo.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.85);
+}
+
+.sky-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#87CEEB, #ffffff);
+  opacity: 0.45;
+}
+
+.light-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8), transparent);
+  opacity: 0.6;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #f7f7f7;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+/* --------------------------------------------------------------
+   STORY LETTER
+-------------------------------------------------------------- */
+
+.story-letter-section {
+  background: #ffffff;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.letter-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.letter-text {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.signature img {
+  width: 180px;
+  display: block;
+  margin: 40px auto 0 auto;
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------------------
+   EVOLVING GATE
+-------------------------------------------------------------- */
+
+.gate-section {
+  text-align: center;
+  background: #f7fbff;
+}
+
+.gate-image {
+  width: 260px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+.gate-caption {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* --------------------------------------------------------------
+   REALMS GRID
+-------------------------------------------------------------- */
+
+.realms-section {
+  background: #ffffff;
+}
+
+.realm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.realm-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 14px;
+  padding: 24px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.realm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.realm-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+/* --------------------------------------------------------------
+   CLOSING SECTION
+-------------------------------------------------------------- */
+
+.closing-section {
+  text-align: center;
+  background: #fdf8e3;
+  padding-bottom: 120px;
+}
+
+.closing-glow {
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at center, rgba(255,215,0,0.4), transparent);
+  margin-bottom: 20px;
+}
+
+.closing-message {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #444;
+}
