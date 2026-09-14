@@ -1,5 +1,5 @@
-/*/* --------------------------------------------------------------
-   Global Variables
+/* --------------------------------------------------------------
+   GLOBAL VARIABLES
 -------------------------------------------------------------- */
 :root {
     --ivory: #fdfcf7;
@@ -9,13 +9,13 @@
     --body-font: 'Inter', sans-serif;
     --heading-font: 'Playfair Display', serif;
 
-    --gradient: linear-gradient(to right, #008c8c, #00b3b3, #d4a24c);
+    --gold: #ffd700;
 
-    --section-padding: 60px 40px;
+    --section-padding: 80px 10%;
 }
 
 /* --------------------------------------------------------------
-   Reset
+   RESET + GLOBAL BODY
 -------------------------------------------------------------- */
 * {
     margin: 0;
@@ -23,655 +23,167 @@
     box-sizing: border-box;
 }
 
-body 
 body {
-    animation: introFade 1.2s ease-out;
-}
-
-{
     background: var(--ivory);
     color: var(--charcoal);
     font-family: var(--body-font);
     line-height: 1.7;
+    padding-top: 80px; /* space for fixed nav */
+    animation: introFade 1.2s ease-out;
 }
 
 /* --------------------------------------------------------------
-   Navigation
+   COSMIC NAVIGATION BAR
 -------------------------------------------------------------- */
-.nav {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    padding: 20px;
-    font-size: 1.1rem;
-}
-
-.nav a {
-    text-decoration: none;
-    color: var(--charcoal);
-    font-weight: 500;
-}
-
-/* --------------------------------------------------------------
-   Hero Section
--------------------------------------------------------------- */
-/* Header Logo */
-.header .hero-image img {
-    height: 80px;
-    width: auto;
-}
-
-/* Hero Section Logo */
-.hero-image img {
-    height: 320px;
-    max-width: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.25));
-    border-radius: 12px;
-}
-
-.hero {
+.realm-nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 14px 10%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: var(--section-padding);
-    background: var(--gradient);
-    color: var(--white);
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-}
-
-.hero-content {
-    max-width: 620px;
-}
-
-.hero h1 {
-    font-family: var(--heading-font);
-    font-size: 2.8rem;
-    margin-bottom: 24px;
-    line-height: 1.25;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-}
-
-.action-line {
-    font-size: 1.4rem;
-    margin-top: 20px;
-}
-
-/* --------------------------------------------------------------
-   Mobile Navigation
--------------------------------------------------------------- */
-.mobile-nav a {
-    font-size: 1.15rem;
-}
-
-/* --------------------------------------------------------------
-   OUR STORY SECTION STYLING
--------------------------------------------------------------- */
-.our-story {
-    padding: 120px 20px;
-    background: linear-gradient(to bottom, #fdfcf7, #f7f3e9);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Soft golden glow behind the section */
-.our-story::before {
-    content: "";
-    position: absolute;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,215,130,0.35), transparent 70%);
-    z-index: 0;
-}
-
-.story-container {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.story-title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: 600;
-    background: linear-gradient(to right, #008c8c, #00b3b3, #d4a24c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.story-intro,
-.story-body,
-.story-closing {
-    font-size: 1.25rem;
-    line-height: 1.75;
-    margin-bottom: 28px;
-    color: #444;
-    text-align: center;
-    font-weight: 300;
-}
-
-/* Subtle fade-in animation */
-.our-story p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1.2s ease forwards;
-}
-
-.our-story p:nth-child(2) { animation-delay: 0.2s; }
-.our-story p:nth-child(3) { animation-delay: 0.4s; }
-.our-story p:nth-child(4) { animation-delay: 0.6s; }
-.our-story p:nth-child(5) { animation-delay: 0.8s; }
-
-/* --------------------------------------------------------------
-   OUR STORY – Horizon Shift Animation
--------------------------------------------------------------- */
-.our-story {
-    background: linear-gradient(to bottom, #f9e6b3, #d8c1f0);
-    transition: background 1s ease-out;
-}
-
-.our-story.horizon-mid {
-    background: linear-gradient(to bottom, #ffe9a8, #bcd4ff);
-}
-
-.our-story.horizon-sunset {
-    background: linear-gradient(to bottom, #f7c27a, #d8a0e8);
-}
-
-/* --------------------------------------------------------------
-   Footer (Polished)
--------------------------------------------------------------- */
-.footer-section {
-    background: var(--white);
-    padding: 60px 40px;
-    margin-top: 80px;
-    border-top: 1px solid #e5e5e5;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-}
-
-.footer-column h3,
-.footer-column h4 {
-    font-family: var(--heading-font);
-    margin-bottom: 16px;
-    font-size: 1.4rem;
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
-}
-
-.footer-column a {
-    text-decoration: none;
-}
-
-/* --------------------------------------------------------------
-   Responsive Design (Polished)
--------------------------------------------------------------- */
-@media (max-width: 900px) {
-    .hero-image img {
-        margin-top: 30px;
-        height: 220px;
-    }
-
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-    }
-}
-
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1.15rem;
-    }
-
-    .action-line {
-        font-size: 1.2rem;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
-
-/* --------------------------------------------------------------
-   Fade-Up Keyframes
--------------------------------------------------------------- */
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* SECTION BACKGROUND */
-.ecosystem-section {
-  position: relative;
-  padding: 80px 20px;
-  background: linear-gradient(180deg, #0b0f26, #000000);
-  color: #ffffff;
-  overflow: hidden;
-}
-
-/* STARLIGHT PARTICLES (ELEGANT) */
-.starlight {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255,215,0,0.25) 1px, transparent 1px);
-  background-size: 3px 3px, 4px 4px;
-  background-position: 0 0, 20px 40px;
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-/* INTRO */
-.ecosystem-intro {
-  max-width: 900px;
-  margin: 0 auto 60px auto;
-  text-align: center;
-}
-
-.ecosystem-intro h2 {
-  font-size: 2.5rem;
-  color: #ffd700;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.ecosystem-intro p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-/* GRID */
-.portal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* PORTAL CARDS */
-.portal-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 215, 0, 0.4);
-  padding: 30px;
-  border-radius: 16px;
-  text-align: center;
-  position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.portal-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-}
-
-/* ICONS (PLACEHOLDERS) */
-.portal-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 20px auto;
-  background-size: contain;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 0 8px #ffd700);
-}
-
-/* Replace these with your actual SVGs later */
-.book-icon { background-image: url('icons/book-gold.svg'); }
-.lantern-icon { background-image: url('icons/lantern-gold.svg'); }
-.hands-icon { background-image: url('icons/hands-gold.svg'); }
-.orb-icon { background-image: url('icons/orb-gold.svg'); }
-.key-icon { background-image: url('icons/key-gold.svg'); }
-
-/* DESCRIPTION */
-.portal-description {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  margin: 15px 0;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.portal-card:hover .portal-description {
-  opacity: 1;
-}
-
-/* BUTTON */
-.portal-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 18px;
-  border-radius: 8px;
-  background: #ffd700;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.portal-button:hover {
-  background: #fff3a0;
-}
-
-/* PORTAL HOVER GLOW */
-.portal-item {
-    transition: transform 0.35s ease, filter 0.35s ease;
-}
-
-.portal-item:hover {
-    transform: translateY(-6px) scale(1.05);
-    filter: drop-shadow(0 0 12px #ffd700) brightness(1.2);
-}
-
-.book-icon:hover {
-    transform: translateY(-6px) scale(1.08);
-}
-
-.lantern-icon:hover {
-    animation: lanternFlicker 0.8s infinite alternate;
-}
-
-@keyframes lanternFlicker {
-    from { filter: drop-shadow(0 0 10px #ffd700); }
-    to   { filter: drop-shadow(0 0 18px #ffea8a); }
-}
-
-.hands-icon:hover {
-    animation: handsPulse 1.2s infinite ease-in-out;
-}
-
-@keyframes handsPulse {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.07); }
-    100% { transform: scale(1); }
-}
-
-.orb-icon:hover {
-    animation: orbSpin 4s linear infinite;
-}
-
-@keyframes orbSpin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
-.key-icon:hover {
-    animation: keyFlutter 0.6s infinite alternate;
-}
-
-@keyframes keyFlutter {
-    from { transform: translateY(-6px) rotate(-3deg); }
-    to   { transform: translateY(-6px) rotate(3deg); }
-}
-
-/* PORTAL OPENING TRANSITION */
-.portal-item::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: radial-gradient(circle, rgba(255,215,0,0.4), transparent 70%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
-    pointer-events: none;
-}
-
-.portal-item:hover::after {
-    width: 180px;
-    height: 180px;
-    opacity: 1;
-}
-
-/* REALM NAVIGATION BAR */
-.realm-nav {
+    gap: 32px;
     position: fixed;
     top: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.6);
-    padding: 12px 0;
-    text-align: center;
-    z-index: 999;
-    backdrop-filter: blur(6px);
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .realm-nav a {
-    color: #ffd700;
-    margin: 0 14px;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-family: "Georgia", serif;
+    font-size: 1rem;
+    color: #444;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Gold underline + glow */
+.realm-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    box-shadow: 0 0 8px rgba(255,215,0,0.7);
+    transition: width 0.3s ease;
+}
+
+.realm-nav a:hover::after {
+    width: 100%;
 }
 
 .realm-nav a:hover {
-    color: #fff3a0;
+    color: #000;
 }
 
-/* REALM FOOTER */
-.realm-footer {
-    text-align: center;
-    margin: 60px 0 40px;
+/* Dropdown */
+.nav-dropdown {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 10px;
+    padding: 10px 16px;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 999;
 }
 
-.realm-footer a {
-    color: #ffd700;
-    font-size: 18px;
+.nav-dropdown a {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: #333;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 4px 0;
 }
 
-.realm-footer a:hover {
-    color: #fff3a0;
+.nav-dropdown a:hover {
+    color: #000;
 }
 
-/* PAGE FADE-IN */
-body {
-    animation: fadeIn 0.8s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* PORTAL LABELS */
-.portal-link {
+/* --------------------------------------------------------------
+   COSMIC + SKY HYBRID HERO
+-------------------------------------------------------------- */
+.hero-section {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    text-decoration: none;
-}
-
-.portal-label {
-    margin-top: 10px;
-    color: #ffd700;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.portal-link:hover .portal-label {
-    color: #fff3a0;
-}
-
-/* PORTAL SHIMMER EFFECT */
-.portal-item {
     position: relative;
     overflow: hidden;
 }
 
-.portal-item::after {
-    content: "";
+/* Background Layers */
+.hero-background {
     position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.25) 50%,
-        transparent 100%
-    );
-    transform: skewX(-20deg);
-    transition: all 0.8s ease;
-}
-
-.portal-link:hover .portal-item::after {
-    top: 100%;
-}
-
-/* FLOATING PARTICLES */
-.particles {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     overflow: hidden;
-    z-index: 1;
 }
 
-.particles::before,
-.particles::after {
-    content: "";
+/* Sky Gradient */
+.sky-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#87CEEB, #ffffff);
+    opacity: 0.55;
+}
+
+/* Nebula Glow */
+.nebula-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 40% 60%, rgba(255,215,0,0.25), transparent 70%);
+    opacity: 0.45;
+}
+
+/* Stars */
+.stars-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.7) 2px, transparent 2px);
+    background-size: 4px 4px;
+    opacity: 0.35;
+    animation: starFloat 12s ease-in-out infinite;
+}
+
+/* Parallax */
+.cosmic-parallax {
     position: absolute;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 3px) repeat;
-    background-size: 40px 40px;
-    animation: floatParticles 18s linear infinite;
-    opacity: 0.4;
-}
-
-.particles::after {
-    animation-duration: 28s;
+    top: -50%;
+    left: -50%;
+    background-image: radial-gradient(circle, rgba(255,215,0,0.15) 8px, transparent 12px);
     opacity: 0.25;
+    animation: parallaxDrift 60s linear infinite;
 }
 
-@keyframes floatParticles {
-    from {
-        transform: translate(-10%, -10%) rotate(0deg);
-    }
-    to {
-        transform: translate(10%, 10%) rotate(360deg);
-    }
-}
-
-/* COSMIC LOADING TRANSITION */
-.transition-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.8), rgba(0,0,0,0.9));
-    opacity: 0;
-    pointer-events: none;
-    z-index: 9999;
-    animation: fadeOutOverlay 1.2s ease forwards;
-}
-
-@keyframes fadeOutOverlay {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-/* FLASH WHEN CLICKING PORTALS OR NAV LINKS */
-a {
-    position: relative;
-}
-
-a:active ~ .transition-overlay,
-a:focus ~ .transition-overlay {
-    animation: fadeInOverlay 0.6s ease forwards;
-}
-
-@keyframes fadeInOverlay {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-/* PORTAL HOVER GLOW */
-.portal-item {
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.portal-item:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 18px #ffd700) brightness(1.2);
-}
-/* PORTAL LABEL HOVER GLOW */
-.portal-link:hover .portal-label {
-    color: #fff8c6;
-    text-shadow: 0 0 12px #ffd700;
-}
-/* NAV BAR HOVER GLOW */
-.realm-nav a:hover {
-    color: #fff8c6;
-    text-shadow: 0 0 10px #ffd700;
-}
-/* FOOTER HOVER GLOW */
-.realm-footer a:hover {
-    color: #fff8c6;
-    text-shadow: 0 0 10px #ffd700;
-}
-/* UNIVERSAL BACKGROUND ANIMATIONS */
-@keyframes slowGlow {
-    0% { opacity: 0.85; }
-    50% { opacity: 1; }
-    100% { opacity: 0.85; }
-}
-
-@keyframes drift {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 200% 200%; }
-}
-
-@keyframes pulseLight {
-    0% { filter: brightness(0.9); }
-    50% { filter: brightness(1.1); }
-    100% { filter: brightness(0.9); }
+@keyframes parallaxDrift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(200px, 300px); }
 }
 
 @keyframes starFloat {
@@ -680,72 +192,261 @@ a:focus ~ .transition-overlay {
     100% { transform: translateY(0px); opacity: 0.6; }
 }
 
-/* REALM BACKGROUND ANIMATIONS */
-.library-container {
-    animation: slowGlow 6s ease-in-out infinite;
-}
-
-.guidance-container {
-    animation: pulseLight 5s ease-in-out infinite;
-}
-
-.unity-container {
-    background: linear-gradient(120deg, #f9e6b3, #d8c1f0, #ffe9a8, #bcd4ff);
-    background-size: 300% 300%;
-    animation: drift 18s linear infinite;
-}
-
-.observatory-container {
+/* Hero Content */
+.hero-content {
     position: relative;
+    z-index: 10;
+    max-width: 800px;
 }
 
-.observatory-container::before {
-    content: "";
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #f7f7f7;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+/* --------------------------------------------------------------
+   STORY LETTER
+-------------------------------------------------------------- */
+.story-letter-section {
+    background: #ffffff;
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.letter-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.letter-text {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.signature img {
+    width: 180px;
+    display: block;
+    margin: 40px auto 0 auto;
+    opacity: 0.9;
+}
+
+/* --------------------------------------------------------------
+   EVOLVING GATE
+-------------------------------------------------------------- */
+.gate-section {
+    text-align: center;
+    background: #f7fbff;
+    padding: var(--section-padding);
+}
+
+.gate-image {
+    width: 260px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+.gate-caption {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* --------------------------------------------------------------
+   REALMS PREVIEW
+-------------------------------------------------------------- */
+.realms-section {
+    background: #ffffff;
+    padding: var(--section-padding);
+}
+
+.realm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.realm-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 14px;
+    padding: 24px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.realm-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+/* --------------------------------------------------------------
+   CLOSING SECTION
+-------------------------------------------------------------- */
+.closing-section {
+    text-align: center;
+    background: #fdf8e3;
+    padding: var(--section-padding);
+}
+
+.closing-glow {
+    width: 100%;
+    height: 200px;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.4), transparent);
+    margin-bottom: 20px;
+}
+
+.closing-message {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #444;
+}
+
+/* --------------------------------------------------------------
+   SCROLL FADE-INS
+-------------------------------------------------------------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------
+   RESPONSIVE DESIGN
+-------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero-title { font-size: 1.8rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .realm-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-section { height: 80vh; }
+    .hero-title { font-size: 1.5rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+}
+
+/* --------------------------------------------------------------
+   INTRO FADE KEYFRAME
+-------------------------------------------------------------- */
+@keyframes introFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* --------------------------------------------------------------
+   COSMIC REALM BACKGROUND
+-------------------------------------------------------------- */
+.realm-page {
+    position: relative;
+    background: linear-gradient(180deg, #0b0f26, #000000);
+    color: #ffffff;
+    overflow: hidden;
+    padding: 80px 20px;
+}
+
+/* STARLIGHT */
+.starlight {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 3px) repeat;
-    background-size: 60px 60px;
-    animation: starFloat 8s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255,215,0,0.25) 1px, transparent 1px);
+    background-size: 3px 3px, 4px 4px;
+    background-position: 0 0, 20px 40px;
+    opacity: 0.25;
     pointer-events: none;
-    opacity: 0.4;
 }
 
-.belonging-container {
-    animation: slowGlow 4s ease-in-out infinite;
+/* --------------------------------------------------------------
+   PORTAL GRID
+-------------------------------------------------------------- */
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-/* PORTAL RIPPLE EFFECT */
-@keyframes ripplePulse {
-    0% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 0px #ffd700);
-    }
-    50% {
-        transform: scale(1.12);
-        filter: drop-shadow(0 0 14px #ffd700);
-    }
-    100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 0px #ffd700);
-    }
+
+/* PORTAL CARDS */
+.portal-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-.portal-item:hover {
-    animation: ripplePulse 0.8s ease-out;
+
+.portal-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
 }
-.portal-link:hover .portal-label {
-    animation: ripplePulse 0.8s ease-out;
+
+/* ICONS */
+.portal-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 8px #ffd700);
 }
-/* REALM ICON ANIMATIONS */
+
+/* --------------------------------------------------------------
+   REALM MAP
+-------------------------------------------------------------- */
+.realm-map-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    margin-top: 80px;
+}
+
+.map-node {
+    position: absolute;
+    color: #ffd700;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 10px #ffd700;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.map-node:hover {
+    transform: scale(1.15);
+    text-shadow: 0 0 18px #fff8c6;
+}
+
+/* --------------------------------------------------------------
+   COSMIC ANIMATIONS
+-------------------------------------------------------------- */
 @keyframes iconFloat {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-6px); }
     100% { transform: translateY(0px); }
-}
-
-@keyframes iconPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
 }
 
 @keyframes iconGlow {
@@ -764,761 +465,21 @@ a:focus ~ .transition-overlay {
     50% { transform: scale(1.05); opacity: 1; }
     100% { transform: scale(1); opacity: 0.9; }
 }
-/* LIBRARY — Gentle Float */
-.library-icon {
-    animation: iconFloat 4s ease-in-out infinite;
-}
-
-/* GUIDANCE — Lantern Glow */
-.guidance-icon {
-    animation: iconGlow 3.5s ease-in-out infinite;
-}
-
-/* UNITY — Heartbeat Pulse */
-.unity-icon {
-    animation: iconPulse 3s ease-in-out infinite;
-}
-
-/* OBSERVATORY — Orbital Rotation */
-.observatory-icon {
-    animation: iconOrbit 18s linear infinite;
-}
-
-/* BELONGING — Soft Breath */
-.belonging-icon {
-    animation: iconBreath 5s ease-in-out infinite;
-}
-/* EVOLVING GATE ANIMATIONS */
-@keyframes gateBreath {
-    0% { transform: scale(1); opacity: 0.92; }
-    50% { transform: scale(1.04); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.92; }
-}
-
-@keyframes gateFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
-}
-
-@keyframes gateHalo {
-    0% { filter: drop-shadow(0 0 6px #ffd700); }
-    50% { filter: drop-shadow(0 0 18px #ffe9a8); }
-    100% { filter: drop-shadow(0 0 6px #ffd700); }
-}
-/* EVOLVING GATE — Combined Animation */
-.evolving-gate {
-    animation:
-        gateBreath 6s ease-in-out infinite,
-        gateFloat 10s ease-in-out infinite,
-        gateHalo 5s ease-in-out infinite;
-}
-/* REALM MAP */
-.realm-map-container {
-    position: relative;
-    width: 100%;
-    height: 85vh;
-    margin-top: 80px;
-}
-
-/* Realm Nodes */
-.map-node {
-    position: absolute;
-    color: #ffd700;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    text-shadow: 0 0 10px #ffd700;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-.map-node:hover {
-    transform: scale(1.15);
-    text-shadow: 0 0 18px #fff8c6;
-}
-
-/* Center Gate */
-.map-gate {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 140px;
-    height: 140px;
-}
-
-/* Connecting Lines */
-.map-line {
-    position: absolute;
-    background: rgba(255, 215, 0, 0.4);
-    height: 3px;
-    transform-origin: left center;
-    animation: pulseLine 3s ease-in-out infinite;
-}
-
-@keyframes pulseLine {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
-}
-
-/* Line Positions */
-.line1 { top: 32%; left: 50%; width: 30%; transform: rotate(180deg); }
-.line2 { top: 38%; left: 50%; width: 30%; transform: rotate(0deg); }
-.line3 { top: 50%; left: 50%; width: 40%; transform: rotate(210deg); }
-.line4 { top: 50%; left: 50%; width: 40%; transform: rotate(-30deg); }
-.line5 { top: 60%; left: 50%; width: 25%; transform: rotate(90deg); }
-/* ICON TRAIL PARTICLES */
-@keyframes trailFade {
-    0% { opacity: 0.9; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.8); }
-}
-.icon-trail {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: radial-gradient(circle, #ffd700, transparent);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: trailFade 0.6s linear forwards;
-    z-index: 9999;
-}
-/* PORTAL CLICK PULSE */
-@keyframes portalClickPulse {
-    0% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 6px #ffd700);
-    }
-    50% {
-        transform: scale(1.25);
-        filter: drop-shadow(0 0 22px #fff8c6);
-    }
-    100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 6px #ffd700);
-    }
-}
-.portal-click-animate {
-    animation: portalClickPulse 0.45s ease-out;
-}
-/* CONSTELLATION MOTION */
-@keyframes constellationDrift {
-    0% { transform: translateY(0px) translateX(0px); }
-    50% { transform: translateY(-6px) translateX(4px); }
-    100% { transform: translateY(0px) translateX(0px); }
-}
-
-@keyframes constellationGlow {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
-}
-/* Realm Nodes Drift */
-.map-node {
-    animation: constellationDrift 6s ease-in-out infinite;
-}
-/* Lines Glow & Drift */
-.map-line {
-    animation:
-        constellationGlow 4s ease-in-out infinite,
-        constellationDrift 10s ease-in-out infinite;
-}
-/* Starfield Behind Map */
-.realm-map-container::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 3px) repeat;
-    background-size: 70px 70px;
-    opacity: 0.35;
-    animation: constellationDrift 12s ease-in-out infinite;
-    pointer-events: none;
-}
-/* BELONGING HEARTBEAT */
-@keyframes belongingHeartbeat {
-    0% { transform: scale(1); opacity: 0.9; }
-    25% { transform: scale(1.06); opacity: 1; }
-    40% { transform: scale(1); opacity: 0.95; }
-    55% { transform: scale(1.06); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.9; }
-}
-.belonging-heartbeat {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 260px;
-    height: 260px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.35), transparent 70%);
-    border-radius: 50%;
-    animation: belongingHeartbeat 3.2s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-/* REALM PARTICLE KEYFRAMES */
-@keyframes particleFloat {
-    0% { transform: translateY(0) scale(1); opacity: 0.8; }
-    50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
-    100% { transform: translateY(0) scale(1); opacity: 0.8; }
-}
-
-@keyframes particleDrift {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(40px); }
-}
-.realm-particles {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.realm-particles span {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: particleFloat 4s ease-in-out infinite,
-               particleDrift 12s linear infinite;
-}
-/* LIBRARY — Golden Dust */
-.library-container .realm-particles span {
-    background: radial-gradient(circle, #ffd700, transparent);
-}
-
-/* GUIDANCE — Lantern Sparks */
-.guidance-container .realm-particles span {
-    background: radial-gradient(circle, #ffdd88, transparent);
-}
-
-/* UNITY — Heart Glow */
-.unity-container .realm-particles span {
-    background: radial-gradient(circle, #ffb3c1, transparent);
-}
-
-/* OBSERVATORY — Star Particles */
-.observatory-container .realm-particles span {
-    background: radial-gradient(circle, #ffffff, transparent);
-}
-
-/* BELONGING — Wing Motes */
-.belonging-container .realm-particles span {
-    background: radial-gradient(circle, #ffe9c6, transparent);
-}
-/* PORTAL OPENING EXPANSION */
-@keyframes portalOpen {
-    0% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 6px #ffd700);
-        opacity: 1;
-    }
-    40% {
-        transform: scale(1.4);
-        filter: drop-shadow(0 0 28px #fff8c6);
-        opacity: 0.9;
-    }
-    70% {
-        transform: scale(1.8);
-        filter: drop-shadow(0 0 40px #fff8c6);
-        opacity: 0.4;
-    }
-    100% {
-        transform: scale(2.2);
-        opacity: 0;
-    }
-}
-.portal-opening {
-    animation: portalOpen 0.65s ease-out forwards;
-    position: relative;
-    z-index: 999;
-}
-/* COSMIC PARALLAX BACKGROUND */
-.cosmic-parallax {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    overflow: hidden;
-    z-index: -10;
-    pointer-events: none;
-}
-
-.parallax-layer {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background-repeat: repeat;
-    background-size: 600px 600px;
-    opacity: 0.35;
-    animation: parallaxDrift 60s linear infinite;
-}
-
-.parallax-layer.stars {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.5) 2px, transparent 3px);
-}
-
-.parallax-layer.nebula {
-    background-image: radial-gradient(circle, rgba(255,215,0,0.15) 8px, transparent 12px);
-    opacity: 0.25;
-    animation-duration: 90s;
-}
-
-@keyframes parallaxDrift {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(200px, 300px); }
-}
-/* GLOWING PATHS BETWEEN PORTALS */
-.glowing-paths {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    height: 60%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.path-line {
-    position: absolute;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #ffd700, transparent);
-    opacity: 0.7;
-    animation: pathPulse 3s ease-in-out infinite;
-    transform-origin: left center;
-}
-
-@keyframes pathPulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
-}
-/* HOMEPAGE INTRO FADE-IN */
-@keyframes introFade {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.intro-fade {
-    animation: introFade 1.4s ease-out forwards;
-    opacity: 0;
-}
-/* PORTAL HOVER SHIMMER TRAILS */
-@keyframes shimmerTrail {
-    0% {
-        opacity: 0.9;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.8);
-    }
-}
-.portal-shimmer {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: radial-gradient(circle, #ffd700, transparent);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: shimmerTrail 0.6s linear forwards;
-    z-index: 9999;
-}
-/* REALM ENTRANCE TRANSITIONS */
-@keyframes realmEntrance {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.98);
-        filter: blur(6px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.realm-entrance {
-    opacity: 0;
-    animation: realmEntrance 1.2s ease-out forwards;
-}
-/* OPTIONAL REALM ENTRANCE GLOW */
-.library-container.realm-entrance {
-    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.25));
-}
-
-.guidance-container.realm-entrance {
-    filter: drop-shadow(0 0 20px rgba(255, 220, 120, 0.25));
-}
-
-.unity-container.realm-entrance {
-    filter: drop-shadow(0 0 20px rgba(255, 150, 170, 0.25));
-}
-
-.observatory-container.realm-entrance {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.25));
-}
-
-.belonging-container.realm-entrance {
-    filter: drop-shadow(0 0 20px rgba(255, 233, 198, 0.25));
-}
-/* REALM EXIT TRANSITIONS */
-@keyframes realmExit {
-    0% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-        filter: blur(0);
-    }
-    40% {
-        opacity: 0.6;
-        transform: scale(0.98) translateY(-10px);
-        filter: blur(3px);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.95) translateY(-20px);
-        filter: blur(8px);
-    }
-}
-
-.realm-exit {
-    animation: realmExit 0.9s ease-in forwards;
-}
-/* OPTIONAL REALM EXIT GLOW */
-.library-container.realm-exit {
-    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.25));
-}
-
-.guidance-container.realm-exit {
-    filter: drop-shadow(0 0 30px rgba(255, 220, 120, 0.25));
-}
-
-.unity-container.realm-exit {
-    filter: drop-shadow(0 0 30px rgba(255, 150, 170, 0.25));
-}
-
-.observatory-container.realm-exit {
-    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.25));
-}
-
-.belonging-container.realm-exit {
-    filter: drop-shadow(0 0 30px rgba(255, 233, 198, 0.25));
-}
-/* PORTAL GLYPH REVEAL */
-@keyframes glyphReveal {
-    0% {
-        opacity: 0;
-        transform: scale(0.6) rotate(-10deg);
-        filter: blur(6px);
-    }
-    60% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-        filter: blur(0);
-    }
-    100% {
-        opacity: 0.9;
-    }
-}
-
-.portal-glyph {
-    position: absolute;
-    font-size: 22px;
-    color: #ffd700;
-    opacity: 0;
-    pointer-events: none;
-    animation: glyphReveal 0.8s ease-out forwards;
-    z-index: 9999;
-    text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
-}
-/* GLYPH SYMBOL SET */
-.glyph-symbol {
-    font-family: 'Georgia', serif;
-    letter-spacing: 2px;
-}
-/* REALM-SPECIFIC BACKGROUND MOTION */
-@keyframes realmSkyDrift {
-    0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.7;
-    }
-    50% {
-        transform: translate(-40px, -60px) scale(1.05);
-        opacity: 0.9;
-    }
-    100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.7;
-    }
-}
-
-.realm-sky {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -5;
-    background-size: cover;
-    background-position: center;
-    animation: realmSkyDrift 18s ease-in-out infinite;
-    opacity: 0.8;
-}
-/* LIBRARY — Golden Wisdom Sky */
-.library-container .realm-sky {
-    background: radial-gradient(circle at center, #2a1f00, #000);
-}
-
-/* GUIDANCE — Lantern Glow Sky */
-.guidance-container .realm-sky {
-    background: radial-gradient(circle at center, #2b1a00, #000);
-}
-
-/* UNITY — Heart Bloom Sky */
-.unity-container .realm-sky {
-    background: radial-gradient(circle at center, #2a0010, #000);
-}
-
-/* OBSERVATORY — Starfield Sky */
-.observatory-container .realm-sky {
-    background: radial-gradient(circle at center, #0a0a1a, #000);
-}
-
-/* BELONGING — Wing Light Sky */
-.belonging-container .realm-sky {
-    background: radial-gradient(circle at center, #1a0f00, #000);
-}
-/* --------------------------------------------------------------
-   HERO SECTION STYLING
--------------------------------------------------------------- */
-
-.hero-background {
-  background-image: url("images/family-heroes.jpg"); /* rename to whatever you save it as */
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.sky-layer {
-  background: linear-gradient(#87CEEB, #ffffff);
-  opacity: 0.6;
-}
-
-.light-glow {
-  background: radial-gradient(circle at center, rgba(255,255,255,0.8), transparent);
-  opacity: 0.7;
-}
-/* --------------------------------------------------------------
-   GLOBAL STYLES
--------------------------------------------------------------- */
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #ffffff;
-  font-family: "Segoe UI", system-ui, sans-serif;
-  color: #333;
-  line-height: 1.6;
-}
-
-section {
-  padding: 80px 10%;
-  position: relative;
-}
-
-h1, h2, h3 {
-  font-family: "Georgia", "Times New Roman", serif;
-  margin-bottom: 20px;
-  color: #2c2c2c;
-}
-
-p {
-  margin-bottom: 16px;
-}
 
 /* --------------------------------------------------------------
-   HERO SECTION
+   REALM-SPECIFIC ICON ANIMATIONS
 -------------------------------------------------------------- */
-
-.hero-section {
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("images/family photo.jpg");
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.85);
-}
-
-.sky-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#87CEEB, #ffffff);
-  opacity: 0.45;
-}
-
-.light-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.8), transparent);
-  opacity: 0.6;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-  max-width: 800px;
-}
-
-.hero-title {
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: #f7f7f7;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
-}
+.library-icon { animation: iconFloat 4s ease-in-out infinite; }
+.guidance-icon { animation: iconGlow 3.5s ease-in-out infinite; }
+.unity-icon { animation: iconBreath 5s ease-in-out infinite; }
+.observatory-icon { animation: iconOrbit 18s linear infinite; }
+.belonging-icon { animation: iconBreath 5s ease-in-out infinite; }
 
 /* --------------------------------------------------------------
-   STORY LETTER
+   RESPONSIVE DESIGN
 -------------------------------------------------------------- */
-
-.story-letter-section {
-  background: #ffffff;
-}
-
-.section-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.letter-container {
-  max-width: 800px;
-  margin: auto;
-}
-
-.letter-text {
-  font-size: 1.1rem;
-  margin-bottom: 24px;
-}
-
-.signature img {
-  width: 180px;
-  display: block;
-  margin: 40px auto 0 auto;
-  opacity: 0.9;
-}
-
-/* --------------------------------------------------------------
-   EVOLVING GATE
--------------------------------------------------------------- */
-
-.gate-section {
-  text-align: center;
-  background: #f7fbff;
-}
-
-.gate-image {
-  width: 260px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
-}
-
-.gate-caption {
-  font-size: 1.2rem;
-  color: #444;
-}
-
-/* --------------------------------------------------------------
-   REALMS GRID
--------------------------------------------------------------- */
-
-.realms-section {
-  background: #ffffff;
-}
-
-.realm-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
-}
-
-.realm-card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 14px;
-  padding: 24px;
-  text-decoration: none;
-  color: #333;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.realm-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-}
-
-.realm-card h3 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-}
-
-/* --------------------------------------------------------------
-   CLOSING SECTION
--------------------------------------------------------------- */
-
-.closing-section {
-  text-align: center;
-  background: #fdf8e3;
-  padding-bottom: 120px;
-}
-
-.closing-glow {
-  width: 100%;
-  height: 200px;
-  background: radial-gradient(circle at center, rgba(255,215,0,0.4), transparent);
-  margin-bottom: 20px;
-}
-
-.closing-message {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #444;
+@media (max-width: 768px) {
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
 }
