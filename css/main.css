@@ -474,6 +474,37 @@ body {
 .unity-icon { animation: iconBreath 5s ease-in-out infinite; }
 .observatory-icon { animation: iconOrbit 18s linear infinite; }
 .belonging-icon { animation: iconBreath 5s ease-in-out infinite; }
+/* --------------------------------------------------------------
+   COSMIC PAGE TRANSITIONS
+-------------------------------------------------------------- */
+
+.cosmic-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99999;
+    opacity: 0;
+    background: radial-gradient(circle at center,
+        rgba(255, 215, 0, 0.35),
+        rgba(0, 0, 0, 0.85)
+    );
+    backdrop-filter: blur(12px);
+    transition: opacity 0.8s ease;
+}
+
+/* Fade-in when leaving page */
+.cosmic-transition.active {
+    opacity: 1;
+}
+
+/* Fade-out when arriving */
+body.page-loaded .cosmic-transition {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
 
 /* --------------------------------------------------------------
    RESPONSIVE DESIGN

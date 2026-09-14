@@ -67,3 +67,32 @@ document.addEventListener('click', (e) => {
     setTimeout(() => pulse.remove(), 600);
   }
 });
+/* ============================================================
+   COSMIC PAGE TRANSITIONS
+============================================================ */
+
+const cosmicLayer = document.querySelector('.cosmic-transition');
+
+// Fade-out when page loads
+window.addEventListener('load', () => {
+  document.body.classList.add('page-loaded');
+});
+
+// Fade-in when clicking links
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+
+  if (!link) return;
+
+  const href = link.getAttribute('href');
+
+  // Only animate real page navigations
+  if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+    e.preventDefault();
+    cosmicLayer.classList.add('active');
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 600); // matches CSS transition timing
+  }
+});
