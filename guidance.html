@@ -1,264 +1,123 @@
-<!-- test -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Guidance Hall</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidance – Forever Evolving</title>
 
-    <style>
-        body  {
-            margin: 0;
-            padding: 0;
-            background: radial-gradient(circle at center, #0d0d0d, #000);
-            color: #fff;
-            font-family: 'Georgia', serif;
-            overflow-x: hidden;
-        }
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/realms.css">
 
-        .guidance-container {
-            text-align: center;
-            padding: 120px 20px;
-            position: relative;
-        }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #020817, #0b1024);
+      color: #fff;
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+    }
 
-        /* Floating lantern sparks */
-        .spark {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background: #ffd700;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: drift 5s infinite ease-in-out;
-        }
+    .guidance-container {
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
 
-        @keyframes drift {
-            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(40px); opacity: 0; }
-        }
+    .guidance-title {
+      font-size: 46px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 25px #7fffd4;
+    }
 
-        /* Glowing header */
-        .guidance-title {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 22px #ffd700;
-        }
+    .guidance-subtitle {
+      font-size: 22px;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
 
-        .guidance-subtitle {
-            font-size: 22px;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
+    .guidance-icon {
+      width: 160px;
+      height: 160px;
+      background-image: url('icons/lantern-gold.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: 40px auto;
+      filter: drop-shadow(0 0 25px #7fffd4);
+      animation: lanternPulse 3s infinite ease-in-out;
+    }
 
-        /* Lantern icon */
-        .guidance-icon {
-            width: 150px;
-            height: 150px;
-            background-image: url('icons/lantern-gold.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            margin: 40px auto;
-            filter: drop-shadow(0 0 20px #ffd700);
-            animation: lanternGlow 2.2s infinite alternate ease-in-out;
-        }
+    @keyframes lanternPulse {
+      0% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(-8px); opacity: 0.85; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
 
-        @keyframes lanternGlow {
-            from { filter: drop-shadow(0 0 14px #ffd700); }
-            to   { filter: drop-shadow(0 0 28px #ffea8a); }
-        }
+    .guidance-orbit {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7fffd4;
+      box-shadow: 0 0 12px #7fffd4;
+      animation: orbit 9s linear infinite;
+    }
 
-        /* Back button */
-        .back-button {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 12px 22px;
-            background: #ffd700;
-            color: #000;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: #fff3a0;
-        }
-    </style>
+    @keyframes orbit {
+      0% { transform: rotate(0deg) translateX(120px); }
+      100% { transform: rotate(360deg) translateX(120px); }
+    }
+  </style>
 </head>
 
 <body>
-<div class="cosmic-parallax">
+
+  <div class="cosmic-parallax">
     <div class="parallax-layer stars"></div>
     <div class="parallax-layer nebula"></div>
-</div>
-
-    <div class="transition-overlay"></div>
-
-<audio id="ambientSound" src="sounds/guidance-ambience.mp3" preload="auto" loop></audio>
-<audio id="arrivalGuidance" src="sounds/guidance-arrival.mp3" preload="auto"></audio>
-
-<audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
-
-   <nav class="realm-nav">
-  <a href="index.html#hero">
-    <img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home
-  </a>
-
-  <a href="index.html#story-letter">
-    <img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story
-  </a>
-
-  <a href="index.html#evolving-gate">
-    <img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate
-  </a>
-
-  <a href="index.html#realms" class="nav-dropdown-toggle">
-    <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
-  </a>
-
-  <div class="nav-dropdown">
-    <a href="belonging.html">Belonging</a>
-    <a href="guidance.html">Guidance</a>
-    <a href="library.html">Library</a>
-    <a href="unity.html">Unity</a>
-    <a href="observatory.html">Observatory</a>
-    <a href="realm-map.html">Realm Map</a>
   </div>
-</nav>
 
-<div class="evolving-gate">
-    <img src="icons/evolving-gate.svg" alt="Evolving Gate">
-</div>
+  <div class="cosmic-transition"></div>
 
-    <div class="guidance-container">
+  <audio id="ambientSound" src="sounds/guidance-ambience.mp3" preload="auto"></audio>
+  <audio id="arrivalGuidance" src="sounds/guidance-cue.mp3" preload="auto"></audio>
+  <audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
 
-        <!-- Floating sparks -->
-        <div class="spark" style="left: 25%; animation-delay: 0s;"></div>
-        <div class="spark" style="left: 45%; animation-delay: 1s;"></div>
-        <div class="spark" style="left: 65%; animation-delay: 2s;"></div>
-        <div class="spark" style="left: 85%; animation-delay: 3s;"></div>
+  <nav class="realm-nav">
+    <a href="index.html#hero"><img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home</a>
+    <a href="index.html#story-letter"><img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story</a>
+    <a href="index.html#evolving-gate"><img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate</a>
 
-        <div class="guidance-title">
+    <a href="index.html#realms" class="nav-dropdown-toggle">
+      <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
+    </a>
 
-            <footer class="realm-footer">
-    <a href="index.html">← Return to the Realm Gate</a>
-</footer>
+    <div class="nav-dropdown">
+      <a href="belonging.html">Belonging</a>
+      <a href="guidance.html">Guidance</a>
+      <a href="library.html">Library</a>
+      <a href="unity.html">Unity</a>
+      <a href="observatory.html">Observatory</a>
+      <a href="realm-map.html">Realm Map</a>
+    </div>
+  </nav>
+
+  <div class="guidance-container">
+    <h1 class="guidance-title">The Realm of Guidance</h1>
+    <p class="guidance-subtitle">
+      Where clarity meets intuition, and your inner voice becomes your compass — softly, steadily, in your own time.
+    </p>
+
+    <div class="guidance-icon"></div>
+
+    <p>
+      Guidance here is gentle, never forceful. It honors your pace, your questions, and the way your spirit
+      learns to trust its own knowing.
+    </p>
+
+    <div class="guidance-orbit" style="top: 50%; left: 50%;"></div>
+  </div>
 
 </body>
-
-<script>
-    const ambient = document.getElementById('ambientSound');
-    ambient.volume = 0;
-
-    ambient.play().then(() => {
-        let vol = 0;
-        const fade = setInterval(() => {
-            vol += 0.02;
-            ambient.volume = vol;
-            if (vol >= 0.4) clearInterval(fade);
-        }, 150);
-    });
-</script>
-<script>
-    const portalActivate = document.getElementById('portalActivate');
-
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            portalActivate.currentTime = 0;
-            portalActivate.play();
-        });
-    });
-</script>
-<script>
-    document.querySelectorAll('.portal-item, .realm-nav a, .map-node').forEach(icon => {
-        icon.addEventListener('mousemove', (e) => {
-            const trail = document.createElement('div');
-            trail.classList.add('icon-trail');
-            document.body.appendChild(trail);
-
-            trail.style.left = e.pageX + 'px';
-            trail.style.top = e.pageY + 'px';
-
-            setTimeout(() => {
-                trail.remove();
-            }, 600);
-        });
-    });
-</script>
-<script>
-    document.querySelectorAll('.portal-item').forEach(portal => {
-        portal.addEventListener('click', () => {
-            portal.classList.add('portal-click-animate');
-
-            setTimeout(() => {
-                portal.classList.remove('portal-click-animate');
-            }, 450);
-        });
-    });
-</script>
-<script>
-    const particleContainer = document.querySelector('.realm-particles');
-
-    for (let i = 0; i < 25; i++) {
-        const p = document.createElement('span');
-        p.style.left = Math.random() * 100 + '%';
-        p.style.top = Math.random() * 100 + '%';
-        p.style.animationDelay = (Math.random() * 4) + 's';
-        particleContainer.appendChild(p);
-    }
-</script>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const container = document.querySelector('.realm-container, .library-container, .guidance-container, .unity-container, .observatory-container, .belonging-container');
-
-        for (let i = 0; i < 20; i++) {
-            const burst = document.createElement('div');
-            burst.classList.add('realm-burst');
-
-            burst.style.left = (Math.random() * 100) + '%';
-            burst.style.top = (Math.random() * 100) + '%';
-            burst.style.animationDelay = (Math.random() * 0.4) + 's';
-
-            container.appendChild(burst);
-
-            setTimeout(() => burst.remove(), 1500);
-        }
-    });
-</script>
-<script>
-    const realmContainer =
-        document.querySelector('.library-container, .guidance-container, .unity-container, .observatory-container, .belonging-container');
-
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Only animate when leaving the realm (not internal anchors)
-            if (!link.href.includes('#')) {
-                e.preventDefault();
-
-                realmContainer.classList.add('realm-exit');
-
-                setTimeout(() => {
-                    window.location = link.href;
-                }, 900); // matches animation duration
-            }
-        });
-    });
-</script>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const audio =
-            document.getElementById('arrivalLibrary') ||
-            document.getElementById('arrivalGuidance') ||
-            document.getElementById('arrivalUnity') ||
-            document.getElementById('arrivalObservatory') ||
-            document.getElementById('arrivalBelonging');
-
-        if (audio) {
-            audio.currentTime = 0;
-            audio.play();
-        }
-    });
-</script>
+</html>

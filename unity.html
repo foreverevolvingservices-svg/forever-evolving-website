@@ -1,264 +1,120 @@
-<!-- test -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Unity Chamber</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity – Forever Evolving</title>
 
-    <style>
-        <body>
-            
-            <div class="realm-sky"></div>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/realms.css">
 
-<div class="cosmic-parallax">
-    <div class="parallax-layer stars"></div>
-    <div class="parallax-layer nebula"></div>
-</div>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #020b12, #041a24);
+      color: #fff;
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+    }
 
-            <div class="transition-overlay"></div>
+    .unity-container {
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
 
-<audio id="ambientSound" src="sounds/unity-ambience.mp3" preload="auto" loop></audio>
-<audio id="arrivalUnity" src="sounds/unity-arrival.mp3" preload="auto"></audio>
+    .unity-title {
+      font-size: 46px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 25px #00ffa2;
+    }
 
-<audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
+    .unity-subtitle {
+      font-size: 22px;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
 
-   <nav class="realm-nav">
-  <a href="index.html#hero">
-    <img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home
-  </a>
+    .unity-icon {
+      width: 160px;
+      height: 160px;
+      background-image: url('icons/orb-gold.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: 40px auto;
+      filter: drop-shadow(0 0 25px #00ffa2);
+      animation: unityBreath 4s infinite ease-in-out;
+    }
 
-  <a href="index.html#story-letter">
-    <img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story
-  </a>
+    @keyframes unityBreath {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.06); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
 
-  <a href="index.html#evolving-gate">
-    <img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate
-  </a>
+    .unity-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 255, 162, 0.4);
+      animation: ringPulse 7s infinite ease-out;
+    }
 
-  <a href="index.html#realms" class="nav-dropdown-toggle">
-    <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
-  </a>
-
-  <div class="nav-dropdown">
-    <a href="belonging.html">Belonging</a>
-    <a href="guidance.html">Guidance</a>
-    <a href="library.html">Library</a>
-    <a href="unity.html">Unity</a>
-    <a href="observatory.html">Observatory</a>
-    <a href="realm-map.html">Realm Map</a>
-  </div>
-</nav>
-
-<div class="evolving-gate">
-    <img src="icons/evolving-gate.svg" alt="Evolving Gate">
-</div>
-
-    <div class="unity-container">
-        <div class="realm-particles"></div>
-
-    <div class="unity-title">The Unity Chamber</div>
-
-    <div class="unity-subtitle">
-        A realm of connection, compassion, and shared humanity.  
-        Where hands reach across distance and hearts meet in the middle.
-    </div>
-
-    <div class="unity-icon"></div>
-</div>
-
-<footer class="realm-footer">
-    <a href="index.html">← Return to the Realm Gate</a>
-</footer>
+    @keyframes ringPulse {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+  </style>
+</head>
 
 <body>
 
-        {
-            margin: 0;
-            padding: 0;
-            background: radial-gradient(circle at center, #0a0a0a, #000);
-            color: #fff;
-            font-family: 'Georgia', serif;
-            overflow-x: hidden;
-        }
+  <div class="cosmic-parallax">
+    <div class="parallax-layer stars"></div>
+    <div class="parallax-layer nebula"></div>
+  </div>
 
-        .unity-container {
-            text-align: center;
-            padding: 120px 20px;
-            position: relative;
-        }
+  <div class="cosmic-transition"></div>
 
-        /* Floating heart particles */
-        .heart {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #ffd700;
-            transform: rotate(45deg);
-            opacity: 0.7;
-            animation: rise 6s infinite ease-in-out;
-        }
+  <audio id="ambientSound" src="sounds/unity-ambience.mp3" preload="auto"></audio>
+  <audio id="arrivalUnity" src="sounds/unity-arrival.mp3" preload="auto"></audio>
+  <audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
 
-        .heart::before,
-        .heart::after {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #ffd700;
-            border-radius: 50%;
-        }
+  <nav class="realm-nav">
+    <a href="index.html#hero"><img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home</a>
+    <a href="index.html#story-letter"><img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story</a>
+    <a href="index.html#evolving-gate"><img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate</a>
 
-        .heart::before {
-            top: -5px;
-            left: 0;
-        }
+    <a href="index.html#realms" class="nav-dropdown-toggle">
+      <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
+    </a>
 
-        .heart::after {
-            left: 5px;
-            top: 0;
-        }
+    <div class="nav-dropdown">
+      <a href="belonging.html">Belonging</a>
+      <a href="guidance.html">Guidance</a>
+      <a href="library.html">Library</a>
+      <a href="unity.html">Unity</a>
+      <a href="observatory.html">Observatory</a>
+      <a href="realm-map.html">Realm Map</a>
+    </div>
+  </nav>
 
-        @keyframes rise {
-            0% { transform: translateY(0) rotate(45deg); opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-120px) rotate(45deg); opacity: 0; }
-        }
+  <div class="unity-container">
+    <h1 class="unity-title">The Realm of Unity</h1>
+    <p class="unity-subtitle">
+      The realm of harmony, balance, and inner alignment — where all your pieces learn to live together.
+    </p>
 
-        /* Glowing header */
-        .unity-title {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 22px #ffd700;
-        }
+    <div class="unity-icon"></div>
 
-        .unity-subtitle {
-            font-size: 22px;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
+    <p>
+      Unity is not perfection. It is the gentle weaving of your past, present, and becoming into a life
+      that feels honest, whole, and deeply yours.
+    </p>
 
-        /* Hands icon */
-        .unity-icon {
-            width: 160px;
-            height: 160px;
-            background-image: url('icons/hands-gold.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            margin: 40px auto;
-            filter: drop-shadow
+    <div class="unity-ring" style="top: 55%; left: 50%; width: 220px; height: 220px;"></div>
+  </div>
 
-   <script>
-    const ambient = document.getElementById('ambientSound');
-    ambient.volume = 0;
-
-    ambient.play().then(() => {
-        let vol = 0;
-        const fade = setInterval(() => {
-            vol += 0.02;
-            ambient.volume = vol;
-            if (vol >= 0.4) clearInterval(fade);
-        }, 150);
-    });
-</script>
-   <script>
-    const portalActivate = document.getElementById('portalActivate');
-
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            portalActivate.currentTime = 0;
-            portalActivate.play();
-        });
-    });
-</script>
-      <script>
-    document.querySelectorAll('.portal-item, .realm-nav a, .map-node').forEach(icon => {
-        icon.addEventListener('mousemove', (e) => {
-            const trail = document.createElement('div');
-            trail.classList.add('icon-trail');
-            document.body.appendChild(trail);
-
-            trail.style.left = e.pageX + 'px';
-            trail.style.top = e.pageY + 'px';
-
-            setTimeout(() => {
-                trail.remove();
-            }, 600);
-        });
-    });
-</script>
-<script>
-    document.querySelectorAll('.portal-item').forEach(portal => {
-        portal.addEventListener('click', () => {
-            portal.classList.add('portal-click-animate');
-
-            setTimeout(() => {
-                portal.classList.remove('portal-click-animate');
-            }, 450);
-        });
-    });
-</script>
-<script>
-    const particleContainer = document.querySelector('.realm-particles');
-
-    for (let i = 0; i < 25; i++) {
-        const p = document.createElement('span');
-        p.style.left = Math.random() * 100 + '%';
-        p.style.top = Math.random() * 100 + '%';
-        p.style.animationDelay = (Math.random() * 4) + 's';
-        particleContainer.appendChild(p);
-    }
-</script>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const container = document.querySelector('.realm-container, .library-container, .guidance-container, .unity-container, .observatory-container, .belonging-container');
-
-        for (let i = 0; i < 20; i++) {
-            const burst = document.createElement('div');
-            burst.classList.add('realm-burst');
-
-            burst.style.left = (Math.random() * 100) + '%';
-            burst.style.top = (Math.random() * 100) + '%';
-            burst.style.animationDelay = (Math.random() * 0.4) + 's';
-
-            container.appendChild(burst);
-
-            setTimeout(() => burst.remove(), 1500);
-        }
-    });
-</script>
-<script>
-    const realmContainer =
-        document.querySelector('.library-container, .guidance-container, .unity-container, .observatory-container, .belonging-container');
-
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Only animate when leaving the realm (not internal anchors)
-            if (!link.href.includes('#')) {
-                e.preventDefault();
-
-                realmContainer.classList.add('realm-exit');
-
-                setTimeout(() => {
-                    window.location = link.href;
-                }, 900); // matches animation duration
-            }
-        });
-    });
-</script>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const audio =
-            document.getElementById('arrivalLibrary') ||
-            document.getElementById('arrivalGuidance') ||
-            document.getElementById('arrivalUnity') ||
-            document.getElementById('arrivalObservatory') ||
-            document.getElementById('arrivalBelonging');
-
-        if (audio) {
-            audio.currentTime = 0;
-            audio.play();
-        }
-    });
-</script>
+</body>
+</html>

@@ -1,134 +1,185 @@
-<!-- test -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events • Forever Evolving</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events – Forever Evolving</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/realms.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #0b0b0b, #1a1a1a);
+      color: #fff;
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+    }
+
+    .events-container {
+      max-width: 900px;
+      margin: 120px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .events-title {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 25px #ffd700;
+    }
+
+    .events-subtitle {
+      font-size: 22px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    .event-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      text-align: left;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 26px rgba(255, 215, 0, 0.45);
+    }
+
+    .event-card h3 {
+      margin-bottom: 8px;
+      font-size: 26px;
+      color: #ffd700;
+    }
+
+    .event-card p {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    .event-date {
+      font-size: 16px;
+      opacity: 0.8;
+      margin-bottom: 12px;
+    }
+
+    .event-button {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #ffd700;
+      color: #000;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .event-button:hover {
+      background: #ffea80;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header  class="header">
-        <div class="logo">
-            <img src="images/butterfly-logo.png" alt="Forever Evolving Logo">
-            <span>Forever Evolving</span>
-        </div>
-
-        <nav class="realm-nav">
-  <a href="index.html#hero">
-    <img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home
-  </a>
-
-  <a href="index.html#story-letter">
-    <img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story
-  </a>
-
-  <a href="index.html#evolving-gate">
-    <img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate
-  </a>
-
-  <a href="index.html#realms" class="nav-dropdown-toggle">
-    <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
-  </a>
-
-  <div class="nav-dropdown">
-    <a href="belonging.html">Belonging</a>
-    <a href="guidance.html">Guidance</a>
-    <a href="library.html">Library</a>
-    <a href="unity.html">Unity</a>
-    <a href="observatory.html">Observatory</a>
-    <a href="realm-map.html">Realm Map</a>
+  <!-- Cosmic Parallax -->
+  <div class="cosmic-parallax">
+    <div class="parallax-layer stars"></div>
+    <div class="parallax-layer nebula"></div>
   </div>
-</nav>
 
+  <!-- Cosmic Transition -->
+  <div class="cosmic-transition"></div>
 
-        <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
-    </header>
+  <!-- Sounds -->
+  <audio id="ambientSound" src="sounds/ambient-wind.mp3" preload="auto"></audio>
+  <audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="mission.html">Mission</a>
-        <a href="projects.html">Projects</a>
-        <a href="services.html">Services</a>
-        <a href="events.html">Events</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
+  <!-- Navigation -->
+  <nav class="realm-nav">
+    <a href="index.html#hero">
+      <img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home
+    </a>
+
+    <a href="index.html#story-letter">
+      <img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story
+    </a>
+
+    <a href="index.html#evolving-gate">
+      <img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate
+    </a>
+
+    <a href="index.html#realms" class="nav-dropdown-toggle">
+      <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
+    </a>
+
+    <div class="nav-dropdown">
+      <a href="belonging.html">Belonging</a>
+      <a href="guidance.html">Guidance</a>
+      <a href="library.html">Library</a>
+      <a href="unity.html">Unity</a>
+      <a href="observatory.html">Observatory</a>
+      <a href="realm-map.html">Realm Map</a>
+      <a href="events.html">Events</a>
+    </div>
+  </nav>
+
+  <!-- Events Content -->
+  <div class="events-container">
+    <h1 class="events-title">Upcoming Events</h1>
+    <p class="events-subtitle">
+      Gatherings designed to inspire growth, strengthen connection, and honor your becoming.
+    </p>
+
+    <div class="event-card">
+      <h3>Healing Through Reflection Workshop</h3>
+      <p class="event-date">September 14, 2026 • Virtual</p>
+      <p>
+        A guided workshop exploring emotional clarity, self‑reflection, and the courage to evolve.
+        Includes journaling prompts, group conversation, and gentle mindfulness practices.
+      </p>
+      <a href="#" class="event-button">RSVP</a>
     </div>
 
-    <!-- Events Section -->
-    <section class="page-section">
-        <div class="page-container">
+    <div class="event-card">
+      <h3>Thorns and Silver Linings Live Podcast Session</h3>
+      <p class="event-date">October 3, 2026 • Palm Coast, FL</p>
+      <p>
+        Join us for a live recording of the podcast, featuring heartfelt conversations about resilience,
+        healing, and the unexpected beauty found in life’s challenges.
+      </p>
+      <a href="#" class="event-button">Reserve a Seat</a>
+    </div>
 
-            <h1 class="page-title">Upcoming Events</h1>
+    <div class="event-card">
+      <h3>Community Connection Gathering</h3>
+      <p class="event-date">November 12, 2026 • Palm Coast, FL</p>
+      <p>
+        A warm, welcoming community event focused on belonging, empathy, and shared stories.
+        Perfect for individuals seeking connection and meaningful conversation.
+      </p>
+      <a href="#" class="event-button">Join Us</a>
+    </div>
 
-            <p class="page-intro">
-                Forever Evolving hosts meaningful gatherings designed to inspire growth, strengthen connection, 
-                and encourage action. Whether virtual or in person, each event is created with intention, warmth, 
-                and the belief that transformation happens when we show up for ourselves and each other.
-            </p>
+    <div class="event-card">
+      <h3>Finding Peace Book Discussion Circle</h3>
+      <p class="event-date">December 5, 2026 • Virtual</p>
+      <p>
+        A reflective discussion circle centered around <em>Finding Peace in the University of Life</em>.
+        Explore themes of healing, growth, and personal transformation.
+      </p>
+      <a href="#" class="event-button">Sign Up</a>
+    </div>
+  </div>
 
-            <div class="events-grid">
-
-                <!-- Event 1 -->
-                <div class="event-card">
-                    <h3>Healing Through Reflection Workshop</h3>
-                    <p class="event-date">September 14, 2026 • Virtual</p>
-                    <p>
-                        A guided workshop exploring emotional clarity, self‑reflection, and the courage to evolve. 
-                        Participants will engage in journaling prompts, group conversation, and gentle mindfulness practices.
-                    </p>
-                    <a href="#" class="card-button">RSVP</a>
-                </div>
-
-                <!-- Event 2 -->
-                <div class="event-card">
-                    <h3>Thorns and Silver Linings Live Podcast Session</h3>
-                    <p class="event-date">October 3, 2026 • Palm Coast, FL</p>
-                    <p>
-                        Join us for a live recording of the podcast, featuring heartfelt conversations about resilience, 
-                        healing, and the unexpected beauty found in life’s challenges.
-                    </p>
-                    <a href="#" class="card-button">Reserve a Seat</a>
-                </div>
-
-                <!-- Event 3 -->
-                <div class="event-card">
-                    <h3>Community Connection Gathering</h3>
-                    <p class="event-date">November 12, 2026 • Palm Coast, FL</p>
-                    <p>
-                        A warm, welcoming community event focused on belonging, empathy, and shared stories. 
-                        Perfect for individuals seeking connection and meaningful conversation.
-                    </p>
-                    <a href="#" class="card-button">Join Us</a>
-                </div>
-
-                <!-- Event 4 -->
-                <div class="event-card">
-                    <h3>Finding Peace Book Discussion Circle</h3>
-                    <p class="event-date">December 5, 2026 • Virtual</p>
-                    <p>
-                        A reflective discussion circle centered around <em>Finding Peace in the University of Life</em>. 
-                        Participants will explore themes of healing, growth, and personal transformation.
-                    </p>
-                    <a href="#" class="card-button">Sign Up</a>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <img src="images/butterfly-logo.png" alt="Forever Evolving Logo" class="footer-logo">
-        <p>© 2026 Forever Evolving. All rights reserved.</p>
-    </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html>

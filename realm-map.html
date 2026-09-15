@@ -1,82 +1,140 @@
-<!-- test -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Realm Map</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realm Map – Forever Evolving</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/realms.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #050608, #000000);
+      color: #fff;
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+    }
+
+    .realm-map-container {
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    .realm-map-title {
+      font-size: 46px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 25px #ffd700;
+    }
+
+    .realm-map-subtitle {
+      font-size: 22px;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    .realm-map-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .realm-map-card {
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .realm-map-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 26px rgba(255, 215, 0, 0.45);
+    }
+
+    .realm-map-card h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .realm-map-card p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body>
-<div class="transition-overlay"></div>
 
-    <audio id="ambientSound" src="sounds/observatory-ambience.mp3" preload="auto" loop></audio>
-
-   <nav class="realm-nav">
-  <a href="index.html#hero">
-    <img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home
-  </a>
-
-  <a href="index.html#story-letter">
-    <img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story
-  </a>
-
-  <a href="index.html#evolving-gate">
-    <img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate
-  </a>
-
-  <a href="index.html#realms" class="nav-dropdown-toggle">
-    <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
-  </a>
-
-  <div class="nav-dropdown">
-    <a href="belonging.html">Belonging</a>
-    <a href="guidance.html">Guidance</a>
-    <a href="library.html">Library</a>
-    <a href="unity.html">Unity</a>
-    <a href="observatory.html">Observatory</a>
-    <a href="realm-map.html">Realm Map</a>
+  <div class="cosmic-parallax">
+    <div class="parallax-layer stars"></div>
+    <div class="parallax-layer nebula"></div>
   </div>
-</nav>
 
+  <div class="cosmic-transition"></div>
 
-    <div class="realm-map-container">
+  <audio id="ambientSound" src="sounds/ambient-wind.mp3" preload="auto"></audio>
+  <audio id="portalActivate" src="sounds/portal-activate.mp3" preload="auto"></audio>
 
-        <!-- Center Gate -->
-        <div class="map-gate evolving-gate">
-            <img src="icons/evolving-gate.svg" alt="Evolving Gate">
-        </div>
+  <nav class="realm-nav">
+    <a href="index.html#hero"><img src="icons/orb-gold.svg" class="nav-icon" alt=""> Home</a>
+    <a href="index.html#story-letter"><img src="icons/book-gold.svg" class="nav-icon" alt=""> Our Story</a>
+    <a href="index.html#evolving-gate"><img src="icons/key-gold.svg" class="nav-icon" alt=""> Gate</a>
 
-        <!-- Realm Nodes -->
-        <a href="library.html" class="map-node" style="top: 20%; left: 50%;">Library</a>
-        <a href="guidance.html" class="map-node" style="top: 40%; left: 20%;">Guidance</a>
-        <a href="unity.html" class="map-node" style="top: 40%; left: 80%;">Unity</a>
-        <a href="observatory.html" class="map-node" style="top: 65%; left: 30%;">Observatory</a>
-        <a href="belonging.html" class="map-node" style="top: 65%; left: 70%;">Belonging</a>
+    <a href="index.html#realms" class="nav-dropdown-toggle">
+      <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
+    </a>
 
-        <!-- Connecting Lines -->
-        <div class="map-line line1"></div>
-        <div class="map-line line2"></div>
-        <div class="map-line line3"></div>
-        <div class="map-line line4"></div>
-        <div class="map-line line5"></div>
-
+    <div class="nav-dropdown">
+      <a href="belonging.html">Belonging</a>
+      <a href="guidance.html">Guidance</a>
+      <a href="library.html">Library</a>
+      <a href="unity.html">Unity</a>
+      <a href="observatory.html">Observatory</a>
+      <a href="realm-map.html">Realm Map</a>
     </div>
+  </nav>
 
-    <footer class="realm-footer">
-        <a href="index.html">Return to the Realm Gate</a>
-    </footer>
+  <div class="realm-map-container">
+    <h1 class="realm-map-title">Realm Map</h1>
+    <p class="realm-map-subtitle">
+      Your guide to navigating the universe of your becoming — one realm, one breath, one step at a time.
+    </p>
 
-    <script>
-        const ambient = document.getElementById('ambientSound');
-        ambient.volume = 0;
-        ambient.play().then(() => {
-            let vol = 0;
-            const fade = setInterval(() => {
-                vol += 0.02;
-                ambient.volume = vol;
-                if (vol >= 0.4) clearInterval(fade);
-            }, 150);
-        });
-    </script>
+    <div class="realm-map-grid">
+      <div class="realm-map-card">
+        <h3>Belonging</h3>
+        <p>A sanctuary for connection, identity, and emotional grounding.</p>
+      </div>
+      <div class="realm-map-card">
+        <h3>Guidance</h3>
+        <p>Where clarity meets intuition, and your inner voice becomes your compass.</p>
+      </div>
+      <div class="realm-map-card">
+        <h3>Library</h3>
+        <p>A quiet space of wisdom, reflection, and learning.</p>
+      </div>
+      <div class="realm-map-card">
+        <h3>Unity</h3>
+        <p>The realm of harmony, balance, and inner alignment.</p>
+      </div>
+      <div class="realm-map-card">
+        <h3>Observatory</h3>
+        <p>A cosmic vantage point to see your life from above.</p>
+      </div>
+      <div class="realm-map-card">
+        <h3>Forever Evolving</h3>
+        <p>The living journey that weaves all realms into your becoming.</p>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
