@@ -96,16 +96,4 @@ document.addEventListener('click', (e) => {
     }, 600); // matches CSS transition timing
   }
 });
-<a href="#realms" class="nav-dropdown-toggle">
-  <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▾
-</a>
 
-<div class="nav-dropdown">
-  <a href="belonging.html">Belonging</a>
-  <a href="guidance.html">Guidance</a>
-  <a href="library.html">Library</a>
-  <a href="unity.html">Unity</a>
-  <a href="observatory.html">Observatory</a>
-  <a href="realm-map.html">Realm Map</a>
-  <a href="events.html">Events</a>
-</div>
