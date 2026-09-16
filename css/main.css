@@ -1,22 +1,7 @@
-/* --------------------------------------------------------------
-   GLOBAL VARIABLES
--------------------------------------------------------------- */
-:root {
-    --ivory: #fdfcf7;
-    --charcoal: #333;
-    --white: #ffffff;
+/* ============================================================
+   GLOBAL RESET & BASE
+============================================================= */
 
-    --body-font: 'Inter', sans-serif;
-    --heading-font: 'Playfair Display', serif;
-
-    --gold: #ffd700;
-
-    --section-padding: 80px 10%;
-}
-
-/* --------------------------------------------------------------
-   RESET + GLOBAL BODY
--------------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -24,304 +9,195 @@
 }
 
 body {
-    background: var(--ivory);
-    color: var(--charcoal);
-    font-family: var(--body-font);
-    line-height: 1.7;
-    padding-top: 80px; /* space for fixed nav */
-    animation: introFade 1.2s ease-out;
+    font-family: "Inter", sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    overflow-x: hidden;
 }
 
-/* --------------------------------------------------------------
-   COSMIC NAVIGATION BAR
--------------------------------------------------------------- */
-.realm-nav {
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ============================================================
+   NAVIGATION
+============================================================= */
+
+.nav-header {
     width: 100%;
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    padding: 14px 10%;
-    display: flex;
-    align-items: center;
-    gap: 32px;
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.realm-nav a {
-    text-decoration: none;
-    font-family: "Georgia", serif;
-    font-size: 1rem;
-    color: #444;
-    padding-bottom: 4px;
-    transition: all 0.3s ease;
-    position: relative;
+.nav-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 30px;
+    padding: 15px 40px;
 }
 
-.nav-icon {
-    width: 20px;
-    height: 20px;
+.nav-link {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* Gold underline + glow */
-.realm-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background: var(--gold);
-    box-shadow: 0 0 8px rgba(255,215,0,0.7);
-    transition: width 0.3s ease;
-}
-
-.realm-nav a:hover::after {
-    width: 100%;
-}
-
-.realm-nav a:hover {
-    color: #000;
+.nav-link:hover {
+    color: #008b8b;
 }
 
 /* Dropdown */
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .nav-dropdown {
-    position: absolute;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    border-radius: 10px;
-    padding: 10px 16px;
     display: none;
     flex-direction: column;
-    gap: 6px;
-    z-index: 999;
+    position: absolute;
+    top: 60px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .nav-dropdown a {
-    font-family: "Segoe UI", system-ui, sans-serif;
-    font-size: 0.95rem;
-    color: #333;
+    padding: 8px 0;
     text-decoration: none;
-    padding: 4px 0;
+    color: #444;
+    font-weight: 500;
 }
 
 .nav-dropdown a:hover {
-    color: #000;
+    color: #008b8b;
 }
 
-/* --------------------------------------------------------------
-   COSMIC + SKY HYBRID HERO
--------------------------------------------------------------- */
-.hero-section {
-    height: 90vh;
+
+/* ============================================================
+   HERO SECTION
+============================================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 80px; /* space for fixed nav */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
 }
 
-/* Background Layers */
 .hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     overflow: hidden;
 }
 
-/* Sky Gradient */
-.sky-layer {
-    position: absolute;
+.hero-image {
     width: 100%;
     height: 100%;
-    background: linear-gradient(#87CEEB, #ffffff);
-    opacity: 0.55;
+    object-fit: cover;
+    filter: brightness(0.85);
 }
 
-/* Nebula Glow */
-.nebula-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 40% 60%, rgba(255,215,0,0.25), transparent 70%);
-    opacity: 0.45;
-}
-
-/* Stars */
-.stars-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.7) 2px, transparent 2px);
-    background-size: 4px 4px;
-    opacity: 0.35;
-    animation: starFloat 12s ease-in-out infinite;
-}
-
-/* Parallax */
-.cosmic-parallax {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background-image: radial-gradient(circle, rgba(255,215,0,0.15) 8px, transparent 12px);
-    opacity: 0.25;
-    animation: parallaxDrift 60s linear infinite;
-}
-
-@keyframes parallaxDrift {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(200px, 300px); }
-}
-
-@keyframes starFloat {
-    0% { transform: translateY(0px); opacity: 0.6; }
-    50% { transform: translateY(-12px); opacity: 1; }
-    100% { transform: translateY(0px); opacity: 0.6; }
-}
-
-/* Hero Content */
 .hero-content {
     position: relative;
     z-index: 10;
-    max-width: 800px;
+    max-width: 900px;
+    text-align: center;
+    padding: 20px;
 }
 
+/* ⭐ Readability Fix */
 .hero-title {
-    font-size: 2.4rem;
-    font-weight: bold;
+    font-size: 2.8rem;
+    line-height: 1.3;
     color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: #f7f7f7;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #fefefe;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.35);
 }
 
-/* --------------------------------------------------------------
-   STORY LETTER
--------------------------------------------------------------- */
-.story-letter-section {
-    background: #ffffff;
-    padding: var(--section-padding);
-}
 
-.section-title {
-    font-size: 2rem;
+/* ============================================================
+   SIGNATURE SECTION
+============================================================= */
+
+.signature-section {
     text-align: center;
-    margin-bottom: 40px;
+    padding: 80px 20px;
 }
 
-.letter-container {
-    max-width: 800px;
-    margin: auto;
+.signature-image {
+    width: 300px;
+    margin: 0 auto;
 }
 
-.letter-text {
-    font-size: 1.1rem;
-    margin-bottom: 24px;
-}
 
-.signature img {
-    width: 180px;
-    display: block;
-    margin: 40px auto 0 auto;
-    opacity: 0.9;
-}
+/* ============================================================
+   GATE SECTION
+============================================================= */
 
-/* --------------------------------------------------------------
-   EVOLVING GATE
--------------------------------------------------------------- */
 .gate-section {
     text-align: center;
-    background: #f7fbff;
-    padding: var(--section-padding);
+    padding: 80px 20px;
 }
 
 .gate-image {
-    width: 260px;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+    width: 450px;
+    margin: 0 auto 30px;
 }
 
-.gate-caption {
-    font-size: 1.2rem;
-    color: #444;
-}
-
-/* --------------------------------------------------------------
-   REALMS PREVIEW
--------------------------------------------------------------- */
-.realms-section {
-    background: #ffffff;
-    padding: var(--section-padding);
-}
-
-.realm-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px;
-    margin-top: 40px;
-}
-
-.realm-card {
-    background: rgba(255,255,255,0.9);
-    border-radius: 14px;
-    padding: 24px;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-}
-
-.realm-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-}
-
-/* --------------------------------------------------------------
-   CLOSING SECTION
--------------------------------------------------------------- */
-.closing-section {
-    text-align: center;
-    background: #fdf8e3;
-    padding: var(--section-padding);
-}
-
-.closing-glow {
-    width: 100%;
-    height: 200px;
-    background: radial-gradient(circle at center, rgba(255,215,0,0.4), transparent);
-    margin-bottom: 20px;
-}
-
-.closing-message {
+.gate-text {
     font-size: 1.4rem;
-    font-weight: bold;
     color: #444;
+    font-weight: 500;
 }
 
-/* --------------------------------------------------------------
-   SCROLL FADE-INS
--------------------------------------------------------------- */
+
+/* ============================================================
+   LETTER SECTION
+============================================================= */
+
+.letter-section {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.letter-image {
+    width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   FADE-IN ANIMATION
+============================================================= */
+
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-in.visible {
@@ -329,188 +205,44 @@ body {
     transform: translateY(0);
 }
 
-/* --------------------------------------------------------------
-   RESPONSIVE DESIGN
--------------------------------------------------------------- */
-@media (max-width: 768px) {
-    .hero-title { font-size: 1.8rem; }
-    .hero-subtitle { font-size: 1rem; }
-    .realm-grid { grid-template-columns: 1fr; }
-}
 
-@media (max-width: 480px) {
-    .hero-section { height: 80vh; }
-    .hero-title { font-size: 1.5rem; }
-    .hero-subtitle { font-size: 0.95rem; }
-}
-
-/* --------------------------------------------------------------
-   INTRO FADE KEYFRAME
--------------------------------------------------------------- */
-@keyframes introFade {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-/* --------------------------------------------------------------
-   COSMIC REALM BACKGROUND
--------------------------------------------------------------- */
-.realm-page {
-    position: relative;
-    background: linear-gradient(180deg, #0b0f26, #000000);
-    color: #ffffff;
-    overflow: hidden;
-    padding: 80px 20px;
-}
-
-/* STARLIGHT */
-.starlight {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-      radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-      radial-gradient(circle, rgba(255,215,0,0.25) 1px, transparent 1px);
-    background-size: 3px 3px, 4px 4px;
-    background-position: 0 0, 20px 40px;
-    opacity: 0.25;
-    pointer-events: none;
-}
-
-/* --------------------------------------------------------------
-   PORTAL GRID
--------------------------------------------------------------- */
-.portal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* PORTAL CARDS */
-.portal-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    padding: 30px;
-    border-radius: 16px;
-    text-align: center;
-    position: relative;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.portal-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-}
-
-/* ICONS */
-.portal-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: drop-shadow(0 0 8px #ffd700);
-}
-
-/* --------------------------------------------------------------
-   REALM MAP
--------------------------------------------------------------- */
-.realm-map-container {
-    position: relative;
-    width: 100%;
-    height: 85vh;
-    margin-top: 80px;
-}
-
-.map-node {
-    position: absolute;
-    color: #ffd700;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    text-shadow: 0 0 10px #ffd700;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-.map-node:hover {
-    transform: scale(1.15);
-    text-shadow: 0 0 18px #fff8c6;
-}
-
-/* --------------------------------------------------------------
-   COSMIC ANIMATIONS
--------------------------------------------------------------- */
-@keyframes iconFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
-}
-
-@keyframes iconGlow {
-    0% { filter: drop-shadow(0 0 4px #ffd700); }
-    50% { filter: drop-shadow(0 0 12px #ffd700); }
-    100% { filter: drop-shadow(0 0 4px #ffd700); }
-}
-
-@keyframes iconOrbit {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes iconBreath {
-    0% { transform: scale(1); opacity: 0.9; }
-    50% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.9; }
-}
-
-/* --------------------------------------------------------------
-   REALM-SPECIFIC ICON ANIMATIONS
--------------------------------------------------------------- */
-.library-icon { animation: iconFloat 4s ease-in-out infinite; }
-.guidance-icon { animation: iconGlow 3.5s ease-in-out infinite; }
-.unity-icon { animation: iconBreath 5s ease-in-out infinite; }
-.observatory-icon { animation: iconOrbit 18s linear infinite; }
-.belonging-icon { animation: iconBreath 5s ease-in-out infinite; }
-/* --------------------------------------------------------------
-   COSMIC PAGE TRANSITIONS
--------------------------------------------------------------- */
+/* ============================================================
+   COSMIC TRANSITION
+============================================================= */
 
 .cosmic-transition {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 99999;
+    inset: 0;
+    background: radial-gradient(circle at center, #0a0a0a, #000);
     opacity: 0;
-    background: radial-gradient(circle at center,
-        rgba(255, 215, 0, 0.35),
-        rgba(0, 0, 0, 0.85)
-    );
-    backdrop-filter: blur(12px);
-    transition: opacity 0.8s ease;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    z-index: 2000;
 }
 
-/* Fade-in when leaving page */
 .cosmic-transition.active {
     opacity: 1;
 }
 
-/* Fade-out when arriving */
-body.page-loaded .cosmic-transition {
-    opacity: 0;
-    transition: opacity 1.2s ease;
-}
 
-/* --------------------------------------------------------------
+/* ============================================================
    RESPONSIVE DESIGN
--------------------------------------------------------------- */
+============================================================= */
+
 @media (max-width: 768px) {
-    .portal-grid {
-        grid-template-columns: 1fr;
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .gate-image {
+        width: 300px;
+    }
+
+    .letter-image {
+        width: 90%;
     }
 }
