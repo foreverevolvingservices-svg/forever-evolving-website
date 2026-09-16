@@ -1,99 +1,142 @@
-/* ============================================================
-   SCROLL FADE-INS
-============================================================ */
-const fadeEls = document.querySelectorAll('.fade-in');
+/* --------------------------------------------------
+   GLOBAL VARIABLES
+-------------------------------------------------- */
+let soundEnabled = true;
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
+/* --------------------------------------------------
+   AUDIO FILES (ADD YOUR OWN FILE PATHS)
+-------------------------------------------------- */
+const sectionAudio = {
+    welcome: new Audio("audio/welcome.mp3"),
+    ourStory: new Audio("audio/ourstory.mp3"),
+    gate: new Audio("audio/gate.mp3"),
+    realms: new Audio("audio/realms.mp3"),
+    healthyNoggin: new Audio("audio/healthy.mp3"),
+    findingPeace: new Audio("audio/peace.mp3"),
+    unity: new Audio("audio/unity.mp3"),
+    observatory: new Audio("audio/observatory.mp3"),
+    events: new Audio("audio/events.mp3"),
+    blog: new Audio("audio/blog.mp3"),
+    contact: new Audio("audio/contact.mp3"),
+    footer: new Audio("audio/footer.mp3")
+};
 
-fadeEls.forEach(el => observer.observe(el));
-
-
-/* ============================================================
-   COSMIC PARALLAX MOVEMENT
-============================================================ */
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-
-  const sky = document.querySelector('.sky-layer');
-  const nebula = document.querySelector('.nebula-layer');
-  const stars = document.querySelector('.stars-layer');
-  const parallax = document.querySelector('.cosmic-parallax');
-
-  if (sky) sky.style.transform = `translateY(${scrollY * 0.15}px)`;
-  if (nebula) nebula.style.transform = `translateY(${scrollY * 0.25}px)`;
-  if (stars) stars.style.transform = `translateY(${scrollY * 0.10}px)`;
-  if (parallax) parallax.style.transform = `translateY(${scrollY * 0.05}px)`;
+/* Prevent overlapping audio */
+Object.values(sectionAudio).forEach(a => {
+    a.volume = 0.55;
 });
 
+/* --------------------------------------------------
+   SOUND TOGGLE (LANTERN)
+-------------------------------------------------- */
+const lantern = document.getElementById("sound-toggle");
 
-/* ============================================================
-   DROPDOWN MENU
-============================================================ */
-const toggle = document.querySelector('.nav-dropdown-toggle');
-const dropdown = document.querySelector('.nav-dropdown');
+lantern.addEventListener("click", () => {
+    soundEnabled = !soundEnabled;
 
-if (toggle && dropdown) {
-  toggle.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isOpen = dropdown.style.display === 'flex';
-    dropdown.style.display = isOpen ? 'none' : 'flex';
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!dropdown.contains(e.target) && e.target !== toggle) {
-      dropdown.style.display = 'none';
+    if (!soundEnabled) {
+        Object.values(sectionAudio).forEach(a => a.pause());
+        lantern.style.opacity = "0.5";
+    } else {
+        lantern.style.opacity = "1";
     }
-  });
+
+    localStorage.setItem("soundEnabled", soundEnabled);
+});
+
+/* Load saved preference */
+if (localStorage.getItem("soundEnabled") === "false") {
+    soundEnabled = false;
+    lantern.style.opacity = "0.5";
 }
 
+/* --------------------------------------------------
+   FADE-IN ON SCROLL
+-------------------------------------------------- */
+const fadeElements = document.querySelectorAll(".fade-in");
 
-/* ============================================================
-   COSMIC CLICK PULSE (Optional Enhancement)
-============================================================ */
-document.addEventListener('click', (e) => {
-  if (e.target.tagName === 'A') {
-    const pulse = document.createElement('span');
-    pulse.classList.add('click-pulse');
-    pulse.style.left = `${e.pageX}px`;
-    pulse.style.top = `${e.pageY}px`;
-    document.body.appendChild(pulse);
+function handleFadeIn() {
+    fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 120) {
+            el.classList.add("visible");
+        }
+    });
+}
 
-    setTimeout(() => pulse.remove(), 600);
-  }
+window.addEventListener("scroll", handleFadeIn);
+window.addEventListener("load", handleFadeIn);
+
+/* --------------------------------------------------
+   PLAY AUDIO WHEN SECTION ENTERS VIEW
+-------------------------------------------------- */
+function playSectionAudio(id) {
+    if (!soundEnabled) return;
+
+    const audio = sectionAudio[id];
+    if (audio) {
+        Object.values(sectionAudio).forEach(a => a.pause());
+        audio.currentTime = 0;
+        audio.play();
+    }
+}
+
+function handleSectionAudio() {
+    const sections = [
+        { id: "welcome", audio: "welcome" },
+        { id: "our-story", audio: "ourStory" },
+        { id: "gate", audio: "gate" },
+        { id: "realms", audio: "realms" },
+        { id: "realm-healthy-noggin", audio: "healthyNoggin" },
+        { id: "realm-finding-peace", audio: "findingPeace" },
+        { id: "realm-unity", audio: "unity" },
+        { id: "realm-observatory", audio: "observatory" },
+        { id: "events", audio: "events" },
+        { id: "blog", audio: "blog" },
+        { id: "contact", audio: "contact" },
+        { id: "footer", audio: "footer" }
+    ];
+
+    sections.forEach(sec => {
+        const el = document.getElementById(sec.id);
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight / 1.3 && rect.bottom > 0) {
+            playSectionAudio(sec.audio);
+        }
+    });
+}
+
+window.addEventListener("scroll", handleSectionAudio);
+
+/* --------------------------------------------------
+   SMOOTH SCROLL FOR NAV LINKS
+-------------------------------------------------- */
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", e => {
+        if (link.getAttribute("href").startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    });
 });
-/* ============================================================
-   COSMIC PAGE TRANSITIONS
-============================================================ */
 
-const cosmicLayer = document.querySelector('.cosmic-transition');
+/* --------------------------------------------------
+   REALM BUTTONS SCROLL-TO
+-------------------------------------------------- */
+const realmLinks = document.querySelectorAll("#realms .nav-link");
 
-// Fade-out when page loads
-window.addEventListener('load', () => {
-  document.body.classList.add('page-loaded');
-});
-
-// Fade-in when clicking links
-document.addEventListener('click', (e) => {
-  const link = e.target.closest('a');
-
-  if (!link) return;
-
-  const href = link.getAttribute('href');
-
-  // Only animate real page navigations
-  if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
-    e.preventDefault();
-    cosmicLayer.classList.add('active');
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 600); // matches CSS transition timing
-  }
+realmLinks.forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
 });
 
