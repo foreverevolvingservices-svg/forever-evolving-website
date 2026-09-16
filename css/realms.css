@@ -1,0 +1,181 @@
+/* ============================================
+   COSMIC REALM BASE STYLES
+============================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Georgia', serif;
+  overflow-x: hidden;
+}
+
+/* Cosmic Parallax */
+.cosmic-parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-layer.stars {
+  background-image: url('../images/stars.png');
+  opacity: 0.4;
+}
+
+.parallax-layer.nebula {
+  background-image: url('../images/nebula.png');
+  opacity: 0.25;
+}
+
+/* Cosmic Transition */
+.cosmic-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,215,0,0.2), rgba(0,0,0,0.9));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  z-index: 999;
+}
+
+/* ============================================
+   REALM NAVIGATION
+============================================ */
+
+.realm-nav {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  border-bottom: 1px solid rgba(255,215,0,0.3);
+  box-shadow: 0 4px 18px rgba(255,215,0,0.2);
+}
+
+.realm-nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.realm-nav a:hover {
+  opacity: 1;
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Dropdown */
+.nav-dropdown {
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  border: 1px solid rgba(255,215,0,0.3);
+  position: absolute;
+  margin-top: 60px;
+}
+
+.nav-dropdown-toggle:hover + .nav-dropdown,
+.nav-dropdown:hover {
+  display: flex;
+}
+
+.nav-dropdown a {
+  padding: 6px 0;
+  color: #ffd700;
+}
+
+/* ============================================
+   COSMIC FOOTER
+============================================ */
+
+.cosmic-footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 -4px 18px rgba(255, 215, 0, 0.2);
+  margin-top: 80px;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-butterfly {
+  width: 70px;
+  height: auto;
+  filter: drop-shadow(0 0 12px #ffd700);
+}
+
+.footer-title {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #ffd700;
+  text-shadow: 0 0 12px #ffd700;
+}
+
+.footer-links,
+.footer-realms {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.footer-links a,
+.footer-realms a {
+  color: #ffd700;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-realms a:hover {
+  opacity: 1;
+}
+
+.footer-tagline {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.footer-copy {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.6;
+}
