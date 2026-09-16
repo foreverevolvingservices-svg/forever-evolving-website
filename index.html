@@ -2,83 +2,168 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forever Evolving</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- NAVIGATION + LANTERN TOGGLE -->
     <header class="nav-header">
         <nav class="nav-bar">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="our-story.html" class="nav-link">Our Story</a>
-            <a href="gate.html" class="nav-link">Gate</a>
+            <a href="#welcome" class="nav-link">Home</a>
+            <a href="#our-story" class="nav-link">Our Story</a>
+            <a href="#gate" class="nav-link">Gate</a>
+            <a href="#realms" class="nav-link">Realms</a>
+            <a href="#events" class="nav-link">Events</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#contact" class="nav-link">Contact</a>
 
-            <a href="#realms" class="nav-dropdown-toggle">
-                <img src="icons/lantern-gold.svg" class="nav-icon" alt=""> Realms ▼
-            </a>
+            <!-- Forever Evolving logo in nav -->
+            <img src="images/foreverevolving group.png" alt="Forever Evolving Logo" style="height:40px; margin-left:auto;">
 
-            <div class="nav-dropdown">
-                <a href="belonging.html">Belonging</a>
-                <a href="guidance.html">Guidance</a>
-                <a href="library.html">Library</a>
-                <a href="unity.html">Unity</a>
-                <a href="observatory.html">Observatory</a>
-                <a href="realm-map.html">Realm Map</a>
-                <a href="events.html">Events</a>
-            </div>
+            <!-- Lantern sound toggle -->
+            <button id="sound-toggle" class="lantern-toggle" aria-label="Toggle sound">
+                <!-- You can style this in CSS as a pulsing lantern -->
+                🔔
+            </button>
         </nav>
     </header>
 
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-background">
-            <img src="images/panoramic-evolution.png" alt="Hero Background" class="hero-image">
-        </div>
-
+    <!-- WELCOME SECTION -->
+    <section id="welcome" class="signature-section fade-in">
         <div class="hero-content">
-            <h1 class="hero-title">
-                In every chapter of life, we rise, heal, and transform — gently, bravely, and always evolving.
-            </h1>
-
-            <p class="hero-subtitle">
-                Welcome to Forever Evolving — a sanctuary for growth, belonging, and becoming.
-            </p>
+            <img src="images/foreverevolving group.png" alt="Forever Evolving Group Logo" style="max-width:320px; margin:0 auto 20px;">
+            <img src="images/circle podcast logo.png" alt="Circle Podcast Logo" style="max-width:180px; margin:0 auto;">
         </div>
     </section>
 
+    <!-- OUR STORY SECTION -->
+    <section id="our-story" class="letter-section fade-in">
+        <div style="display:flex; flex-wrap:wrap; gap:30px; align-items:flex-start; justify-content:center;">
+            <!-- Hero family image (left) -->
+            <div style="flex:1 1 320px; max-width:480px;">
+                <img src="images/panoramic-evolution.png" alt="Family Hero Image" style="width:100%; border-radius:8px;">
+            </div>
 
-    <!-- SIGNATURE SECTION -->
-    <section class="signature-section fade-in">
-        <img src="images/signature.png" alt="Kinia Signature" class="signature-image">
+            <!-- Letter + your photo (right) -->
+            <div style="flex:1 1 320px; max-width:520px;">
+                <h2 style="margin-bottom:20px;">Our Story</h2>
+                <p style="margin-bottom:20px;">
+                    As I look back on my journey, I see moments that lifted me, moments that broke me, and moments that quietly rebuilt me.
+                    None of it was perfect, but all of it was real — and it shaped the person I am still becoming.
+                    Forever Evolving was born from that truth. From the need for a place where people can breathe, heal, and feel seen.
+                    A place where growth isn’t rushed, where pain isn’t judged, and where every step forward — even the small ones — matters.
+                    Here, you are not alone. Here, your story is honored. Here, we rise together.
+                    <br><br>— Kinia
+                </p>
+                <img src="images/Book back kinia n pink.JPG" alt="Kinia" style="max-width:220px; border-radius:8px; display:block; margin-top:10px;">
+            </div>
+        </div>
     </section>
-
 
     <!-- GATE SECTION -->
-    <section class="gate-section fade-in">
+    <section id="gate" class="gate-section fade-in">
         <img src="images/evolving gate.png" alt="Evolving Gate" class="gate-image">
-
         <p class="gate-text">
             Step through the gate and enter the realms of your becoming.
         </p>
     </section>
 
-
-    <!-- LETTER SECTION -->
-    <section class="letter-section fade-in">
-        <img src="images/letter.png" alt="Letter from Kinia" class="letter-image">
+    <!-- REALMS MAP -->
+    <section id="realms" class="signature-section fade-in">
+        <h2 style="margin-bottom:20px;">Realms of Forever Evolving</h2>
+        <p style="margin-bottom:30px;">
+            Choose a realm to explore. Each path reveals a different facet of growth, healing, and becoming.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+            <a href="#realm-healthy-noggin" class="nav-link">My Healthy Noggin</a>
+            <a href="#realm-finding-peace" class="nav-link">Finding Peace</a>
+            <a href="#realm-unity" class="nav-link">Unity</a>
+            <a href="#realm-observatory" class="nav-link">Observatory</a>
+        </div>
     </section>
 
+    <!-- REALM: MY HEALTHY NOGGIN -->
+    <section id="realm-healthy-noggin" class="signature-section fade-in">
+        <h2>My Healthy Noggin</h2>
+        <p>
+            A playful, imaginative realm for children and families, centered on emotional wellness and storytelling.
+        </p>
+        <!-- Add book links and content here -->
+    </section>
 
-    <!-- COSMIC TRANSITION LAYER -->
-    <div class="cosmic-transition"></div>
+    <!-- REALM: FINDING PEACE -->
+    <section id="realm-finding-peace" class="signature-section fade-in">
+        <h2>Finding Peace in the University of Life</h2>
+        <p>
+            A reflective realm dedicated to your book, inviting readers into a journey of healing, growth, and inner peace.
+        </p>
+        <!-- Add book links and content here -->
+    </section>
+
+    <!-- REALM: UNITY -->
+    <section id="realm-unity" class="signature-section fade-in">
+        <h2>Unity — The Human Connection Project</h2>
+        <p>
+            A realm for community, activism, and shared humanity — where visitors can learn, participate, and connect.
+        </p>
+        <!-- Add Human Connection Project details and participation info here -->
+    </section>
+
+    <!-- REALM: OBSERVATORY -->
+    <section id="realm-observatory" class="signature-section fade-in">
+        <h2>Observatory — Thorns & Silver Linings Podcast</h2>
+        <p>
+            A realm of conversation and reflection, exploring the hard truths and hidden blessings of life.
+        </p>
+        <!-- Add podcast link and upcoming episodes here -->
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="signature-section fade-in">
+        <h2>Events</h2>
+        <p>
+            Community gatherings, workshops, readings, and live podcast moments — all in one evolving calendar.
+        </p>
+        <!-- Embed or link to your events calendar here -->
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="signature-section fade-in">
+        <h2>Blog & Episodes</h2>
+        <p>
+            A living archive of posts and episodes, from the very first to the most recent.
+        </p>
+        <!-- Add blog cards or episode list here -->
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="signature-section fade-in">
+        <h2>Contact Us</h2>
+        <p>
+            Reach out to share your story, ask a question, or explore collaboration.
+        </p>
+        <!-- Simple contact info or form placeholder -->
+        <p>Email: info@foreverevolvingservices.com</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="signature-section">
+        <nav class="nav-bar">
+            <a href="#welcome" class="nav-link">Home</a>
+            <a href="#our-story" class="nav-link">Our Story</a>
+            <a href="#gate" class="nav-link">Gate</a>
+            <a href="#realms" class="nav-link">Realms</a>
+            <a href="#events" class="nav-link">Events</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <p style="text-align:center; margin-top:20px;">
+            © Forever Evolving — All rights reserved.
+        </p>
+    </footer>
 
     <script src="js/main.js"></script>
-
 </body>
 </html>
 
