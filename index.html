@@ -65,7 +65,6 @@
             padding: 4rem 1.5rem;
             z-index: 1;
 
-            /* 🌤 Parallax container */
             transform: translateY(0px);
             transition: transform 0.6s ease-in-out;
         }
@@ -80,30 +79,6 @@
             font-size: 1.1rem;
             max-width: 520px;
             margin: 1rem auto 0;
-        }
-
-        /* 🎐 Cape Entrance Fade + Wind */
-        .cape-layer {
-            position: absolute;
-            inset: 0;
-            background: url("images/cape.png") center bottom / cover no-repeat;
-            animation: capeWind 26s ease-in-out infinite;
-            pointer-events: none;
-            opacity: 0;
-            animation: capeFadeIn 2.5s ease forwards, capeWind 26s ease-in-out infinite;
-        }
-
-        @keyframes capeFadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 0.9; }
-        }
-
-        @keyframes capeWind {
-            0%   { transform: translateX(0) translateY(0) scale(1); }
-            25%  { transform: translateX(-4px) translateY(-1px) scale(1.015); }
-            50%  { transform: translateX(-10px) translateY(-3px) scale(1.025); }
-            75%  { transform: translateX(-4px) translateY(-1px) scale(1.015); }
-            100% { transform: translateX(0) translateY(0) scale(1); }
         }
 
         /* Fade Sections */
@@ -125,6 +100,62 @@
 
         .fade-section p {
             line-height: 1.6;
+        }
+
+        /* 🌤 About Us Image + Glow + Scroll Fade-In */
+        .story-image-wrapper {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Glow halo */
+        .story-image-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: -20px;
+            border-radius: 20px;
+            background: radial-gradient(circle at center,
+                rgba(180, 220, 255, 0.45),
+                transparent 70%
+            );
+            filter: blur(25px);
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        .story-image {
+            width: 100%;
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+
+        .story-caption {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #4b5a6f;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+
+        /* Active scroll state */
+        .story-visible .story-image {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .story-visible .story-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .story-visible .story-image-wrapper::before {
+            opacity: 1;
         }
 
         /* Gate shimmer */
@@ -154,7 +185,6 @@
             margin-top: 2rem;
         }
 
-        /* ✨ Realm Hover Glow Animation */
         .realm-card {
             padding: 1.5rem;
             border-radius: 1rem;
@@ -209,7 +239,6 @@
     <div id="clouds"></div>
 
     <header class="hero" id="hero">
-        <div class="cape-layer"></div>
         <div class="hero-content">
             <h1>Forever Evolving</h1>
             <p>A living realm of growth, healing, and transformation—where your story, your sky, and your spirit are always in motion.</p>
@@ -218,6 +247,12 @@
 
     <section id="our-story" class="fade-section">
         <h2>Our Story</h2>
+
+        <div class="story-image-wrapper" id="story-block">
+            <img src="images/panoramic-evolution.png" alt="Family Journey" class="story-image">
+            <div class="story-caption">A family’s journey through growth, resilience, and transformation.</div>
+        </div>
+
         <p>Forever Evolving is a journey through realms of reflection, resilience, and renewal.</p>
     </section>
 
@@ -240,7 +275,6 @@
 
     <footer>Forever Evolving • A living, breathing digital realm.</footer>
 
-    <!-- Updated audio paths -->
     <audio id="sky-ambience" src="sounds/sky-ambience.mp3" loop></audio>
     <audio id="welcome-chime" src="sounds/welcome-chime.mp3"></audio>
 
@@ -248,13 +282,13 @@
         document.addEventListener("DOMContentLoaded", () => {
             const clouds = document.getElementById("clouds");
             const hero = document.getElementById("hero");
+            const storyBlock = document.getElementById("story-block");
             const skyAmbience = document.getElementById("sky-ambience");
             const welcomeChime = document.getElementById("welcome-chime");
 
             let cloudOffsetX = 0;
             let cloudOffsetY = 0;
 
-            /* ☁️ Cloud Drift */
             function animateClouds() {
                 cloudOffsetX -= 0.005;
                 cloudOffsetY += 0.0015;
@@ -263,14 +297,12 @@
             }
             animateClouds();
 
-            /* 🌤 Parallax Hero (medium-soft, 30–45px, ease-in-out) */
             function updateParallax() {
                 const scrollY = window.scrollY;
                 const movement = Math.min(45, scrollY * 0.12);
                 hero.style.transform = `translateY(${movement}px)`;
             }
 
-            /* Atmosphere Scroll Effects */
             function updateAtmosphereOnScroll() {
                 updateParallax();
 
@@ -302,12 +334,17 @@
                 } else {
                     document.body.classList.remove("realms-active");
                 }
+
+                /* 🌤 Scroll-triggered fade-in for About Us image */
+                const storyRect = storyBlock.getBoundingClientRect();
+                if (storyRect.top < window.innerHeight * 0.75) {
+                    storyBlock.classList.add("story-visible");
+                }
             }
 
             window.addEventListener("scroll", updateAtmosphereOnScroll);
             updateAtmosphereOnScroll();
 
-            /* 🎵 Audio Activation */
             function startAudio() {
                 skyAmbience.volume = 0.35;
                 skyAmbience.play().catch(() => {});
