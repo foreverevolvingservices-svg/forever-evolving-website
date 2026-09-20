@@ -19,7 +19,8 @@ body {
     position: relative;
     overflow: hidden;
 
-    background-image: url("images/clouds-ultrawide.png");
+    /* Correct path for sky image */
+    background-image: url("../images/clouds-ultrawide.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,7 +100,8 @@ body {
 
 /* CLOSING SECTION */
 #closing {
-    background-image: url("images/panoramic-evolution.png");
+    /* Correct path for closing image */
+    background-image: url("../images/panoramic-evolution.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
