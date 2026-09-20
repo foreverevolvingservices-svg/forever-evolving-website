@@ -1,10 +1,5 @@
-// main.js is intentionally clean and stable.
-// All previous event listeners and old IDs have been removed
-// because the new index.html no longer contains those elements.
+// main.js clean and stable
 
-// --- AUDIO SETUP ---
-
-// Get audio elements safely
 const skyAmbience = document.getElementById("sky-ambience");
 const welcomeChime = document.getElementById("welcome-chime");
 
