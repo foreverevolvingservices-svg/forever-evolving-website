@@ -1,0 +1,115 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Georgia", serif;
+    background: #f7f9fc;
+    color: #0a2a4a;
+    overflow-x: hidden;
+}
+
+/* HERO SECTION */
+#hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url("images/clouds-ultrawide.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(2px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/* REALMS SECTION */
+#realms {
+    padding: 100px 40px;
+    text-align: center;
+    background: transparent;
+}
+
+#realms h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#realms h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.realm-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.realm-btn {
+    padding: 15px 30px;
+    background: #0a2a4a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.realm-btn:hover {
+    background: #134a7c;
+}
+
+/* CLOSING SECTION */
+#closing {
+    background-image: url("images/panoramic-evolution.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 120px 40px;
+    text-align: center;
+    color: white;
+}
+
+#closing h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
