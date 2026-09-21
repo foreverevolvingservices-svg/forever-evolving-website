@@ -1,17 +1,12 @@
-// main.js clean and stable
-
+// Ambient audio
 const skyAmbience = document.getElementById("sky-ambience");
-const welcomeChime = document.getElementById("welcome-chime");
-
-// Play sky ambience when the page loads
 if (skyAmbience) {
     skyAmbience.volume = 0.4;
-    skyAmbience.play().catch(() => {
-        // Autoplay may be blocked; user interaction will trigger it later
-    });
+    skyAmbience.play().catch(() => {});
 }
 
-// Play welcome chime once on first interaction
+// Welcome chime
+const welcomeChime = document.getElementById("welcome-chime");
 let chimePlayed = false;
 
 window.addEventListener("click", () => {

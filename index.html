@@ -5,201 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forever Evolving</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Audio -->
     <audio id="sky-ambience" src="sounds/sky-ambience.mp3" loop></audio>
     <audio id="welcome-chime" src="sounds/welcome-chime.mp3"></audio>
 </head>
 
 <body>
 
-    <!-- HEADER / NAV -->
+    <!-- HEADER -->
     <header id="site-header">
         <div class="header-inner">
-            <div class="logo">
-                <img src="images/forever-evolving-logo.png" alt="Forever Evolving Logo">
-            </div>
+            <img src="images/forever-evolving-logo.png" class="logo" alt="Forever Evolving Logo">
             <nav class="nav-links">
                 <a href="#welcome">Home</a>
                 <a href="#welcome">Welcome</a>
                 <a href="#story">Our Story</a>
+                <a href="#portal">Enter the Portal</a>
                 <a href="#realms">Realms</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- WELCOME / HERO SECTION -->
-    <section id="welcome">
-        <div class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>FOREVER EVOLVING</h1>
-                <p>
-                    A living, breathing realm of growth—where your story, your sky, and your spirit
-                    are always in motion.
-                </p>
-                <p class="hero-sub">
-                    Welcome to a futuristic, evolving website designed to feel like a journey,
-                    not just a page.
-                </p>
-                <a href="#story" class="primary-btn">Begin the Journey</a>
-            </div>
-        </div>
+    <!-- GLOBAL CLOUD BACKGROUND -->
+    <div class="clouds-bg"></div>
 
-        <div class="welcome-layout">
-            <div class="welcome-image">
-                <img src="images/foreverevolving group.png" alt="Forever Evolving Realms Group">
-            </div>
-            <div class="welcome-text">
-                <h2>Welcome to Forever Evolving</h2>
-                <p>
-                    This space was created to guide you gently through realms of belonging,
-                    guidance, wisdom, observation, and unity. Each realm reflects a facet of
-                    your human experience and your walk with God.
-                </p>
-                <div class="welcome-podcast">
-                    <img src="images/podcast.png" alt="Podcast Logo">
-                    <p>
-                        The Forever Evolving podcast extends this journey beyond the page,
-                        offering conversations, reflections, and stories that support your
-                        growth in everyday life.
-                    </p>
-                </div>
-            </div>
+    <!-- WELCOME SECTION -->
+    <section id="welcome">
+        <img src="images/foreverevolving group.png" class="welcome-main-img" alt="Forever Evolving Group">
+
+        <div class="welcome-text">
+            <p>
+                Welcome to Forever Evolving — a living, breathing realm of growth where your story,
+                your sky, and your spirit are always in motion.
+            </p>
+
+            <img src="images/podcast.png" class="welcome-podcast-img" alt="Podcast Logo">
+
+            <p>
+                The Forever Evolving podcast extends this journey beyond the page, offering conversations,
+                reflections, and stories that support your growth in everyday life.
+            </p>
+
+            <a href="#story" class="primary-btn">Begin the Journey</a>
         </div>
     </section>
 
     <!-- OUR STORY SECTION -->
     <section id="story">
-        <div class="story-container">
-            <div class="story-letter">
-                <img src="images/letter.png" alt="Letter Image" class="letter-image">
-                <div class="story-text">
-                    <h2>Our Story</h2>
-                    <p>
-                        Forever Evolving was born from a journey of faith, healing, and transformation.
-                        A reminder that no matter where you stand today, your story is still unfolding,
-                        your sky is still expanding, and your spirit is still rising.
-                    </p>
-                    <p>
-                        This realm is a sanctuary for growth—a place where you can breathe,
-                        reflect, and rediscover the strength God placed within you.
-                    </p>
-                    <p>
-                        Here, every step forward counts. Every tear, every prayer, every quiet
-                        moment of courage becomes part of a larger, living testimony.
-                    </p>
-                    <p class="signature-text">— Kinia</p>
-                </div>
-            </div>
+        <h2>Our Story</h2>
 
-            <div class="story-portrait">
-                <img src="images/Book back kinia n pink.JPG" alt="Kinia Portrait">
+        <p class="story-intro">
+            Forever Evolving was born from a journey of faith, healing, and transformation — a reminder
+            that no matter where you stand today, your story is still unfolding, your sky is still expanding,
+            and your spirit is still rising.
+        </p>
+
+        <div class="story-flex">
+            <img src="images/letter.png" class="letter-img" alt="Letter">
+
+            <div class="story-side">
+                <img src="images/Book back kinia n pink.JPG" class="portrait-img" alt="Kinia Portrait">
+
+                <p class="signature">— Kinia</p>
             </div>
+        </div>
+    </section>
+
+    <!-- PORTAL INTRO SECTION -->
+    <section id="portal">
+        <h2>ENTER THE PORTAL</h2>
+
+        <img src="images/foreverevolving group.png" class="portal-logo" alt="Forever Evolving Logo">
+        <img src="images/podcast.png" class="portal-podcast" alt="Podcast Logo">
+
+        <div class="portal-container">
+            <img src="images/evolving gate.png" class="portal-gate" alt="Portal Gate">
         </div>
     </section>
 
     <!-- REALMS SECTION -->
     <section id="realms">
-        <div class="realms-intro">
-            <h2>Realms of Becoming</h2>
-            <p>
-                Each realm is a portal into a different facet of your journey—inviting you to
-                explore, reflect, and grow at your own pace.
-            </p>
-            <img src="images/foreverevolving group.png" alt="Realms Group" class="realms-group-image">
-        </div>
+        <h2>Realms</h2>
 
-        <div class="realm-grid">
-            <div class="realm-card">
+        <div class="realms-grid">
+
+            <div class="realm-card" data-realm="peace">
                 <h3>Finding Peace</h3>
-                <img src="images/Finding Peace bookcover.png" alt="Finding Peace Book">
-                <p>
-                    A realm dedicated to calming the mind and heart, anchored by
-                    <em>Finding Peace in the University of Life</em>.
-                </p>
-            </div>
-
-            <div class="realm-card">
-                <h3>The Human Connection</h3>
-                <img src="images/the human conn butterfly.png" alt="Human Connection Butterfly">
-                <p>
-                    A space to honor relationships, empathy, and the delicate beauty of
-                    human connection.
-                </p>
-            </div>
-
-            <div class="realm-card">
-                <h3>The Portal</h3>
-                <img src="images/evolving gate.png" alt="Evolving Gate Portal">
-                <p>
-                    A gateway into new seasons, new perspectives, and new levels of
-                    spiritual and emotional growth.
-                </p>
-            </div>
-
-            <div class="realm-card">
-                <h3>My Healthy Noggin</h3>
-                <img src="images/my healthy noggin book.jpg" alt="My Healthy Noggin Book">
-                <p>
-                    A realm focused on mental wellness and practical tools for caring
-                    for your mind.
-                </p>
-                <div class="realm-sub-image">
-                    <img src="images/my healthy noggin.png" alt="My Healthy Noggin Icon">
+                <div class="realm-hidden">
+                    <img src="images/Finding Peace bookcover.png" alt="Finding Peace">
+                    <p>A realm dedicated to calming the mind and heart.</p>
                 </div>
             </div>
 
-            <div class="realm-card">
-                <h3>Podcast Realm</h3>
-                <img src="images/podcast.png" alt="Podcast Image">
-                <p>
-                    A realm where conversations, stories, and reflections continue the
-                    journey beyond the written page.
-                </p>
+            <div class="realm-card" data-realm="human">
+                <h3>Human Connection</h3>
+                <div class="realm-hidden">
+                    <img src="images/the human conn butterfly.png" alt="Human Connection">
+                    <p>A space honoring relationships, empathy, and unity.</p>
+                </div>
             </div>
+
+            <div class="realm-card" data-realm="noggin">
+                <h3>My Healthy Noggin</h3>
+                <div class="realm-hidden">
+                    <img src="images/my healthy noggin book.jpg" alt="My Healthy Noggin Book">
+                    <img src="images/my healthy noggin.png" alt="My Healthy Noggin Icon">
+                    <p>A realm focused on mental wellness and practical tools.</p>
+                </div>
+            </div>
+
+            <div class="realm-card" data-realm="podcast">
+                <h3>Podcast Realm</h3>
+                <div class="realm-hidden">
+                    <img src="images/podcast.png" alt="Podcast Realm">
+                    <p>Where conversations and reflections continue the journey.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- CLOSING SECTION -->
     <section id="closing">
-        <div class="closing-overlay"></div>
-        <div class="closing-content">
-            <h2>Forever Evolving — A living, breathing realm of growth.</h2>
-            <p>
-                May this space always remind you: you are in motion, you are becoming,
-                and you are never walking alone.
-            </p>
+        <div class="closing-placeholder">
+            <!-- Silhouette image will be added in Phase 2 -->
         </div>
+
+        <h2>Forever Evolving — A living, breathing realm of growth.</h2>
+        <p>May this space always remind you: you are in motion, you are becoming, and you are never walking alone.</p>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
     <section id="contact">
-        <div class="contact-container">
-            <h2>Contact</h2>
-            <p>
-                This realm will soon connect you to resources, updates, and ways to stay
-                in touch as Forever Evolving continues to grow.
-            </p>
-            <p>
-                For now, thank you for walking this journey and exploring these realms of
-                becoming.
-            </p>
-        </div>
+        <h2>Contact</h2>
+        <p>More ways to connect coming soon.</p>
     </section>
 
-    <!-- FOOTER -->
-    <footer id="site-footer">
-        <p>© Forever Evolving • A living, breathing realm of growth and continuous becoming.</p>
+    <footer>
+        <p>© Forever Evolving</p>
     </footer>
 
-    <!-- JS -->
     <script src="js/main.js"></script>
 </body>
 </html>

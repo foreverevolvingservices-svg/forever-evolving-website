@@ -6,409 +6,209 @@
 }
 
 body {
-    font-family: "Georgia", serif;
-    background: #f7f9fc;
+    font-family: Georgia, serif;
     color: #0a2a4a;
     overflow-x: hidden;
 }
 
-/* HEADER / NAV */
+/* CLOUD BACKGROUND */
+.clouds-bg {
+    position: fixed;
+    inset: 0;
+    background: url("../images/image.png") center/cover no-repeat;
+    z-index: -1;
+    opacity: 0.55;
+}
+
+/* HEADER */
 #site-header {
-    width: 100%;
-    background: rgba(10, 42, 74, 0.95);
-    color: #ffffff;
-    padding: 12px 24px;
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100%;
+    background: rgba(10, 42, 74, 0.9);
+    padding: 12px 24px;
     z-index: 20;
 }
 
 .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    align-items: center;
 }
 
-.logo img {
+.logo {
     height: 42px;
-    width: auto;
 }
 
 .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
+    color: white;
     margin-left: 18px;
-    font-size: 0.95rem;
-    letter-spacing: 0.08em;
+    text-decoration: none;
     text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-/* WELCOME / HERO */
+/* WELCOME */
 #welcome {
-    padding-top: 70px; /* header space */
-}
-
-.hero {
-    height: 60vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-
-    background-image: url("../images/stars.png"), url("../images/clouds-ultrawide.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(2px);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    padding-top: 100px;
     text-align: center;
-    animation: fadeInUp 1.2s ease-out;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 16px;
+.welcome-main-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.welcome-text {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
-.hero-sub {
-    margin-top: 10px;
-    font-size: 1.05rem;
-    opacity: 0.9;
+.welcome-podcast-img {
+    width: 140px;
+    margin: 20px auto;
+    display: block;
 }
 
 .primary-btn {
     display: inline-block;
-    margin-top: 24px;
-    padding: 14px 28px;
+    margin-top: 20px;
+    padding: 12px 28px;
     background: #0a2a4a;
-    color: #ffffff;
-    text-decoration: none;
+    color: white;
     border-radius: 999px;
-    font-size: 0.95rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: 0.3s ease;
-}
-
-.primary-btn:hover {
-    background: #134a7c;
-}
-
-/* WELCOME LAYOUT */
-.welcome-layout {
-    max-width: 1200px;
-    margin: 40px auto 80px;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
-    align-items: center;
-    padding: 0 40px;
-}
-
-.welcome-image img {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-.welcome-text h2 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-}
-
-.welcome-text p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 18px;
-}
-
-.welcome-podcast {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.welcome-podcast img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
+    text-decoration: none;
 }
 
 /* OUR STORY */
 #story {
     padding: 80px 40px;
-    background: #ffffff;
 }
 
-.story-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.story-letter {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.letter-image {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.story-text h2 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-}
-
-.story-text p {
-    font-size: 1.05rem;
+.story-intro {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
     line-height: 1.7;
-    margin-bottom: 14px;
 }
 
-.signature-text {
-    font-size: 1.2rem;
-    font-style: italic;
-    margin-top: 6px;
+.story-flex {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-.story-portrait img {
+.letter-img {
     width: 100%;
+    max-width: 400px;
     border-radius: 12px;
-    object-fit: cover;
+}
+
+.portrait-img {
+    width: 50%;
+    max-width: 250px;
+    border-radius: 12px;
+}
+
+.signature {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* PORTAL */
+#portal {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.portal-logo {
+    width: 300px;
+    margin: 20px auto;
+}
+
+.portal-podcast {
+    width: 140px;
+    margin: 20px auto;
+}
+
+.portal-container {
+    position: relative;
+    margin-top: 40px;
+}
+
+.portal-gate {
+    width: 300px;
+    margin: 0 auto;
+    display: block;
 }
 
 /* REALMS */
 #realms {
     padding: 80px 40px;
-    background-image: url("../images/nebula.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
+    background: url("../images/nebula.png") center/cover no-repeat;
     position: relative;
 }
 
-#realms::before {
+#realms::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(10, 42, 74, 0.7);
+    background: url("../images/stars.png") center/cover no-repeat;
+    opacity: 0.4;
 }
 
-.realms-intro,
-.realm-grid {
+.realms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
     position: relative;
     z-index: 2;
 }
 
-.realms-intro {
-    max-width: 900px;
-    margin: 0 auto 40px;
-    text-align: center;
-}
-
-.realms-intro h2 {
-    font-size: 2.2rem;
-    margin-bottom: 16px;
-}
-
-.realms-intro p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.realms-group-image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 12px;
-    margin: 0 auto;
-    display: block;
-}
-
-.realm-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
 .realm-card {
-    background: rgba(255,255,255,0.08);
-    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
     padding: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
 }
 
-.realm-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+.realm-hidden {
+    display: none;
+    margin-top: 10px;
 }
 
-.realm-card img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.realm-card p {
-    font-size: 0.98rem;
-    line-height: 1.6;
-}
-
-.realm-sub-image img {
-    width: 60%;
-    margin-top: 8px;
-    border-radius: 8px;
+.realm-card:hover .realm-hidden {
+    display: block;
 }
 
 /* CLOSING */
 #closing {
-    position: relative;
-    background-image: url("../images/panoramic-evolution.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 120px 40px;
+    padding: 80px 40px;
     text-align: center;
-    color: #ffffff;
 }
 
-.closing-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 42, 74, 0.6);
-}
-
-.closing-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.closing-content h2 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-}
-
-.closing-content p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+.closing-placeholder {
+    height: 300px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 /* CONTACT */
 #contact {
     padding: 80px 40px;
-    background: #f7f9fc;
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
     text-align: center;
-}
-
-.contact-container h2 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-}
-
-.contact-container p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 12px;
 }
 
 /* FOOTER */
-#site-footer {
+footer {
     background: #0a2a4a;
-    color: #ffffff;
+    color: white;
     text-align: center;
-    padding: 16px 24px;
-    font-size: 0.95rem;
-}
-
-/* ANIMATIONS */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* RESPONSIVE */
-@media (max-width: 1000px) {
-    .welcome-layout,
-    .story-container {
-        grid-template-columns: 1fr;
-    }
-
-    .realm-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .realm-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero-content p {
-        font-size: 1.05rem;
-    }
-
-    .welcome-layout {
-        padding: 0 20px;
-    }
+    padding: 16px;
 }
