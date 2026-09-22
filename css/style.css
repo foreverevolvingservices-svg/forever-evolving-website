@@ -15,7 +15,7 @@ body {
 .clouds-bg {
     position: fixed;
     inset: 0;
-    background: url("../images/image.png") center/cover no-repeat;
+   background: url("../images/foreverevolving group.png")
     z-index: -1;
     opacity: 0.55;
 
