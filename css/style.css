@@ -15,11 +15,12 @@ body {
 .clouds-bg {
     position: fixed;
     inset: 0;
-    background: url("../images/foreverevolving group.png") center/cover no-repeat;
+    background: url("../images/clouds-ultrawide.png") center/cover no-repeat;
     z-index: -1;
     opacity: 0.55;
     animation: cloudDrift 120s linear infinite;
 }
+
 
 /* HEADER */
 #site-header {
