@@ -20,7 +20,16 @@ body {
     opacity: 0.55;
     animation: cloudDrift 120s linear infinite;
 }
-
+/* UNIVERSAL SECTION SURFACE */
+.section-surface {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 60px 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    margin: 80px auto;
+    width: 90%;
+    max-width: 1200px;
+}
 
 /* HEADER */
 #site-header {
