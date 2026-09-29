@@ -1,8 +1,13 @@
+// Reveal the page once JS is running
+document.addEventListener("DOMContentLoaded", () => {
+    const hiddenSections = document.querySelectorAll(".section-hidden");
+    hiddenSections.forEach(section => {
+        section.classList.remove("section-hidden");
+    });
+});
 // Ensure star drift layer animates smoothly
-const starLayer = document.querySelector(".star-drift-layer");
-if (starLayer) {
-    starLayer.style.willChange = "background-position";
-}
+const starLayer = document.querySelector(".star-drift");
+
 
 // Optimize cloud drift animation
 const cloudsBG = document.querySelector(".clouds-bg");
