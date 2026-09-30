@@ -317,12 +317,12 @@ footer {
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);
 }
 /* Scroll reveal animation for closing silhouette */
-.closing-silhouette.section-hidden {
+.closing-silhouette.silhouette-hidden{
     opacity: 0;
     transform: translateY(40px);
 }
 
-.closing-silhouette.section-visible {
+.closing-silhouette.silhouette-visible {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 1.5s ease, transform 1.5s ease;

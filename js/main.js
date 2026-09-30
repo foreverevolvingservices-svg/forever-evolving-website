@@ -50,7 +50,7 @@ if (closingSilhouette) {
     const silhouetteObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                closingSilhouette.classList.add("section-visible");
+           closingSilhouette.classList.add("silhouette-visible");
             }
         });
     }, {
