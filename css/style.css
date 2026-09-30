@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,8 @@ body {
     opacity: 0.55;
     animation: cloudDrift 120s linear infinite;
 }
-/* UNIVERSAL SECTION SURFACE */
+
+/* SECTION SURFACE */
 .section-surface {
     background: rgba(255, 255, 255, 0.75);
     padding: 60px 40px;
@@ -95,22 +96,8 @@ body {
 }
 
 /* OUR STORY */
-#story {
+#our-story {
     padding: 80px 40px;
-}
-
-.story-intro {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-
-.story-flex {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
 }
 
 .letter-img {
@@ -119,15 +106,9 @@ body {
     border-radius: 12px;
 }
 
-.portrait-img {
-    width: 50%;
-    max-width: 250px;
-    border-radius: 12px;
-}
-
 .signature {
     margin-top: 10px;
-    font-style: italic;
+    width: 180px;
 }
 
 /* PORTAL */
@@ -146,11 +127,6 @@ body {
     margin: 20px auto;
 }
 
-.portal-container {
-    position: relative;
-    margin-top: 40px;
-}
-
 .portal-gate {
     width: 300px;
     margin: 0 auto;
@@ -160,24 +136,12 @@ body {
 /* REALMS */
 #realms {
     padding: 80px 40px;
-    background: url("../images/nebula.png") center/cover no-repeat;
-    position: relative;
-}
-
-#realms::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("../images/stars.png") center/cover no-repeat;
-    opacity: 0.4;
 }
 
 .realms-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    position: relative;
-    z-index: 2;
 }
 
 .realm-card {
@@ -189,21 +153,9 @@ body {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.realm-hidden {
-    display: none;
-    margin-top: 10px;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
 .realm-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 22px rgba(255, 215, 0, 0.45);
-}
-
-.realm-card:hover .realm-hidden {
-    display: block;
-    opacity: 1;
 }
 
 /* CLOSING */
@@ -212,112 +164,26 @@ body {
     text-align: center;
 }
 
-.closing-placeholder {
-    height: 300px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-
-/* CONTACT */
-#contact {
-    padding: 80px 40px;
-    text-align: center;
-}
-
-/* FOOTER */
-footer {
-    background: #0a2a4a;
-    color: white;
-    text-align: center;
-    padding: 16px;
-}
-
-/* PORTAL SHIMMER EFFECT */
-.portal-container {
-    position: relative;
-    display: inline-block;
-}
-
-.portal-container::after {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.35) 50%,
-        transparent 100%
-    );
-    transform: skewX(-20deg);
-    transition: top 0.8s ease;
-    pointer-events: none;
-}
-
-.portal-container:hover::after {
-    top: 100%;
-}
-
-/* PORTAL GLOW */
-.portal-gate {
-    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.45));
-    transition: filter 0.6s ease;
-}
-
-.portal-container:hover .portal-gate {
-    filter: drop-shadow(0 0 28px rgba(255, 255, 255, 0.75));
-}
-
-/* STAR DRIFT ANIMATION */
-.star-drift-layer {
-    position: absolute;
-    inset: 0;
-    background: url("../images/stars.png") repeat;
-    opacity: 0.35;
-    animation: starDrift 60s linear infinite;
-    z-index: 1;
-}
-
-@keyframes starDrift {
-    from { background-position: 0 0; }
-    to { background-position: -800px 800px; }
-}
-
-/* CLOUD DRIFT ANIMATION */
-@keyframes cloudDrift {
-    from { background-position: 0 0; }
-    to { background-position: -1200px 800px; }
-}
-
-/* Closing silhouette styling */
 .closing-silhouette {
-  display: block;
-  margin: 0 auto;
-  width: 60%;
-  max-width: 800px;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 20px rgba(255, 200, 150, 0.3))
-          brightness(1.05)
-          contrast(1.1);
-  transition: opacity 1.5s ease, transform 1.5s ease;
-  transform: translateY(0);
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    max-width: 800px;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 20px rgba(255, 200, 150, 0.3))
+            brightness(1.05)
+            contrast(1.1);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    transform: translateY(0);
 }
 
 .closing-silhouette:hover {
-  opacity: 1;
-  transform: translateY(-5px);
+    opacity: 1;
+    transform: translateY(-5px);
 }
 
-/* Atmospheric fade */
-.closing-silhouette {
-  mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);
-}
-/* Scroll reveal animation for closing silhouette */
-.closing-silhouette.silhouette-hidden{
+/* Silhouette Reveal */
+.closing-silhouette.silhouette-hidden {
     opacity: 0;
     transform: translateY(40px);
 }
@@ -326,4 +192,18 @@ footer {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* CLOUD DRIFT */
+@keyframes cloudDrift {
+    from { background-position: 0 0; }
+    to { background-position: -1200px 800px; }
+}
+
+/* FOOTER */
+footer {
+    background: #0a2a4a;
+    color: white;
+    text-align: center;
+    padding: 16px;
 }
