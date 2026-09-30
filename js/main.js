@@ -43,3 +43,19 @@ realmCards.forEach(card => {
         // visual-only click effect
     });
 });
+// Scroll reveal for closing silhouette
+const closingSilhouette = document.querySelector(".closing-silhouette");
+
+if (closingSilhouette) {
+    const silhouetteObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                closingSilhouette.classList.add("section-visible");
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    silhouetteObserver.observe(closingSilhouette);
+}

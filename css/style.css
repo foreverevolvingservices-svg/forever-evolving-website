@@ -303,3 +303,38 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* Closing silhouette styling */
+.closing-silhouette {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  max-width: 800px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 20px rgba(255, 200, 150, 0.3))
+          brightness(1.05)
+          contrast(1.1);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  transform: translateY(0);
+}
+
+.closing-silhouette:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+/* Atmospheric fade */
+.closing-silhouette {
+  mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);
+}
+/* Scroll reveal animation for closing silhouette */
+.closing-silhouette.section-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.closing-silhouette.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
