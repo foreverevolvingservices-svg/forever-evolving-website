@@ -59,6 +59,85 @@ body {
     text-transform: uppercase;
     font-size: 0.9rem;
 }
+/* HEADER */
+.main-header {
+    width: 100%;
+    background: rgba(10, 42, 74, 0.85);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 12px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    margin-left: 24px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* MOBILE MENU BUTTON */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(10, 42, 74, 0.95);
+    padding: 20px;
+    text-align: center;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 0;
+    font-size: 1.2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-menu.show {
+        display: flex;
+    }
+}
 
 /* WELCOME */
 #welcome {
@@ -93,6 +172,32 @@ body {
     color: white;
     border-radius: 999px;
     text-decoration: none;
+}
+/* WELCOME */
+#welcome {
+    padding-top: 120px; /* clears the header */
+    text-align: center;
+}
+
+.welcome-main-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.welcome-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #0a2a4a;
+}
+
+.welcome-podcast-img {
+    width: 160px;
+    margin: 30px auto;
+    display: block;
 }
 
 /* OUR STORY */
@@ -367,6 +472,32 @@ body {
     color: #0a2a4a;
 }
 
+/* CONTACT */
+#contact {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #0a2a4a;
+}
+
+.contact-text {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #0a2a4a;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #0a2a4a;
+    margin-top: 20px;
+}
 
 /* CLOUD DRIFT */
 @keyframes cloudDrift {

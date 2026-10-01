@@ -10,47 +10,82 @@
 <body>
 
     <!-- HEADER -->
-    <header id="site-header">
-        <div class="header-inner">
-            <img src="images/forever-evolving-logo.png" class="logo" alt="Forever Evolving Logo">
-            <nav class="nav-links">
-                <a href="#welcome">Home</a>
-                <a href="#welcome">Welcome</a>
-                <a href="#our-story">Our Story</a>
-                <a href="#portal">Enter the Portal</a>
-                <a href="#realms">Realms</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <!-- HEADER -->
+<header class="main-header">
+    <div class="nav-container">
+
+        <a href="#welcome" class="logo">Forever Evolving</a>
+
+        <nav class="nav-links">
+            <a href="#welcome">Welcome</a>
+            <a href="#our-story">Our Story</a>
+            <a href="#portal">Enter the Portal</a>
+            <a href="#realms">Realms</a>
+            <a href="#closing">Closing</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+       <!-- MOBILE MENU SCRIPT -->
+<script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+    });
+</script>
+
+</body>
+</html>
+
+        <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#welcome">Welcome</a>
+        <a href="#our-story">Our Story</a>
+        <a href="#portal">Enter the Portal</a>
+        <a href="#realms">Realms</a>
+        <a href="#closing">Closing</a>
+        <a href="#contact">Contact</a>
+    </div>
+</header>
+
 
     <!-- CLOUD BACKGROUND -->
     <div class="clouds-bg"></div>
 
     <!-- WELCOME -->
-    <section id="welcome">
-        <div class="section-surface">
+    <!-- WELCOME -->
+<section id="welcome">
+    <div class="section-surface">
 
-            <img src="images/foreverevolving-group.png" class="welcome-main-img" alt="Forever Evolving Group">
+        <!-- Main Welcome Image -->
+        <img src="images/foreverevolving-group.png" class="welcome-main-img" alt="Forever Evolving Group">
 
-            <div class="welcome-text">
-                <p>
-                    Welcome to Forever Evolving — a living, breathing realm of growth where your story,
-                    your sky, and your spirit are always in motion.
-                </p>
+        <div class="welcome-text">
+            <p>
+                Welcome to Forever Evolving — a living, breathing realm of growth where your story,
+                your sky, and your spirit are always in motion.
+            </p>
 
-                <img src="images/podcast.png" class="welcome-podcast-img" alt="Podcast Logo">
+            <!-- Podcast Image -->
+            <img src="images/podcast.png" class="welcome-podcast-img" alt="Podcast Logo">
 
-                <p>
-                    The Forever Evolving podcast extends this journey beyond the page, offering conversations,
-                    reflections, and stories that support your growth in everyday life.
-                </p>
+            <p>
+                The Forever Evolving podcast extends this journey beyond the page, offering conversations,
+                reflections, and stories that support your growth in everyday life.
+            </p>
 
-                <a href="#our-story" class="primary-btn">Begin the Journey</a>
-            </div>
-
+            <a href="#our-story" class="primary-btn">Begin the Journey</a>
         </div>
-    </section>
+
+    </div>
+</section>
+
 
     <!-- OUR STORY -->
    <!-- OUR STORY -->
@@ -117,30 +152,34 @@
         <div class="realms-grid">
 
             <!-- Realm 1 -->
-            <div class="realm-card">
-                <img src="images/finding-peace-bookcover.png" class="realm-img" alt="Library of Becoming">
-                <div class="realm-label">The Library of Becoming</div>
-            </div>
+          <div class="realms-grid">
 
-            <!-- Realm 2 -->
-            <div class="realm-card">
-                <img src="images/my-healthy-noggin.png" class="realm-img" alt="Guidance Hall">
-                <div class="realm-label">The Guidance Hall</div>
-            </div>
+    <!-- Realm 1 -->
+    <div class="realm-card">
+        <img src="images/finding-peace-bookcover.png" class="realm-img" alt="Library of Becoming">
+        <div class="realm-label">The Library of Becoming</div>
+    </div>
 
-            <!-- Realm 3 -->
-            <div class="realm-card">
-                <img src="images/the-human-connection-butterfly.png" class="realm-img" alt="Unity Chamber">
-                <div class="realm-label">The Unity Chamber</div>
-            </div>
+    <!-- Realm 2 -->
+    <div class="realm-card">
+        <img src="images/mhn6.jpg" class="realm-img" alt="Guidance Hall">
+        <div class="realm-label">The Guidance Hall</div>
+    </div>
 
-            <!-- Realm 4 -->
-            <div class="realm-card">
-                <img src="images/portal.png" class="realm-img" alt="Insight Observatory">
-                <div class="realm-label">The Insight Observatory</div>
-            </div>
+    <!-- Realm 3 -->
+    <div class="realm-card">
+        <img src="images/the-human-connection-butterfly.png" class="realm-img" alt="Unity Chamber">
+        <div class="realm-label">The Unity Chamber</div>
+    </div>
 
-        </div>
+    <!-- Realm 4 -->
+    <div class="realm-card">
+        <img src="images/podcast.png" class="realm-img" alt="Insight Observatory">
+        <div class="realm-label">The Insight Observatory</div>
+    </div>
+
+</div>
+
 
     </div>
 </section>
@@ -166,17 +205,22 @@
 </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-        <div class="section-surface">
-            <h2>Contact</h2>
-            <p>More ways to connect coming soon.</p>
+   <!-- CONTACT -->
+<section id="contact">
+    <div class="section-surface">
+
+        <h2 class="contact-title">Contact</h2>
+
+        <p class="contact-text">
+            More ways to connect are coming soon.  
+            For now, you can reach out anytime — your journey matters, and we’re here to walk it with you.
+        </p>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> foreverevolvingservices@gmail.com</p>
+            <p><strong>Location:</strong> Palm Coast, Florida</p>
         </div>
-    </section>
 
-    <footer>
-        <p>© Forever Evolving</p>
-    </footer>
+    </div>
+</section>
 
-    <script src="js/main.js?v=3"></script>
-</body>
-</html>
