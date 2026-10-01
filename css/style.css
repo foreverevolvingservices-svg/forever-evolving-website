@@ -18,7 +18,7 @@ body {
     background: url("../images/clouds-ultrawide.png") center/cover no-repeat;
     z-index: -1;
     opacity: 0.55;
-    animation: cloudDrift 120s linear infinite;
+   animation: cloudDrift 180s linear infinite;
 }
 
 /* SECTION SURFACE */
@@ -178,6 +178,38 @@ body {
     margin: 0 auto;
     display: block;
 }
+/* PORTAL */
+#portal {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.portal-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #0a2a4a;
+}
+
+.portal-logo {
+    width: 260px;
+    max-width: 90%;
+    margin: 20px auto;
+    display: block;
+}
+
+.portal-description {
+    max-width: 700px;
+    margin: 20px auto 40px auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #0a2a4a;
+}
+
+/* Placeholder gate wrapper */
+.portal-gate-wrapper {
+    margin: 40px auto;
+    min-height: 40px; /* keeps spacing consistent */
+}
 
 /* REALMS */
 #realms {
@@ -202,6 +234,59 @@ body {
 .realm-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 22px rgba(255, 215, 0, 0.45);
+}
+/* REALMS */
+#realms {
+    padding: 80px 40px;
+}
+
+.realms-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #0a2a4a;
+}
+
+.realms-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #0a2a4a;
+}
+
+.realms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.realm-card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.realm-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 22px rgba(255, 215, 0, 0.45);
+}
+
+.realm-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.realm-label {
+    font-size: 1.1rem;
+    color: #0a2a4a;
+    font-weight: 600;
 }
 
 /* CLOSING */
@@ -238,13 +323,57 @@ body {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 1.5s ease, transform 1.5s ease;
+}/* CLOSING */
+#closing {
+    padding: 80px 40px;
+    text-align: center;
 }
+
+.closing-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #0a2a4a;
+}
+
+.closing-silhouette {
+    display: block;
+    margin: 0 auto 30px auto;
+    width: 100%;
+    max-width: 700px;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 20px rgba(255, 200, 150, 0.3))
+            brightness(1.05)
+            contrast(1.1);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    transform: translateY(0);
+}
+
+/* Reveal animation */
+.closing-silhouette.silhouette-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.closing-silhouette.silhouette-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.closing-text {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #0a2a4a;
+}
+
 
 /* CLOUD DRIFT */
 @keyframes cloudDrift {
     from { background-position: 0 0; }
-    to { background-position: -1200px 800px; }
+    to { background-position: 0 -400px; }
 }
+
 
 /* FOOTER */
 footer {
