@@ -106,9 +106,55 @@ body {
     border-radius: 12px;
 }
 
-.signature {
-    margin-top: 10px;
-    width: 180px;
+/* Kinia Image */
+.kinia-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    display: block;
+    margin: 20px auto;
+}
+/* OUR STORY */
+#our-story {
+    padding: 80px 40px;
+}
+
+.our-story-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #0a2a4a;
+}
+
+.story-image-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.story-panoramic {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+}
+
+.letter-block {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.letter-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+}
+
+/* Kinia Portrait */
+.kinia-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    display: block;
+    margin: 40px auto 0 auto;
 }
 
 /* PORTAL */
