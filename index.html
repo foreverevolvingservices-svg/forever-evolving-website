@@ -4,229 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forever Evolving</title>
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <!-- HEADER -->
-<header class="main-header">
-    <div class="nav-container">
-
-        <a href="#welcome" class="logo">Forever Evolving</a>
-
-        <nav class="nav-links">
-            <a href="#welcome">Welcome</a>
-            <a href="#our-story">Our Story</a>
-            <a href="#portal">Enter the Portal</a>
-            <a href="#realms">Realms</a>
-            <a href="#closing">Closing</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <!-- Mobile Menu Button -->
-       <!-- MOBILE MENU SCRIPT -->
-<script>
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('show');
-    });
-</script>
-
-</body>
-</html>
-
-        <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
-
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#welcome">Welcome</a>
-        <a href="#our-story">Our Story</a>
-        <a href="#portal">Enter the Portal</a>
-        <a href="#realms">Realms</a>
-        <a href="#closing">Closing</a>
-        <a href="#contact">Contact</a>
-    </div>
-</header>
-
-
-    <!-- CLOUD BACKGROUND -->
-    <div class="clouds-bg"></div>
-
-    <!-- WELCOME -->
-    <!-- WELCOME -->
-<section id="welcome">
-    <div class="section-surface">
-
-        <!-- Main Welcome Image -->
-        <img src="images/foreverevolving-group.png" class="welcome-main-img" alt="Forever Evolving Group">
-
-        <div class="welcome-text">
-            <p>
-                Welcome to Forever Evolving — a living, breathing realm of growth where your story,
-                your sky, and your spirit are always in motion.
-            </p>
-
-            <!-- Podcast Image -->
-            <img src="images/podcast.png" class="welcome-podcast-img" alt="Podcast Logo">
-
-            <p>
-                The Forever Evolving podcast extends this journey beyond the page, offering conversations,
-                reflections, and stories that support your growth in everyday life.
-            </p>
-
-            <a href="#our-story" class="primary-btn">Begin the Journey</a>
-        </div>
-
-    </div>
-</section>
-
-
-    <!-- OUR STORY -->
-   <!-- OUR STORY -->
-<section id="our-story">
-    <div class="section-surface">
-
-        <h2 class="our-story-title">Our Story</h2>
-
-        <!-- Panoramic Family Image -->
-        <div class="story-image-wrapper">
-            <img src="images/panoramic-evolution.png" class="story-panoramic" alt="Family Panoramic">
-        </div>
-
-        <!-- Letter -->
-        <div class="letter-block">
-            <img src="images/letter.png" class="letter-img" alt="Letter">
-        </div>
-
-        <!-- Kinia Portrait -->
-        <img src="images/kinia.jpg" class="kinia-img" alt="Kinia">
-
-    </div>
-</section>
-
+    <!-- 1. SKY HERO -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Forever Evolving</h1>
+            <p>Your journey. Your evolution. Your becoming.</p>
+            <div class="hero-cta">
+                <a href="#start-here">Start Here</a>
+                <a href="#realms">Explore the Realms</a>
+                <a href="#experiences">Choose Your Experience</a>
+            </div>
         </div>
     </section>
 
-    <!-- PORTAL -->
-    <!-- PORTAL -->
-<section id="portal">
-    <div class="section-surface">
-
-        <h2 class="portal-title">Enter the Portal</h2>
-
-        <!-- Portal Emblem -->
-        <img src="images/portal-logo.png" class="portal-logo" alt="Portal Emblem">
-
-        <p class="portal-description">
-            A gateway to transformation — where insight, healing, and evolution begin.
-        </p>
-
-        <!-- Placeholder for future portal gate image -->
-        <div class="portal-gate-wrapper">
-            <!-- Gate image will be added here later -->
+    <!-- 2. REALM GATEWAY -->
+    <section id="realm-gateway">
+        <div class="portal-icons">
+            <div class="portal-icon" data-target="#library">📘</div>
+            <div class="portal-icon" data-target="#guidance">🕯️</div>
+            <div class="portal-icon" data-target="#unity">🤝</div>
+            <div class="portal-icon" data-target="#insight">🔮</div>
+            <div class="portal-icon" data-target="#hero">🗝️</div>
         </div>
+        <p class="portal-text">Choose Your Realm</p>
+    </section>
 
-        <a href="#realms" class="primary-btn">Explore the Realms</a>
-
-    </div>
-</section>
-
-
-    <!-- REALMS -->
-    <!-- REALMS -->
-<section id="realms">
-    <div class="section-surface">
-
-        <h2 class="realms-title">The Realms</h2>
-
-        <p class="realms-intro">
-            Each realm represents a chapter of growth — a place where insight, healing, and transformation unfold.
-        </p>
-
-        <div class="realms-grid">
-
-            <!-- Realm 1 -->
-          <div class="realms-grid">
-
-    <!-- Realm 1 -->
-    <div class="realm-card">
-        <img src="images/finding-peace-bookcover.png" class="realm-img" alt="Library of Becoming">
-        <div class="realm-label">The Library of Becoming</div>
-    </div>
-
-    <!-- Realm 2 -->
-    <div class="realm-card">
-        <img src="images/mhn6.jpg" class="realm-img" alt="Guidance Hall">
-        <div class="realm-label">The Guidance Hall</div>
-    </div>
-
-    <!-- Realm 3 -->
-    <div class="realm-card">
-        <img src="images/the-human-connection-butterfly.png" class="realm-img" alt="Unity Chamber">
-        <div class="realm-label">The Unity Chamber</div>
-    </div>
-
-    <!-- Realm 4 -->
-    <div class="realm-card">
-        <img src="images/podcast.png" class="realm-img" alt="Insight Observatory">
-        <div class="realm-label">The Insight Observatory</div>
-    </div>
-
-</div>
-
-
-    </div>
-</section>
-
-
-    <!-- CLOSING -->
-    <!-- CLOSING -->
-<section id="closing">
-    <div class="section-surface">
-
-        <h2 class="closing-title">Closing Reflections</h2>
-
-        <!-- Silhouette -->
-        <img src="images/silhouette.png" class="closing-silhouette silhouette-hidden" alt="Silhouette">
-
-        <p class="closing-text">
-            Every journey leads back to the heart — and the heart always knows the way.
-        </p>
-
-        <a href="#contact" class="primary-btn">Connect</a>
-
-    </div>
-</section>
-
-    <!-- CONTACT -->
-   <!-- CONTACT -->
-<section id="contact">
-    <div class="section-surface">
-
-        <h2 class="contact-title">Contact</h2>
-
-        <p class="contact-text">
-            More ways to connect are coming soon.  
-            For now, you can reach out anytime — your journey matters, and we’re here to walk it with you.
-        </p>
-
-        <div class="contact-info">
-            <p><strong>Email:</strong> foreverevolvingservices@gmail.com</p>
-            <p><strong>Location:</strong> Palm Coast, Florida</p>
+    <!-- 3. EXPERIENCE SECTION -->
+    <section id="experiences">
+        <h2>Experiences</h2>
+        <div class="experience-grid">
+            <div class="experience-card">Evolving Mind Hub</div>
+            <div class="experience-card">Awakening Path</div>
+            <div class="experience-card">LifeShift Experience</div>
+            <div class="experience-card">Human Connection Project</div>
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- 4. INTERACTIVE TOOLS -->
+    <section id="tools-strip">
+        <div class="tools-icons">
+            <div class="tool-icon">📝</div>
+            <div class="tool-icon">🎧</div>
+            <div class="tool-icon">💬</div>
+            <div class="tool-icon">✨</div>
+            <div class="tool-icon">📊</div>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-    <p class="footer-text">
-        © 2026 Forever Evolving — Always Growing, Always Becoming
-    </p>
-</footer>
+    <!-- 5. START HERE HUB -->
+    <section id="start-here">
+        <h2>Start Here</h2>
+        <div class="start-grid">
+            <div class="start-card">Mental Wellness</div>
+            <div class="start-card">Starting Over</div>
+            <div class="start-card">Personal Growth</div>
+            <div class="start-card">Spiritual Connection</div>
+            <div class="start-card">Books & Tools</div>
+        </div>
+    </section>
+
+    <!-- 6. REALMS -->
+    <section id="realms">
+        <h2>The Realms</h2>
+
+        <div id="library" class="realm-section">Library of Becoming</div>
+        <div id="guidance" class="realm-section">Guidance Hall</div>
+        <div id="unity" class="realm-section">Unity Chamber</div>
+        <div id="insight" class="realm-section">Insight Observatory</div>
+    </section>
+
+    <!-- 7. AWAKENING PATH -->
+    <section id="awakening-path">
+        <h2>The Awakening Path</h2>
+        <div class="awakening-grid">
+            <div class="awakening-card">Awareness</div>
+            <div class="awakening-card">Alignment</div>
+            <div class="awakening-card">Activation</div>
+            <div class="awakening-card">Expansion</div>
+        </div>
+    </section>
+
+    <!-- 8. HUMAN CONNECTION PROJECT -->
+    <section id="human-connection">
+        <h2>Human Connection Project</h2>
+        <div class="connection-grid">
+            <div class="connection-card">Empathy Challenge</div>
+            <div class="connection-card">Human Mirror</div>
+            <div class="connection-card">Connection Reset</div>
+            <div class="connection-card">Unity Moments</div>
+        </div>
+    </section>
+
+    <!-- 9. PODCAST HUB -->
+    <section id="podcast">
+        <h2>LifeShift Podcast</h2>
+        <div class="featured-episode">Featured Episode</div>
+        <div class="episode-grid">
+            <div class="episode-card">Awakening Episodes</div>
+            <div class="episode-card">Healing Episodes</div>
+            <div class="episode-card">Connection Episodes</div>
+            <div class="episode-card">Becoming Episodes</div>
+        </div>
+    </section>
+
+    <!-- 10. UNIVERSITY OF LIFE -->
+    <section id="university">
+        <h2>University of Life Journey</h2>
+        <div class="classroom-grid">
+            <div class="classroom-card">Awareness</div>
+            <div class="classroom-card">Healing</div>
+            <div class="classroom-card">Becoming</div>
+            <div class="classroom-card">Connection</div>
+        </div>
+    </section>
+
+    <!-- 11. BOOKS & TOOLS HUB -->
+    <section id="books-tools">
+        <h2>Books & Tools</h2>
+        <div class="books-grid">
+            <div class="book-card">Finding Peace</div>
+            <div class="book-card">My Healthy Noggin</div>
+        </div>
+        <div class="tools-grid">
+            <div class="tool-card">Worksheets</div>
+            <div class="tool-card">Audio Lessons</div>
+            <div class="tool-card">Growth Challenges</div>
+            <div class="tool-card">Reflection Tools</div>
+        </div>
+    </section>
+
+    <!-- 12. CLOSING SKY -->
+    <section id="closing">
+        <div class="closing-content">
+            <p>You’re entering your next evolution.</p>
+        </div>
+    </section>
+
+</body>
+</html>
