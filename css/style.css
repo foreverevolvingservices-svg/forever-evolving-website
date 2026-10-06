@@ -1,3 +1,17 @@
+:root {
+    --library-main: #ffd700;
+    --library-glow: rgba(255, 215, 0, 0.7);
+
+    --guidance-main: #ffdd88;
+    --guidance-glow: rgba(255, 221, 136, 0.7);
+
+    --unity-main: #ffb3c1;
+    --unity-glow: rgba(255, 179, 193, 0.7);
+
+    --insight-main: #c8a4ff;
+    --insight-glow: rgba(200, 164, 255, 0.7);
+}
+
 /* GLOBAL RESET */
 * {
     margin: 0;
@@ -158,6 +172,37 @@ p {
     box-shadow: 0 0 26px rgba(255,255,255,0.9);
     background: radial-gradient(circle, rgba(255,255,255,0.45) 0, transparent 70%);
 }
+/* REALM GLOW COLORS */
+.portal-icon[data-target="#library"] {
+    box-shadow: 0 0 25px var(--library-glow);
+}
+
+.portal-icon[data-target="#guidance"] {
+    box-shadow: 0 0 25px var(--guidance-glow);
+}
+
+.portal-icon[data-target="#unity"] {
+    box-shadow: 0 0 25px var(--unity-glow);
+}
+
+.portal-icon[data-target="#insight"] {
+    box-shadow: 0 0 25px var(--insight-glow);
+}
+.portal-icon[data-target="#library"]:hover {
+    box-shadow: 0 0 45px var(--library-main);
+}
+
+.portal-icon[data-target="#guidance"]:hover {
+    box-shadow: 0 0 45px var(--guidance-main);
+}
+
+.portal-icon[data-target="#unity"]:hover {
+    box-shadow: 0 0 45px var(--unity-main);
+}
+
+.portal-icon[data-target="#insight"]:hover {
+    box-shadow: 0 0 45px var(--insight-main);
+}
 
 .portal-text {
     font-size: 0.9rem;
@@ -224,6 +269,42 @@ p {
     box-shadow: 0 16px 40px rgba(0,0,0,0.7);
     background: rgba(10, 16, 40, 0.8);
 }
+/* REALM SECTION BACKGROUNDS */
+#library.realm-section {
+    background: rgba(255, 215, 0, 0.12);
+    border-color: var(--library-main);
+}
+
+#guidance.realm-section {
+    background: rgba(255, 221, 136, 0.12);
+    border-color: var(--guidance-main);
+}
+
+#unity.realm-section {
+    background: rgba(255, 179, 193, 0.12);
+    border-color: var(--unity-main);
+}
+
+#insight.realm-section {
+    background: rgba(200, 164, 255, 0.12);
+    border-color: var(--insight-main);
+}
+#library.realm-section {
+    color: var(--library-main);
+}
+
+#guidance.realm-section {
+    color: var(--guidance-main);
+}
+
+#unity.realm-section {
+    color: var(--unity-main);
+}
+
+#insight.realm-section {
+    color: var(--insight-main);
+}
+
 /* CLOSING SECTION */
 #closing {
     text-align: center;
@@ -233,4 +314,746 @@ p {
 .closing-content p {
     font-size: 1rem;
     opacity: 0.9;
+}
+/* PORTAL ICON FLOAT */
+.portal-icon {
+    animation: portalFloat 6s ease-in-out infinite;
+}
+
+@keyframes portalFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* PORTAL ICON PULSE */
+.portal-icon {
+    box-shadow: 0 0 18px rgba(255,255,255,0.45);
+    animation: portalPulse 4s ease-in-out infinite;
+}
+
+@keyframes portalPulse {
+    0% { box-shadow: 0 0 18px rgba(255,255,255,0.45); }
+    50% { box-shadow: 0 0 28px rgba(255,255,255,0.85); }
+    100% { box-shadow: 0 0 18px rgba(255,255,255,0.45); }
+}
+.portal-icon:hover {
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 0 40px rgba(255,255,255,1);
+}
+
+.portal-icon:hover::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    from { transform: scale(0.6); opacity: 0.9; }
+    to { transform: scale(1.4); opacity: 0; }
+}
+/* PORTAL FADE ON SCROLL */
+#realm-gateway.fade-out {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.portal-icon[data-target="#library"] { box-shadow: 0 0 20px rgba(255,215,0,0.7); }
+.portal-icon[data-target="#guidance"] { box-shadow: 0 0 20px rgba(100,150,255,0.7); }
+.portal-icon[data-target="#unity"] { box-shadow: 0 0 20px rgba(255,120,150,0.7); }
+.portal-icon[data-target="#insight"] { box-shadow: 0 0 20px rgba(180,100,255,0.7); }
+.portal-icon[data-target="#hero"] { box-shadow: 0 0 20px rgba(255,255,255,0.9); }
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BODY / SKY ========== */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #ffffff;
+    background: radial-gradient(circle at top, #fdf6e3 0%, #a3c7ff 40%, #1b2554 100%);
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* ========== SECTIONS ========== */
+section {
+    position: relative;
+    padding: 80px 10%;
+    min-height: 60vh;
+}
+
+/* ========== HEADINGS / TEXT ========== */
+h1, h2 {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+p {
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+/* ========== CLOUD LAYERS ========== */
+.cloud-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-repeat: repeat-x;
+    opacity: 0.35;
+}
+
+/* FAR CLOUDS */
+.cloud-layer.back {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.6) 0, transparent 60%);
+    animation: driftBack 80s linear infinite;
+    transform: translateY(-10vh);
+}
+
+/* NEAR CLOUDS */
+.cloud-layer.front {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.9) 0, transparent 55%);
+    animation: driftFront 50s linear infinite;
+    transform: translateY(5vh);
+}
+
+@keyframes driftBack {
+    from { transform: translateX(0) translateY(-10vh); }
+    to   { transform: translateX(-40vw) translateY(-10vh); }
+}
+
+@keyframes driftFront {
+    from { transform: translateX(0) translateY(5vh); }
+    to   { transform: translateX(40vw) translateY(5vh); }
+}
+
+/* ========== HERO SECTION ========== */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 800px;
+    backdrop-filter: blur(6px);
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    text-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+.hero-content p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* HERO CTA BUTTONS */
+.hero-cta {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-cta a {
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.7);
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
+    box-shadow: 0 0 18px rgba(0,0,0,0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.hero-cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 26px rgba(255,255,255,0.7);
+    background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.12));
+}
+
+/* ========== REALM GATEWAY ========== */
+#realm-gateway {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.portal-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.portal-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background: radial-gradient(circle, rgba(255,255,255,0.25) 0, transparent 70%);
+    box-shadow: 0 0 18px rgba(255,255,255,0.45);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    animation: portalFloat 6s ease-in-out infinite, portalPulse 4s ease-in-out infinite;
+}
+
+.portal-text {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+/* FLOAT + PULSE */
+@keyframes portalFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes portalPulse {
+    0% { box-shadow: 0 0 18px rgba(255,255,255,0.45); }
+    50% { box-shadow: 0 0 28px rgba(255,255,255,0.85); }
+    100% { box-shadow: 0 0 18px rgba(255,255,255,0.45); }
+}
+
+/* HOVER RIPPLE */
+.portal-icon:hover {
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 0 40px rgba(255,255,255,1);
+}
+
+.portal-icon:hover::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    from { transform: scale(0.6); opacity: 0.9; }
+    to { transform: scale(1.4); opacity: 0; }
+}
+
+/* PORTAL FADE ON SCROLL */
+#realm-gateway.fade-out {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* OPTIONAL REALM COLORS */
+.portal-icon[data-target="#library"] { box-shadow: 0 0 20px rgba(255,215,0,0.7); }
+.portal-icon[data-target="#guidance"] { box-shadow: 0 0 20px rgba(100,150,255,0.7); }
+.portal-icon[data-target="#unity"] { box-shadow: 0 0 20px rgba(255,120,150,0.7); }
+.portal-icon[data-target="#insight"] { box-shadow: 0 0 20px rgba(180,100,255,0.7); }
+.portal-icon[data-target="#hero"] { box-shadow: 0 0 20px rgba(255,255,255,0.9); }
+
+/* ========== GENERIC GRIDS / CARDS ========== */
+.experience-grid,
+.start-grid,
+.awakening-grid,
+.connection-grid,
+.episode-grid,
+.classroom-grid,
+.books-grid,
+.tools-grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Responsive columns */
+.experience-grid,
+.start-grid,
+.episode-grid,
+.classroom-grid,
+.books-grid,
+.tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* CARD STYLE */
+.experience-card,
+.start-card,
+.realm-section,
+.awakening-card,
+.connection-card,
+.episode-card,
+.classroom-card,
+.book-card,
+.tool-card,
+.featured-episode {
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(10, 16, 40, 0.55);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.experience-card:hover,
+.start-card:hover,
+.realm-section:hover,
+.awakening-card:hover,
+.connection-card:hover,
+.episode-card:hover,
+.classroom-card:hover,
+.book-card:hover,
+.tool-card:hover,
+.featured-episode:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.7);
+    background: rgba(10, 16, 40, 0.8);
+}
+
+/* ========== PODCAST HUB SPECIALS ========== */
+#podcast {
+    background: radial-gradient(circle at top, #1b2554 0%, #0c1024 60%);
+}
+
+.featured-episode {
+    margin-bottom: 25px;
+}
+
+/* ========== CLOSING SECTION ========== */
+#closing {
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.closing-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ========== SCROLL REVEAL SYSTEM ========== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional directional reveals */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Optional shimmer reveal */
+.reveal-shimmer {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(6px);
+    transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease;
+}
+.reveal-shimmer.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* ========== RESPONSIVE TWEAKS ========== */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 6%;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content {
+        padding: 0 10px;
+    }
+
+    .portal-icons {
+        gap: 18px;
+    }
+}
+@media (max-width: 768px) {
+
+    /* GLOBAL */
+    section {
+        padding: 60px 6%;
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* HERO */
+    #hero {
+        min-height: 70vh;
+    }
+
+    .hero-content {
+        padding: 0 10px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-cta a {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* REALM GATEWAY */
+    .portal-icons {
+        gap: 18px;
+    }
+
+    .portal-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+
+    /* GRIDS */
+    .experience-grid,
+    .start-grid,
+    .awakening-grid,
+    .connection-grid,
+    .episode-grid,
+    .classroom-grid,
+    .books-grid,
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CARDS */
+    .experience-card,
+    .start-card,
+    .realm-section,
+    .awakening-card,
+    .connection-card,
+    .episode-card,
+    .classroom-card,
+    .book-card,
+    .tool-card,
+    .featured-episode {
+        padding: 18px;
+        font-size: 0.9rem;
+    }
+
+    /* PODCAST */
+    #podcast {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .featured-episode {
+        margin-bottom: 20px;
+    }
+
+    /* CLOSING */
+    #closing {
+        padding: 60px 6%;
+    }
+}
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .portal-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .hero-cta a {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+
+    .experience-card,
+    .start-card,
+    .realm-section,
+    .awakening-card,
+    .connection-card,
+    .episode-card,
+    .classroom-card,
+    .book-card,
+    .tool-card {
+        padding: 16px;
+        font-size: 0.85rem;
+    }
+}
+@media (max-width: 1024px) {
+
+    section {
+        padding: 70px 8%;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .portal-icons {
+        gap: 22px;
+    }
+
+    .experience-grid,
+    .start-grid,
+    .episode-grid,
+    .classroom-grid,
+    .books-grid,
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+@media (min-width: 1400px) {
+
+    section {
+        padding: 100px 14%;
+    }
+
+    h1 {
+        font-size: 3.6rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    .experience-grid,
+    .start-grid,
+    .episode-grid,
+    .classroom-grid,
+    .books-grid,
+    .tools-grid {
+        gap: 30px;
+    }
+
+    .experience-card,
+    .start-card,
+    .realm-section,
+    .awakening-card,
+    .connection-card,
+    .episode-card,
+    .classroom-card,
+    .book-card,
+    .tool-card {
+        padding: 28px;
+        font-size: 1.1rem;
+    }
+}
+/* ============================
+   TOP NAVIGATION BAR
+   ============================ */
+
+#top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 10%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+#top-nav.scrolled {
+    background: rgba(10,16,40,0.55);
+    padding: 12px 10%;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+/* MOBILE TOGGLE */
+.nav-mobile-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(10,16,40,0.85);
+        padding: 20px;
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 18px;
+        width: 60%;
+        text-align: right;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-mobile-toggle {
+        display: block;
+    }
+}
+/* ============================
+   FOOTER
+   ============================ */
+
+#site-footer {
+    background: rgba(10,16,40,0.75);
+    padding: 60px 10%;
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.footer-column a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 8px;
+    opacity: 0.85;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 0.7;
+    font-size: 0.85rem;
 }
