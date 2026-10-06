@@ -1,255 +1,161 @@
-/* =========================================
-   ROOT REALM COLORS
-========================================= */
-:root {
-    --library-main: #ffd700;
-    --library-glow: rgba(255, 215, 0, 0.7);
-
-    --guidance-main: #ffdd88;
-    --guidance-glow: rgba(255, 221, 136, 0.7);
-
-    --unity-main: #ffb3c1;
-    --unity-glow: rgba(255, 179, 193, 0.7);
-
-    --insight-main: #c8a4ff;
-    --insight-glow: rgba(200, 164, 255, 0.7);
-}
-
-/* =========================================
-   GLOBAL RESET
-========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* =========================================
-   BODY / SKY
-========================================= */
 body {
+    margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #ffffff;
-    background: radial-gradient(circle at top, #fdf6e3 0%, #a3c7ff 40%, #1b2554 100%);
-    min-height: 100vh;
-    scroll-behavior: smooth;
+    background: #020617;
+    color: #f9fafb;
 }
 
-/* =========================================
-   SECTIONS
-========================================= */
-section {
-    position: relative;
-    padding: 80px 10%;
-    min-height: 60vh;
+/* NAV */
+#top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+    z-index: 1000;
 }
 
-/* =========================================
-   HEADINGS / TEXT
-========================================= */
-h1, h2 {
+.nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-weight: 700;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
 }
 
-h1 {
-    font-size: 3rem;
+.nav-links a {
+    margin-left: 1rem;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 0.9rem;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+.nav-links a:hover {
+    color: #facc15;
 }
 
-p {
-    max-width: 700px;
-    line-height: 1.6;
+.nav-mobile-toggle {
+    display: none;
 }
 
-/* =========================================
-   CLOUD LAYERS
-========================================= */
+/* CLOUD LAYERS */
 .cloud-layer {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: -1;
-    background-repeat: repeat-x;
-    opacity: 0.35;
+    opacity: 0.15;
 }
 
-.cloud-layer.back {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.6) 0, transparent 60%);
-    animation: driftBack 80s linear infinite;
-    transform: translateY(-10vh);
+.layer-back { background: radial-gradient(circle at top, #0f172a, transparent); }
+.layer-mid { background: radial-gradient(circle at center, #1e293b, transparent); }
+.layer-front { background: radial-gradient(circle at bottom, #111827, transparent); }
+.layer-float { background: radial-gradient(circle at 30% 20%, #38bdf8, transparent); }
+.layer-haze { background: radial-gradient(circle at 70% 80%, #a855f7, transparent); }
+
+/* SECTIONS */
+.section-transition {
+    padding: 6rem 1.5rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.cloud-layer.front {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.9) 0, transparent 55%);
-    animation: driftFront 50s linear infinite;
-    transform: translateY(5vh);
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #4b5563, transparent);
+    margin: 0 auto;
+    max-width: 900px;
 }
 
-@keyframes driftBack {
-    from { transform: translateX(0) translateY(-10vh); }
-    to   { transform: translateX(-40vw) translateY(-10vh); }
+/* HERO */
+.hero-section {
+    padding-top: 7rem;
 }
 
-@keyframes driftFront {
-    from { transform: translateX(0) translateY(5vh); }
-    to   { transform: translateX(40vw) translateY(5vh); }
-}
-
-/* =========================================
-   HERO SECTION
-========================================= */
-#hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 80vh;
-}
-
-.hero-content {
+.hero-inner {
     max-width: 800px;
-    backdrop-filter: blur(6px);
+    margin: 0 auto;
+    text-align: left;
 }
 
-.hero-content h1 {
-    font-size: 3.2rem;
-    text-shadow: 0 0 25px rgba(255,255,255,0.6);
+.hero-inner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-.hero-content p {
-    margin-top: 15px;
+.hero-narrator {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-line;
+    color: #e5e7eb;
+}
+
+/* REALMS */
+.realm-section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.realm-content {
     font-size: 1.1rem;
-    opacity: 0.9;
 }
 
-.hero-cta {
-    margin-top: 30px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.hero-cta a {
-    padding: 10px 22px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.7);
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
-    box-shadow: 0 0 18px rgba(0,0,0,0.25);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-
-.hero-cta a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 26px rgba(255,255,255,0.7);
-    background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.12));
-}
-
-/* =========================================
-   REALM GATEWAY
-========================================= */
-#realm-gateway {
-    text-align: center;
-    padding: 60px 10%;
-}
-
+/* PORTALS */
 .portal-icons {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .portal-icon {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    background: radial-gradient(circle, rgba(255,255,255,0.25) 0, transparent 70%);
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    animation: portalFloat 6s ease-in-out infinite, portalPulse 4s ease-in-out infinite;
+    font-size: 2rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* FLOAT + PULSE */
-@keyframes portalFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes portalPulse {
-    0% { box-shadow: 0 0 18px rgba(255,255,255,0.45); }
-    50% { box-shadow: 0 0 28px rgba(255,255,255,0.85); }
-    100% { box-shadow: 0 0 18px rgba(255,255,255,0.45); }
-}
-
-/* REALM GLOW COLORS */
-.portal-icon[data-target="#library"] { box-shadow: 0 0 25px var(--library-glow); }
-.portal-icon[data-target="#guidance"] { box-shadow: 0 0 25px var(--guidance-glow); }
-.portal-icon[data-target="#unity"] { box-shadow: 0 0 25px var(--unity-glow); }
-.portal-icon[data-target="#insight"] { box-shadow: 0 0 25px var(--insight-glow); }
-
-/* HOVER INTENSIFICATION */
-.portal-icon[data-target="#library"]:hover { box-shadow: 0 0 45px var(--library-main); }
-.portal-icon[data-target="#guidance"]:hover { box-shadow: 0 0 45px var(--guidance-main); }
-.portal-icon[data-target="#unity"]:hover { box-shadow: 0 0 45px var(--unity-main); }
-.portal-icon[data-target="#insight"]:hover { box-shadow: 0 0 45px var(--insight-main); }
-
-/* RIPPLE EFFECT */
 .portal-icon:hover {
-    transform: translateY(-10px) scale(1.08);
-}
-
-.portal-icon:hover::after {
-    content: "";
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
-    animation: ripple 0.6s ease-out;
-    pointer-events: none;
-}
-
-@keyframes ripple {
-    from { transform: scale(0.6); opacity: 0.9; }
-    to { transform: scale(1.4); opacity: 0; }
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px #facc15);
 }
 
 .portal-text {
-    font-size: 0.9rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0.85;
+    text-align: center;
+    font-size: 1rem;
+    color: #e5e7eb;
 }
 
-/* FADE OUT ON SCROLL */
-#realm-gateway.fade-out {
+/* TELEPORT NARRATOR */
+#teleport-narrator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #f9fafb;
+    font-size: 1rem;
+    border-radius: 999px;
     opacity: 0;
-    transform: translateY(-40px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 9999;
+    border: 1px solid rgba(250, 204, 21, 0.6);
 }
 
-/* =========================================
-   GRID / CARD SYSTEM
-========================================= */
+#teleport-narrator.show {
+    opacity: 1;
+}
+
+/* GRIDS */
 .experience-grid,
 .start-grid,
 .awakening-grid,
@@ -259,7 +165,172 @@ p {
 .books-grid,
 .tools-grid {
     display: grid;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
 }
 
-.experience
+.experience-card,
+.start-card,
+.awakening-card,
+.connection-card,
+.episode-card,
+.classroom-card,
+.book-card,
+.tool-card {
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    font-size: 0.95rem;
+}
+
+/* UNIVERSITY OF LIFE MAP */
+.university-map {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.university-path {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.uol-step {
+    position: relative;
+    padding: 0.9rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.8);
+    color: #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.uol-step:hover {
+    transform: translateX(4px);
+    border-color: #facc15;
+}
+
+.uol-step.active {
+    background: radial-gradient(circle at 0% 50%, #facc15, #0f172a);
+    border-color: #facc15;
+    color: #111827;
+}
+
+.uol-step-label {
+    font-weight: 600;
+}
+
+.uol-step-tag {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+/* connecting line (optional visual) */
+.university-path::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: linear-gradient(to bottom, #facc15, transparent);
+    opacity: 0.4;
+}
+
+/* DETAIL PANEL */
+.university-detail {
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    min-height: 180px;
+}
+
+.uol-panel {
+    display: none;
+}
+
+.uol-panel.active {
+    display: block;
+}
+
+.uol-panel h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.uol-panel p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* CLOSING */
+.closing-content {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* FOOTER */
+#site-footer {
+    padding: 3rem 1.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(55, 65, 81, 0.7);
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+    display: block;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.footer-column a:hover {
+    color: #facc15;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .section-transition {
+        padding-top: 5rem;
+    }
+
+    .university-map {
+        grid-template-columns: 1fr;
+    }
+
+    .university-path::before {
+        left: 6px;
+    }
+}
+
